@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI.Desktop
-{  //18/05/22
+{
     static class Program
     {
         /// <summary>

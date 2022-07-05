@@ -19,7 +19,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades", sqlConn);
+                SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades",sqlConn);
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
                 while (drEspecialidades.Read())
                 {
@@ -140,7 +140,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                    "insert into epecialidades(descripcion)" +
+                    "insert into especialidades(desc_especialidad)" +
                     "values(@descripcion)" +
                     "select @@identity", sqlConn);
 

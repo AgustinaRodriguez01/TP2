@@ -17,21 +17,30 @@ namespace UI.Desktop
         public Especialidades()
         {
             InitializeComponent();
+            this.dgvEspecialidades.AutoGenerateColumns = false;
         }
 
         private void tsbNuevo_Click(object sender, EventArgs e)
         {
-
+            EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ApplicationForm.ModoForm.Alta);
+            formEspecialidad.ShowDialog();
+            this.Listar();
         }
 
         private void tsbEditar_Click(object sender, EventArgs e)
         {
-
+            int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+            EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Modificacion);
+            formEspecialidad.ShowDialog();
+            this.Listar();
         }
 
         private void tsbEliminar_Click(object sender, EventArgs e)
         {
-
+            int ID = ((Business.Entities.Especialidad)this.dgvEspecialidades.SelectedRows[0].DataBoundItem).ID;
+            EspecialidadDesktop formEspecialidad = new EspecialidadDesktop(ID, ApplicationForm.ModoForm.Baja);
+            formEspecialidad.ShowDialog();
+            this.Listar();
         }
 
         public void Listar()
@@ -48,6 +57,11 @@ namespace UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Especialidades_Load(object sender, EventArgs e)
+        {
+            this.Listar();
         }
     }
 }
