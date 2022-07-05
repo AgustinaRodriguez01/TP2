@@ -25,7 +25,8 @@ namespace UI.Desktop
 
         private void btnEspecialidades_Click(object sender, EventArgs e)
         {
-
+            Especialidades formEspecialidad = new Especialidades();
+            formEspecialidad.ShowDialog();
         }
 
         private void btnPlanes_Click(object sender, EventArgs e)
