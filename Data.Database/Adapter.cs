@@ -18,13 +18,11 @@ namespace Data.Database
             //connectionString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
             sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
-            //throw new Exception("Metodo no implementado");
         }
 
         protected void CloseConnection()
         {
             sqlConn.Close();
-            //throw new Exception("Metodo no implementado");
         }
 
         protected SqlDataReader ExecuteReader(String commandText)

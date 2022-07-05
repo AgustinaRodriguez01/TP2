@@ -26,10 +26,10 @@ namespace UI.Desktop
 
         public UsuarioDesktop(int ID, ModoForm modo) : this()
         {
-            UsuarioLogic usuario = new UsuarioLogic();
-            usuarioActual = usuario.GetOne(ID);
-            Modo = modo;
-            MapearDeDatos();
+           UsuarioLogic usuario = new UsuarioLogic();
+           usuarioActual = usuario.GetOne(ID);
+           Modo = modo;
+           MapearDeDatos();
         }
 
         protected Usuario usuarioActual;
@@ -53,7 +53,6 @@ namespace UI.Desktop
                 btnAceptar.Text = "Guardar";
                 if (Modo == ModoForm.Modificacion)
                 {
-                    //Prueba
                     this.Text = "Modificar usuario";
                 }
             }

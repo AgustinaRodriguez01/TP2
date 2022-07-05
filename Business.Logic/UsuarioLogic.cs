@@ -23,12 +23,12 @@ namespace Business.Logic
 
         public Usuario GetOne(int id)
         {
-            return UsuarioData.GetOne(id);
+           return UsuarioData.GetOne(id); 
         }
 
         public List<Usuario> GetAll()
         {
-            return UsuarioData.GetAll();
+            return UsuarioData.GetAll(); 
         }
 
         public void Delete(int id)

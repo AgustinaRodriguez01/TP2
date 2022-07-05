@@ -128,21 +128,21 @@ namespace UI.Desktop
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(100, 20);
-            this.txtClave.TabIndex = 6;
+            this.txtClave.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(53, 55);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TabIndex = 2;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(53, 29);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 8;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtID
             // 
@@ -194,14 +194,14 @@ namespace UI.Desktop
             this.txtApellido.Location = new System.Drawing.Point(246, 29);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 15;
+            this.txtApellido.TabIndex = 1;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(246, 55);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtUsuario.TabIndex = 16;
+            this.txtUsuario.TabIndex = 3;
             // 
             // txtConfirmarClave
             // 
@@ -209,14 +209,14 @@ namespace UI.Desktop
             this.txtConfirmarClave.Name = "txtConfirmarClave";
             this.txtConfirmarClave.PasswordChar = '*';
             this.txtConfirmarClave.Size = new System.Drawing.Size(100, 20);
-            this.txtConfirmarClave.TabIndex = 17;
+            this.txtConfirmarClave.TabIndex = 5;
             // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(159, 107);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 19;
+            this.btnAceptar.TabIndex = 6;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -226,7 +226,7 @@ namespace UI.Desktop
             this.btnCancelar.Location = new System.Drawing.Point(246, 107);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.TabIndex = 7;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
