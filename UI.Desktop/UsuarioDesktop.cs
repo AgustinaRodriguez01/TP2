@@ -53,6 +53,7 @@ namespace UI.Desktop
                 btnAceptar.Text = "Guardar";
                 if (Modo == ModoForm.Modificacion)
                 {
+                    //Prueba
                     this.Text = "Modificar usuario";
                 }
             }
