@@ -78,7 +78,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 MateriaActual.Descripcion = txtDescripcion.Text;
-                MateriaActual.IdPlan = cbPlan.Text;
+                //MateriaActual.IdPlan = cbPlan.Text;
                 MateriaActual.HsSemanales = Int32.Parse(txtHsSemanales.Text);
                 MateriaActual.HsTotales = Int32.Parse(txtHsTotales.Text);
 

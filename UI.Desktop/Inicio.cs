@@ -31,7 +31,8 @@ namespace UI.Desktop
 
         private void btnPlanes_Click(object sender, EventArgs e)
         {
-
+            Planes formPlan = new Planes();
+            formPlan.ShowDialog();
         }
 
         private void btnMaterias_Click(object sender, EventArgs e)
