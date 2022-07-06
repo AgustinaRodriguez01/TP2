@@ -12,20 +12,16 @@ namespace Data.Database
 {
     public class PlanAdapter: Adapter
     {
-        public void GetDescripciones(ComboBox cb)
-        {
-            cb.Items.Clear();
-            this.OpenConnection();
-            SqlCommand cmdPlan = new SqlCommand("select * from planes", sqlConn);
-            SqlDataReader drPlan = cmdPlan.ExecuteReader();
-            while (drPlan.Read())
-            {
-                cb.Items.Add(drPlan["desc_plan"].ToString());
-            }
-            this.CloseConnection();
-            cb.Items.Insert(0, "Elija uno...");
-            cb.SelectedIndex = 0;
-        }
+        //public DataTable GetDescripciones()
+        //{
+        //    this.OpenConnection();
+        //    DataTable descripciones = new DataTable();
+        //    SqlCommand cmdPlan = new SqlCommand("select * from planes", sqlConn);
+        //    SqlDataAdapter daPlan = new SqlDataAdapter(cmdPlan);
+        //    daPlan.Fill(descripciones);
+        //    this.CloseConnection();
+        //    return descripciones;
+        //}
 
         public List<Plan> GetAll()
         {
@@ -169,7 +165,6 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al crear el plan", Ex);
-                throw ExcepcionManejada;
             }
             finally
             {

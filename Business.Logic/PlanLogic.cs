@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Windows.Forms;
 
 namespace Business.Logic
 {
@@ -32,6 +33,10 @@ namespace Business.Logic
             return PlanData.GetAll();
         }
 
+        public void GetDescripcion()
+        {
+            PlanData.GetDescripciones();
+        }
         public void Delete(int id)
         {
             PlanData.Delete(id);

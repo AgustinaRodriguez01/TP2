@@ -15,7 +15,6 @@ namespace UI.Desktop
         public PlanDesktop()
         {
             InitializeComponent();
-
         }
 
         public PlanDesktop(ModoForm modo) : this()
@@ -76,7 +75,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = txtDescripcion.Text;
-                //MateriaActual.IdPlan = cbPlan.Text;
+
 
                 if (Modo == ModoForm.Modificacion)
                 {
