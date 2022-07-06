@@ -29,5 +29,15 @@ namespace Business.Logic
                 return false;
             }
         }
+
+        public static bool esEntero(string s)
+        {
+            int nro;
+            if (Int32.TryParse(s, out nro))
+            {
+                return true;
+            }
+            else return false;
+        }
     }
 }

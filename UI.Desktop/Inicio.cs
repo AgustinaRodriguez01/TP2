@@ -36,7 +36,8 @@ namespace UI.Desktop
 
         private void btnMaterias_Click(object sender, EventArgs e)
         {
-
+            Materias formMateria = new Materias();
+            formMateria.ShowDialog();
         }
     }
 }

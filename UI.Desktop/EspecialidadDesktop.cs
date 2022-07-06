@@ -96,7 +96,12 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            return true;
+            if (txtDescripcion.Text == "")
+            {
+                this.Notificar("La especialidad debe tener una descripcion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else return true;
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons
