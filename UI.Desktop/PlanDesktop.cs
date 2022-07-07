@@ -41,7 +41,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.cbEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
+            this.txtIDEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -75,7 +75,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = txtDescripcion.Text;
-
+                PlanActual.IdEspecialidad = Convert.ToInt32(txtIDEspecialidad.Text);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -97,12 +97,17 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            if (txtDescripcion.Text == "" || cbEspecialidad.Text == "")
+            EspecialidadLogic espActual = new EspecialidadLogic();
+            var esp = espActual.GetOne(Convert.ToInt32(txtIDEspecialidad.Text));
+            if (txtDescripcion.Text != "" & txtIDEspecialidad.Text != "")
             {
-                this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (!(esp is null)) return true;
+                else return false;
+            }
+            else 
+            { 
                 return false;
             }
-            else return true;
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons
@@ -124,6 +129,7 @@ namespace UI.Desktop
                 this.GuardarCambios();
                 this.Close();
             }
+            else this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -62,6 +62,7 @@ namespace Data.Database
                     mat.HsTotales = (int)drMateria["hs_totales"];
                     mat.IdPlan = (int)drMateria["id_plan"];
                 }
+                else mat = null;
                 drMateria.Close();
             }
             catch (Exception Ex)
@@ -163,7 +164,6 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al crear la materia", Ex);
-                throw ExcepcionManejada;
             }
             finally
             {

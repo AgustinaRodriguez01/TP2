@@ -44,7 +44,7 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHsSemanales.Text = this.MateriaActual.HsSemanales.ToString();
             this.txtHsTotales.Text = this.MateriaActual.HsTotales.ToString();
-            this.cbPlan.Text = this.MateriaActual.IdPlan.ToString();
+            this.txtIDPlan.Text = this.MateriaActual.IdPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -78,7 +78,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 MateriaActual.Descripcion = txtDescripcion.Text;
-                //MateriaActual.IdPlan = cbPlan.Text;
+                MateriaActual.IdPlan = Convert.ToInt32(txtIDPlan.Text);
                 MateriaActual.HsSemanales = Int32.Parse(txtHsSemanales.Text);
                 MateriaActual.HsTotales = Int32.Parse(txtHsTotales.Text);
 
@@ -103,7 +103,7 @@ namespace UI.Desktop
         public override bool Validar()
         {
             if (txtDescripcion.Text == "" || txtHsSemanales.Text == "" || txtHsTotales.Text == ""
-            || cbPlan.Text == "")
+            || txtIDPlan.Text == "")
             {
                 this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;

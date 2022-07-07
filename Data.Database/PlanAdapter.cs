@@ -21,7 +21,7 @@ namespace Data.Database
         //    daPlan.Fill(descripciones);
         //    this.CloseConnection();
         //    return descripciones;
-        //}
+        //} a futuro, para elegir un plan 
 
         public List<Plan> GetAll()
         {
@@ -98,6 +98,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al eliminar el plan", Ex);
+                throw Ex;
             }
             finally
             {
@@ -140,6 +141,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al modificar los datos del plan", Ex);
+                throw Ex;
             }
             finally
             {
@@ -153,9 +155,9 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmdSave = new SqlCommand(
-                    "insert into planes(desc_materia,id_especialidad)" +
-                    "values(@descripcion,@idEspecialidad)" +
-                    "select @@identity", sqlConn);
+                    "insert into planes(desc_plan,id_especialidad)" +
+                    " values(@descripcion,@idEspecialidad)" +
+                    " select @@identity", sqlConn);
 
                 cmdSave.Parameters.Add("@descripcion", SqlDbType.VarChar, 50).Value = plan.Descripcion;
                 cmdSave.Parameters.Add("@idEspecialidad", SqlDbType.Int).Value = plan.IdEspecialidad;
@@ -165,6 +167,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al crear el plan", Ex);
+                throw Ex;
             }
             finally
             {

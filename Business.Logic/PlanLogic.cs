@@ -33,18 +33,18 @@ namespace Business.Logic
             return PlanData.GetAll();
         }
 
-        public void GetDescripcion()
-        {
-            PlanData.GetDescripciones();
-        }
+        //public void GetDescripcion()
+        //{
+        //    PlanData.GetDescripciones();
+        //}
         public void Delete(int id)
         {
             PlanData.Delete(id);
         }
 
-        public void Save(Plan esp)
+        public void Save(Plan plan)
         {
-            PlanData.Save(esp);
+            PlanData.Save(plan);
         }
     }
 }

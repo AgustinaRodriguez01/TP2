@@ -21,6 +21,11 @@ namespace Business.Logic
            UsuarioData = new UsuarioAdapter();
         }
 
+        public Usuario ExisteUsuario(string us, string con)
+        {
+            return UsuarioData.ExisteUsuario(us, con);
+        }
+
         public Usuario GetOne(int id)
         {
            return UsuarioData.GetOne(id); 

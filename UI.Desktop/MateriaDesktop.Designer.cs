@@ -34,14 +34,14 @@ namespace UI.Desktop
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtHsSemanales = new System.Windows.Forms.TextBox();
             this.txtHsTotales = new System.Windows.Forms.TextBox();
-            this.cbPlan = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtIDPlan = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,14 +56,14 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 3);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label5, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtHsSemanales, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtHsTotales, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.cbPlan, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -114,15 +114,6 @@ namespace UI.Desktop
             this.label2.TabIndex = 3;
             this.label2.Text = "Descripcion";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 156);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Plan";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -170,13 +161,21 @@ namespace UI.Desktop
             this.txtHsTotales.Size = new System.Drawing.Size(100, 20);
             this.txtHsTotales.TabIndex = 10;
             // 
-            // cbPlan
+            // label3
             // 
-            this.cbPlan.FormattingEnabled = true;
-            this.cbPlan.Location = new System.Drawing.Point(86, 159);
-            this.cbPlan.Name = "cbPlan";
-            this.cbPlan.Size = new System.Drawing.Size(116, 21);
-            this.cbPlan.TabIndex = 11;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 156);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(28, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Plan";
+            // 
+            // txtIDPlan
+            // 
+            this.txtIDPlan.Location = new System.Drawing.Point(86, 159);
+            this.txtIDPlan.Name = "txtIDPlan";
+            this.txtIDPlan.Size = new System.Drawing.Size(100, 20);
+            this.txtIDPlan.TabIndex = 12;
             // 
             // MateriaDesktop
             // 
@@ -198,13 +197,13 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtHsSemanales;
         private System.Windows.Forms.TextBox txtHsTotales;
-        private System.Windows.Forms.ComboBox cbPlan;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtIDPlan;
     }
 }
