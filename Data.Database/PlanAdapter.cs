@@ -49,6 +49,7 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                 new Exception("Error al recuperar lista de planes", Ex);
+                throw Ex;
             }
             finally { this.CloseConnection(); }
 
@@ -70,6 +71,7 @@ namespace Data.Database
                     plan.Descripcion = (string)drPlan["desc_plan"];
                     plan.IdEspecialidad = (int)drPlan["id_especialidad"];
                 }
+                else plan = null;
                 drPlan.Close();
             }
             catch (Exception Ex)

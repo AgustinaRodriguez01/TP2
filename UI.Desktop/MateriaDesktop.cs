@@ -102,10 +102,17 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
+            PlanLogic plan = new PlanLogic();
+            var p = plan.GetOne(Convert.ToInt32(txtIDPlan.Text));
             if (txtDescripcion.Text == "" || txtHsSemanales.Text == "" || txtHsTotales.Text == ""
             || txtIDPlan.Text == "")
             {
                 this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if(p is null)
+            {
+                this.Notificar("Ingrese un código de plan válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (!ValidarLogic.esEntero(txtHsSemanales.Text))
