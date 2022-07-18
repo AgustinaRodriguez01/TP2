@@ -37,6 +37,7 @@ namespace Data.Database
             {
                 Exception ExcepcionManejada =
                 new Exception("Error al recuperar lista de especialidades", Ex);
+                throw Ex;
             }
             finally { this.CloseConnection(); }
 

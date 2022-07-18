@@ -8,9 +8,6 @@ namespace Data.Database
 {
     public class Adapter
     {
-        //private SqlConnection sqlConnection = new SqlConnection("ConnectionString;");
-
-
         protected void OpenConnection()
         {
             string connectionString;
@@ -23,6 +20,7 @@ namespace Data.Database
         protected void CloseConnection()
         {
             sqlConn.Close();
+            sqlConn = null;
         }
 
         protected SqlDataReader ExecuteReader(String commandText)

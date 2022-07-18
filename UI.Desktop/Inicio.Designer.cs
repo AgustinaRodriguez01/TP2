@@ -34,6 +34,7 @@ namespace UI.Desktop
             this.btnEspecialidades = new System.Windows.Forms.Button();
             this.btnPlanes = new System.Windows.Forms.Button();
             this.btnMaterias = new System.Windows.Forms.Button();
+            this.btnComision = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,19 +42,20 @@ namespace UI.Desktop
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.btnUsuarios, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnEspecialidades, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnPlanes, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnMaterias, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnComision, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(205, 203);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -64,7 +66,7 @@ namespace UI.Desktop
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUsuarios.Location = new System.Drawing.Point(3, 3);
             this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(199, 44);
+            this.btnUsuarios.Size = new System.Drawing.Size(199, 34);
             this.btnUsuarios.TabIndex = 0;
             this.btnUsuarios.Text = "Usuario";
             this.btnUsuarios.UseVisualStyleBackColor = true;
@@ -75,9 +77,9 @@ namespace UI.Desktop
             this.btnEspecialidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEspecialidades.Location = new System.Drawing.Point(3, 53);
+            this.btnEspecialidades.Location = new System.Drawing.Point(3, 43);
             this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(199, 44);
+            this.btnEspecialidades.Size = new System.Drawing.Size(199, 34);
             this.btnEspecialidades.TabIndex = 1;
             this.btnEspecialidades.Text = "Especialidad";
             this.btnEspecialidades.UseVisualStyleBackColor = true;
@@ -88,9 +90,9 @@ namespace UI.Desktop
             this.btnPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlanes.Location = new System.Drawing.Point(3, 103);
+            this.btnPlanes.Location = new System.Drawing.Point(3, 83);
             this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(199, 44);
+            this.btnPlanes.Size = new System.Drawing.Size(199, 34);
             this.btnPlanes.TabIndex = 2;
             this.btnPlanes.Text = "Plan";
             this.btnPlanes.UseVisualStyleBackColor = true;
@@ -101,13 +103,24 @@ namespace UI.Desktop
             this.btnMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaterias.Location = new System.Drawing.Point(3, 153);
+            this.btnMaterias.Location = new System.Drawing.Point(3, 123);
             this.btnMaterias.Name = "btnMaterias";
-            this.btnMaterias.Size = new System.Drawing.Size(199, 47);
+            this.btnMaterias.Size = new System.Drawing.Size(199, 34);
             this.btnMaterias.TabIndex = 3;
             this.btnMaterias.Text = "Materia";
             this.btnMaterias.UseVisualStyleBackColor = true;
             this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
+            // 
+            // btnComision
+            // 
+            this.btnComision.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnComision.Location = new System.Drawing.Point(3, 163);
+            this.btnComision.Name = "btnComision";
+            this.btnComision.Size = new System.Drawing.Size(199, 37);
+            this.btnComision.TabIndex = 4;
+            this.btnComision.Text = "Comision";
+            this.btnComision.UseVisualStyleBackColor = true;
+            this.btnComision.Click += new System.EventHandler(this.btnComision_Click);
             // 
             // Inicio
             // 
@@ -129,5 +142,6 @@ namespace UI.Desktop
         private System.Windows.Forms.Button btnEspecialidades;
         private System.Windows.Forms.Button btnPlanes;
         private System.Windows.Forms.Button btnMaterias;
+        private System.Windows.Forms.Button btnComision;
     }
 }
