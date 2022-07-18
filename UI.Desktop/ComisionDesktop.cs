@@ -100,9 +100,16 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
+            PlanLogic planActual = new PlanLogic();
+            var plan = planActual.GetOne(Convert.ToInt32(txtIdPlan.Text));
             if (txtDescripcion.Text == "" || txtAnioEspecialidad.Text == "" || txtIdPlan.Text == "")
             {
                 this.Notificar("Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+            else if (plan is null)
+            {
+                this.Notificar("Debe ingresar un id de Plan existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else return true;
