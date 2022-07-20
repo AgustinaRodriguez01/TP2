@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Business.Logic
 {
-    public class PlanLogic
+    public class PlanLogic : BusinessLogic
     {
         private PlanAdapter _planData;
         public PlanAdapter PlanData

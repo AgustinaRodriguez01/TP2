@@ -8,7 +8,7 @@ using Business.Entities;
 
 namespace Business.Logic
 {
-    public class ComisionLogic
+    public class ComisionLogic : BusinessLogic
     {
         private ComisionAdapter _comisionData;
 

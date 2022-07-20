@@ -11,8 +11,8 @@ namespace Data.Database
         protected void OpenConnection()
         {
             string connectionString;
-            connectionString = @"Server=localhost;Database=tp2_net;Integrated Security=true; User=net; Password=net;";
-            //connectionString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
+            //connectionString = @"Server=localhost;Database=tp2_net;Integrated Security=false; User=net; Password=net;";
+            connectionString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
             sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
         }
@@ -31,7 +31,7 @@ namespace Data.Database
         //Clave por defecto a utlizar para la cadena de conexion
         const string consKeyDefaultCnnString = "ConnStringLocal";
 
-        SqlConnection _sqlconn;
+        private SqlConnection _sqlconn;
 
         public SqlConnection sqlConn
         {
