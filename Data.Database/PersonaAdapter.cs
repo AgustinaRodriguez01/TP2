@@ -11,7 +11,6 @@ namespace Data.Database
 {
     public class PersonaAdapter : Adapter
     {
-        //falta agregar tipoPersona en todos los casos
         public Personas GetOne(int ID)
         {
             Personas persona = new Personas();
@@ -146,8 +145,8 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdUpdate = new SqlCommand("update personas set nombre = @nombre, apellido = @apellido" +
-                    "fecha_nac = @fechaNac, direccion = @direccion, legajo = @legajo, telefono = @telefono, id_plan = @idPlan, email = @email, tipo_persona = @tipoPersona" +
+                SqlCommand cmdUpdate = new SqlCommand("update personas set nombre = @nombre, apellido = @apellido, " +
+                    "fecha_nac = @fechaNac, direccion = @direccion, legajo = @legajo, telefono = @telefono, id_plan = @idPlan, email = @email, tipo_persona = @tipoPersona " +
                     "where id_persona = @id", sqlConn);
 
                 cmdUpdate.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = persona.Nombre;

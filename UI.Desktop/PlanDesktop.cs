@@ -97,16 +97,25 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            EspecialidadLogic espActual = new EspecialidadLogic();
-            var esp = espActual.GetOne(Convert.ToInt32(txtIDEspecialidad.Text));
-            if (txtDescripcion.Text != "" & txtIDEspecialidad.Text != "")
+            if (txtDescripcion.Text == "" & txtIDEspecialidad.Text == "")
             {
-                if (!(esp is null)) return true;
-                else return false;
-            }
-            else 
-            { 
+                this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
+            }
+            else if(txtIDEspecialidad.Text != "")
+            {
+                EspecialidadLogic espActual = new EspecialidadLogic();
+                var esp = espActual.GetOne(Convert.ToInt32(txtIDEspecialidad.Text));
+                if (esp is null)
+                {
+                    this.Notificar("Debe ingresar una especialidad válida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                else return true;
+            }
+            else
+            {
+                return true;
             }
         }
 
@@ -129,7 +138,6 @@ namespace UI.Desktop
                 this.GuardarCambios();
                 this.Close();
             }
-            else this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
