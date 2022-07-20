@@ -57,7 +57,7 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdPersonas = new SqlCommand("select * from personas where tipo_persona = 1", sqlConn);
+                SqlCommand cmdPersonas = new SqlCommand("select * from personas", sqlConn);
                 SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
                 while (drPersonas.Read())
                 {

@@ -46,5 +46,11 @@ namespace UI.Desktop
             Comisiones formComision = new Comisiones();
             formComision.ShowDialog();
         }
+
+        private void btnPersonas_Click(object sender, EventArgs e)
+        {
+            Personas formPersonas = new Personas();
+            formPersonas.ShowDialog();
+        }
     }
 }
