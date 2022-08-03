@@ -42,8 +42,7 @@ namespace UI.Desktop
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.txtIdPlan.Text = this.ComisionActual.IdPlan.ToString();
-
+            this.cmbPlanes.SelectedValue = this.ComisionActual.IdPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -78,7 +77,7 @@ namespace UI.Desktop
             {
                 ComisionActual.Descripcion = txtDescripcion.Text;
                 ComisionActual.AnioEspecialidad = Convert.ToInt32(txtAnioEspecialidad.Text);
-                ComisionActual.IdPlan = Convert.ToInt32(txtIdPlan.Text);
+                ComisionActual.IdPlan = Convert.ToInt32(cmbPlanes.SelectedValue);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -101,8 +100,8 @@ namespace UI.Desktop
         public override bool Validar()
         {
             PlanLogic planActual = new PlanLogic();
-            var plan = planActual.GetOne(Convert.ToInt32(txtIdPlan.Text));
-            if (txtDescripcion.Text == "" || txtAnioEspecialidad.Text == "" || txtIdPlan.Text == "")
+            var plan = planActual.GetOne(Convert.ToInt32(cmbPlanes.SelectedValue));
+            if (txtDescripcion.Text == "" || txtAnioEspecialidad.Text == "")
             {
                 this.Notificar("Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -138,6 +137,14 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ComisionDesktop_Load(object sender, EventArgs e)
+        {
+            ComisionLogic comision = new ComisionLogic();
+            cmbPlanes.DataSource = comision.GetPlanes();
+            cmbPlanes.ValueMember = "id_plan";
+            cmbPlanes.DisplayMember = "desc_plan";
         }
     }
 }

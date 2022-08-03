@@ -39,7 +39,7 @@ namespace UI.Desktop
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtAnioEspecialidad = new System.Windows.Forms.TextBox();
-            this.txtIdPlan = new System.Windows.Forms.TextBox();
+            this.cmbPlanes = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.txtID, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtDescripcion, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtAnioEspecialidad, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtIdPlan, 3, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cmbPlanes, 3, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -74,7 +74,7 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(192, 55);
+            this.btnAceptar.Location = new System.Drawing.Point(192, 56);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 5;
@@ -84,7 +84,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(273, 55);
+            this.btnCancelar.Location = new System.Drawing.Point(273, 56);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 6;
@@ -150,12 +150,13 @@ namespace UI.Desktop
             this.txtAnioEspecialidad.Size = new System.Drawing.Size(100, 20);
             this.txtAnioEspecialidad.TabIndex = 3;
             // 
-            // txtIdPlan
+            // cmbPlanes
             // 
-            this.txtIdPlan.Location = new System.Drawing.Point(273, 29);
-            this.txtIdPlan.Name = "txtIdPlan";
-            this.txtIdPlan.Size = new System.Drawing.Size(100, 20);
-            this.txtIdPlan.TabIndex = 4;
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Location = new System.Drawing.Point(273, 29);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(100, 21);
+            this.cmbPlanes.TabIndex = 8;
             // 
             // ComisionDesktop
             // 
@@ -164,6 +165,7 @@ namespace UI.Desktop
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ComisionDesktop";
             this.Text = "Registrar Comision";
+            this.Load += new System.EventHandler(this.ComisionDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -182,6 +184,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtAnioEspecialidad;
-        private System.Windows.Forms.TextBox txtIdPlan;
+        private System.Windows.Forms.ComboBox cmbPlanes;
     }
 }

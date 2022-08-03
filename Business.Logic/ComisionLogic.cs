@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
+using System.Data;
 using Business.Entities;
 
 namespace Business.Logic
@@ -41,6 +42,11 @@ namespace Business.Logic
         public void Save(Comision com)
         {
             ComisionData.Save(com);
+        }
+
+        public DataTable GetPlanes()
+        {
+            return ComisionData.GetPlanes();
         }
     }
 }

@@ -12,17 +12,6 @@ namespace Data.Database
 {
     public class PlanAdapter: Adapter
     {
-        //public DataTable GetDescripciones()
-        //{
-        //    this.OpenConnection();
-        //    DataTable descripciones = new DataTable();
-        //    SqlCommand cmdPlan = new SqlCommand("select * from planes", sqlConn);
-        //    SqlDataAdapter daPlan = new SqlDataAdapter(cmdPlan);
-        //    daPlan.Fill(descripciones);
-        //    this.CloseConnection();
-        //    return descripciones;
-        //} a futuro, para elegir un plan 
-
         public List<Plan> GetAll()
         {
             List<Plan> planes = new List<Plan>();
