@@ -17,40 +17,40 @@ namespace UI.Desktop
             InitializeComponent();
         }
 
-        private void btnUsuarios_Click(object sender, EventArgs e)
+        private void tsmiUsuarios_Click(object sender, EventArgs e)
         {
             Usuarios formUsuario = new Usuarios();
             formUsuario.ShowDialog();
         }
 
-        private void btnEspecialidades_Click(object sender, EventArgs e)
+        private void tsmiPersonas_Click(object sender, EventArgs e)
         {
-            Especialidades formEspecialidad = new Especialidades();
-            formEspecialidad.ShowDialog();
+            Personas formPersonas = new Personas();
+            formPersonas.ShowDialog();
         }
 
-        private void btnPlanes_Click(object sender, EventArgs e)
+        private void tsmiPlanes_Click(object sender, EventArgs e)
         {
             Planes formPlan = new Planes();
             formPlan.ShowDialog();
         }
 
-        private void btnMaterias_Click(object sender, EventArgs e)
+        private void tsmiEspecialidades_Click(object sender, EventArgs e)
+        {
+            Especialidades formEspecialidad = new Especialidades();
+            formEspecialidad.ShowDialog();
+        }
+
+        private void tsmiMaterias_Click(object sender, EventArgs e)
         {
             Materias formMateria = new Materias();
             formMateria.ShowDialog();
         }
 
-        private void btnComision_Click(object sender, EventArgs e)
+        private void tsmiComisiones_Click(object sender, EventArgs e)
         {
             Comisiones formComision = new Comisiones();
             formComision.ShowDialog();
-        }
-
-        private void btnPersonas_Click(object sender, EventArgs e)
-        {
-            Personas formPersonas = new Personas();
-            formPersonas.ShowDialog();
         }
     }
 }

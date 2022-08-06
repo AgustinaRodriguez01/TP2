@@ -33,9 +33,22 @@ namespace UI.Desktop
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lnklblOlvidaste_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OlvidasteContrasenia formOlvido = new OlvidasteContrasenia();
+            formOlvido.ShowDialog();
+        }
+
+        private void btnCrearCuentaNueva_Click(object sender, EventArgs e)
+        {
+            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
+            formUsuario.ShowDialog();
+
         }
     }
 }

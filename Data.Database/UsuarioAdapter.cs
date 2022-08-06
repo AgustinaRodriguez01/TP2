@@ -47,7 +47,7 @@ namespace Data.Database
             return usuarios;
         }
 
-        public Business.Entities.Usuario GetOne(int ID)
+        public Usuario GetOne(int ID)
         {
             Usuario usr = new Usuario();
             try
@@ -80,7 +80,7 @@ namespace Data.Database
             return usr;
         }
 
-        public Business.Entities.Usuario ExisteUsuario(string nombre, string contraseña)
+        public Usuario ExisteUsuario(string nombre, string contraseña)
         {
             Usuario usr = new Usuario();
             try
@@ -209,6 +209,35 @@ namespace Data.Database
             {
                 this.CloseConnection();
             }
+        }
+
+        public Usuario ActualizarContraseña(string us, string conActual, string conNueva)
+        {
+            Usuario usuario = new Usuario();
+            usuario = ExisteUsuario(us, conActual);
+            if(!(usuario is null))
+            {
+                try
+                {
+                    OpenConnection();
+                    SqlCommand cmdAct = new SqlCommand("update usuarios set clave = @clave_nueva, cambia_clave = 1 " + // ver cambia clave
+                                                        "where id_usuario = @id", sqlConn);
+
+                    cmdAct.Parameters.Add("@clave_nueva", SqlDbType.VarChar, 50).Value = conNueva;
+                    cmdAct.Parameters.Add("@id", SqlDbType.Int).Value = usuario.ID;
+                    cmdAct.ExecuteNonQuery();
+                }
+                catch
+                {
+                    Exception ExcepcionManejada = new Exception("Error al modificar la contraseña");
+                    throw ExcepcionManejada;
+                }
+                finally
+                {
+                    CloseConnection();
+                }
+            }
+            return usuario;
         }
     }
 }

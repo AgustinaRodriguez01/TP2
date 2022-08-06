@@ -29,134 +29,143 @@ namespace UI.Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnEspecialidades = new System.Windows.Forms.Button();
-            this.btnPlanes = new System.Windows.Forms.Button();
-            this.btnMaterias = new System.Windows.Forms.Button();
-            this.btnComision = new System.Windows.Forms.Button();
-            this.btnPersonas = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPersonas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiPlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMaterias = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiComisiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
+            this.toolStripContainer1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // toolStripContainer1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.btnUsuarios, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnEspecialidades, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.btnPlanes, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnMaterias, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnComision, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnPersonas, 0, 5);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(205, 231);
-            this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // btnUsuarios
+            // toolStripContainer1.ContentPanel
             // 
-            this.btnUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 3);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(199, 32);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuario";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(659, 463);
+            this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Name = "toolStripContainer1";
+            this.toolStripContainer1.Size = new System.Drawing.Size(659, 487);
+            this.toolStripContainer1.TabIndex = 0;
+            this.toolStripContainer1.Text = "toolStripContainer1";
             // 
-            // btnEspecialidades
+            // toolStripContainer1.TopToolStripPanel
             // 
-            this.btnEspecialidades.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEspecialidades.Location = new System.Drawing.Point(3, 41);
-            this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(199, 32);
-            this.btnEspecialidades.TabIndex = 1;
-            this.btnEspecialidades.Text = "Especialidad";
-            this.btnEspecialidades.UseVisualStyleBackColor = true;
-            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
+            this.toolStripContainer1.TopToolStripPanel.Controls.Add(this.menuStrip1);
             // 
-            // btnPlanes
+            // menuStrip1
             // 
-            this.btnPlanes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPlanes.Location = new System.Drawing.Point(3, 79);
-            this.btnPlanes.Name = "btnPlanes";
-            this.btnPlanes.Size = new System.Drawing.Size(199, 32);
-            this.btnPlanes.TabIndex = 2;
-            this.btnPlanes.Text = "Plan";
-            this.btnPlanes.UseVisualStyleBackColor = true;
-            this.btnPlanes.Click += new System.EventHandler(this.btnPlanes_Click);
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnMaterias
+            // archivoToolStripMenuItem
             // 
-            this.btnMaterias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMaterias.Location = new System.Drawing.Point(3, 117);
-            this.btnMaterias.Name = "btnMaterias";
-            this.btnMaterias.Size = new System.Drawing.Size(199, 32);
-            this.btnMaterias.TabIndex = 3;
-            this.btnMaterias.Text = "Materia";
-            this.btnMaterias.UseVisualStyleBackColor = true;
-            this.btnMaterias.Click += new System.EventHandler(this.btnMaterias_Click);
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aaToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // btnComision
+            // aaToolStripMenuItem
             // 
-            this.btnComision.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnComision.Location = new System.Drawing.Point(3, 155);
-            this.btnComision.Name = "btnComision";
-            this.btnComision.Size = new System.Drawing.Size(199, 32);
-            this.btnComision.TabIndex = 4;
-            this.btnComision.Text = "Comision";
-            this.btnComision.UseVisualStyleBackColor = true;
-            this.btnComision.Click += new System.EventHandler(this.btnComision_Click);
+            this.aaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiUsuarios,
+            this.tsmiPersonas,
+            this.tsmiPlanes,
+            this.tsmiMaterias,
+            this.tsmiEspecialidades,
+            this.tsmiComisiones});
+            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
+            this.aaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aaToolStripMenuItem.Text = "Ver";
             // 
-            // btnPersonas
+            // tsmiUsuarios
             // 
-            this.btnPersonas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPersonas.Location = new System.Drawing.Point(3, 193);
-            this.btnPersonas.Name = "btnPersonas";
-            this.btnPersonas.Size = new System.Drawing.Size(199, 35);
-            this.btnPersonas.TabIndex = 5;
-            this.btnPersonas.Text = "Personas";
-            this.btnPersonas.UseVisualStyleBackColor = true;
-            this.btnPersonas.Click += new System.EventHandler(this.btnPersonas_Click);
+            this.tsmiUsuarios.Name = "tsmiUsuarios";
+            this.tsmiUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsmiUsuarios.Text = "Usuarios";
+            this.tsmiUsuarios.Click += new System.EventHandler(this.tsmiUsuarios_Click);
+            // 
+            // tsmiPersonas
+            // 
+            this.tsmiPersonas.Name = "tsmiPersonas";
+            this.tsmiPersonas.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPersonas.Text = "Personas";
+            this.tsmiPersonas.Click += new System.EventHandler(this.tsmiPersonas_Click);
+            // 
+            // tsmiPlanes
+            // 
+            this.tsmiPlanes.Name = "tsmiPlanes";
+            this.tsmiPlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsmiPlanes.Text = "Planes";
+            this.tsmiPlanes.Click += new System.EventHandler(this.tsmiPlanes_Click);
+            // 
+            // tsmiMaterias
+            // 
+            this.tsmiMaterias.Name = "tsmiMaterias";
+            this.tsmiMaterias.Size = new System.Drawing.Size(180, 22);
+            this.tsmiMaterias.Text = "Materias";
+            this.tsmiMaterias.Click += new System.EventHandler(this.tsmiMaterias_Click);
+            // 
+            // tsmiEspecialidades
+            // 
+            this.tsmiEspecialidades.Name = "tsmiEspecialidades";
+            this.tsmiEspecialidades.Size = new System.Drawing.Size(180, 22);
+            this.tsmiEspecialidades.Text = "Especialidades";
+            this.tsmiEspecialidades.Click += new System.EventHandler(this.tsmiEspecialidades_Click);
+            // 
+            // tsmiComisiones
+            // 
+            this.tsmiComisiones.Name = "tsmiComisiones";
+            this.tsmiComisiones.Size = new System.Drawing.Size(180, 22);
+            this.tsmiComisiones.Text = "Comisiones";
+            this.tsmiComisiones.Click += new System.EventHandler(this.tsmiComisiones_Click);
             // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(205, 231);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(659, 487);
+            this.Controls.Add(this.toolStripContainer1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Inicio";
             this.Text = "Inicio";
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            this.toolStripContainer1.TopToolStripPanel.PerformLayout();
+            this.toolStripContainer1.ResumeLayout(false);
+            this.toolStripContainer1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnEspecialidades;
-        private System.Windows.Forms.Button btnPlanes;
-        private System.Windows.Forms.Button btnMaterias;
-        private System.Windows.Forms.Button btnComision;
-        private System.Windows.Forms.Button btnPersonas;
+        private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPersonas;
+        private System.Windows.Forms.ToolStripMenuItem tsmiPlanes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMaterias;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEspecialidades;
+        private System.Windows.Forms.ToolStripMenuItem tsmiComisiones;
     }
 }

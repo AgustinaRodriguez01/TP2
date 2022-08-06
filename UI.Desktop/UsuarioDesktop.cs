@@ -113,15 +113,9 @@ namespace UI.Desktop
                 return false;
             }
 
-            if (txtClave.Text != txtConfirmarClave.Text)
+            if (ValidarLogic.EsContraseñaValida(txtClave.Text, txtConfirmarClave.Text) == false)
             {
-                this.Notificar("La clave no coincide", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-
-            if (txtClave.Text.Length < 8)
-            {
-                this.Notificar("La contraseña tiene que tener 8 o más caracteres", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Notificar("aa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 
