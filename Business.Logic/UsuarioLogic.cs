@@ -50,5 +50,6 @@ namespace Business.Logic
         {
             UsuarioData.Save(usu);
         }
+
     }
 }

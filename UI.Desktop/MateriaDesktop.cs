@@ -44,7 +44,7 @@ namespace UI.Desktop
             this.txtDescripcion.Text = this.MateriaActual.Descripcion;
             this.txtHsSemanales.Text = this.MateriaActual.HsSemanales.ToString();
             this.txtHsTotales.Text = this.MateriaActual.HsTotales.ToString();
-            this.txtIDPlan.Text = this.MateriaActual.IdPlan.ToString();
+            this.cmbPlanes.SelectedValue = this.MateriaActual.IdPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -78,7 +78,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 MateriaActual.Descripcion = txtDescripcion.Text;
-                MateriaActual.IdPlan = Convert.ToInt32(txtIDPlan.Text);
+                MateriaActual.IdPlan = Convert.ToInt32(cmbPlanes.SelectedValue);
                 MateriaActual.HsSemanales = Int32.Parse(txtHsSemanales.Text);
                 MateriaActual.HsTotales = Int32.Parse(txtHsTotales.Text);
 
@@ -102,17 +102,9 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            PlanLogic plan = new PlanLogic();
-            var p = plan.GetOne(Convert.ToInt32(txtIDPlan.Text));
-            if (txtDescripcion.Text == "" || txtHsSemanales.Text == "" || txtHsTotales.Text == ""
-            || txtIDPlan.Text == "")
+            if (txtDescripcion.Text == "" || txtHsSemanales.Text == "" || txtHsTotales.Text == "")
             {
                 this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else if(p is null)
-            {
-                this.Notificar("Ingrese un código de plan válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else if (!ValidarLogic.esEntero(txtHsSemanales.Text))
@@ -162,6 +154,14 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void MateriaDesktop_Load(object sender, EventArgs e)
+        {
+            PlanLogic planes = new PlanLogic();
+            cmbPlanes.DataSource = planes.GetPlanes();
+            cmbPlanes.ValueMember = "id_plan";
+            cmbPlanes.DisplayMember = "desc_plan";
         }
     }
 }

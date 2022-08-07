@@ -239,5 +239,10 @@ namespace Data.Database
             }
             return usuario;
         }
+
+        //public Array GetTiposPersonas()
+        //{
+        //    return Enum.GetValues(typeof(Personas.TipoPersona));
+        //}
     }
 }

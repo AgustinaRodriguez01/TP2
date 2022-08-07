@@ -124,9 +124,9 @@ namespace UI.Desktop
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(178, 26);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 13);
+            this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "ID Plan";
+            this.label4.Text = "Plan";
             // 
             // txtID
             // 

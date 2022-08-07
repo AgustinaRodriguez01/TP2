@@ -50,14 +50,13 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 PersonaActual.Nombre = txtNombre.Text;
-                PersonaActual.IdPlan = Convert.ToInt32(txtIdPlan.Text);
+                PersonaActual.IdPlan = Convert.ToInt32(cmbPlanes.SelectedValue);
                 PersonaActual.Apellido = txtApellido.Text;
                 PersonaActual.Direccion = txtDireccion.Text;
                 PersonaActual.Email = txtEmail.Text;
                 PersonaActual.Legajo = Convert.ToInt32(txtLegajo.Text);
                 PersonaActual.Telefono = txtTelefono.Text;
-                PersonaActual.FechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
-                //PersonaActual.TPersona = txtTPersona.Text; -ayuda-
+                PersonaActual.FechaNacimiento = Convert.ToDateTime(dtpFechaNacimiento.Text);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -79,10 +78,10 @@ namespace UI.Desktop
             this.txtDireccion.Text = this.PersonaActual.Direccion.ToString();
             this.txtEmail.Text = this.PersonaActual.Email.ToString();
             this.txtTelefono.Text = this.PersonaActual.Telefono.ToString();
-            this.txtFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
+            this.dtpFechaNacimiento.Text = this.PersonaActual.FechaNacimiento.ToString();
             this.txtLegajo.Text = this.PersonaActual.Legajo.ToString();
-            this.txtTPersona.Text = this.PersonaActual.TPersona.ToString();
-            this.txtIdPlan.Text = this.PersonaActual.IdPlan.ToString();
+            this.cmbTipoPersona.SelectedValue = this.PersonaActual.TPersona.ToString();
+            this.cmbPlanes.SelectedValue = this.PersonaActual.IdPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -107,7 +106,7 @@ namespace UI.Desktop
 
         public override bool Validar()
         {
-            if(txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || txtEmail.Text == "" || txtFechaNacimiento.Text == "" || txtLegajo.Text == "" || txtTPersona.Text == "" || txtIdPlan.Text == "" || txtTelefono.Text == "")
+            if(txtNombre.Text == "" || txtApellido.Text == "" || txtDireccion.Text == "" || txtEmail.Text == "" || txtLegajo.Text == "" || txtTelefono.Text == "")
             {
                 Notificar("Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
@@ -116,17 +115,6 @@ namespace UI.Desktop
             {
                 this.Notificar("El mail no es válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }
-            else if (txtIdPlan.Text != "")
-            {
-                PlanLogic plan = new PlanLogic();
-                var p = plan.GetOne(Convert.ToInt32(txtIdPlan.Text));
-                if (p is null)
-                {
-                    Notificar("Debe ingresar un id de plan válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                else return true;
             }
             else return true;
         }
@@ -162,6 +150,16 @@ namespace UI.Desktop
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void PersonaDesktop_Load(object sender, EventArgs e)
+        {
+            PersonaLogic per = new PersonaLogic();
+            cmbTipoPersona.DataSource = per.GetTiposPersona();
+            PlanLogic planes = new PlanLogic();
+            cmbPlanes.DataSource = planes.GetPlanes();
+            cmbPlanes.ValueMember = "id_plan";
+            cmbPlanes.DisplayMember = "desc_plan";
         }
     }
 }

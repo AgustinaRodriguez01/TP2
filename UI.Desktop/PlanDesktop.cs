@@ -41,7 +41,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.txtIDEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
+            this.cmbEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -75,7 +75,7 @@ namespace UI.Desktop
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 PlanActual.Descripcion = txtDescripcion.Text;
-                PlanActual.IdEspecialidad = Convert.ToInt32(txtIDEspecialidad.Text);
+                PlanActual.IdEspecialidad = Convert.ToInt32(cmbEspecialidad.SelectedValue);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -97,21 +97,10 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            if (txtDescripcion.Text == "" & txtIDEspecialidad.Text == "")
+            if (txtDescripcion.Text == "")
             {
                 this.Notificar("Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
-            }
-            else if(txtIDEspecialidad.Text != "")
-            {
-                EspecialidadLogic espActual = new EspecialidadLogic();
-                var esp = espActual.GetOne(Convert.ToInt32(txtIDEspecialidad.Text));
-                if (esp is null)
-                {
-                    this.Notificar("Debe ingresar una especialidad válida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-                else return true;
             }
             else
             {
@@ -143,6 +132,14 @@ namespace UI.Desktop
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PlanDesktop_Load(object sender, EventArgs e)
+        {
+            PlanLogic esp = new PlanLogic();
+            cmbEspecialidad.DataSource = esp.GetEspecialidades();
+            cmbEspecialidad.ValueMember = "id_especialidad";
+            cmbEspecialidad.DisplayMember = "desc_especialidad";
         }
     }
 }

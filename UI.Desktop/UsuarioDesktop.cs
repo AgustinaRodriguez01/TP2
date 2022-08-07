@@ -75,6 +75,8 @@ namespace UI.Desktop
                 Usuario usuarioActual = new Usuario();
                 UsuarioActual = usuarioActual;
                 UsuarioActual.State = BusinessEntity.States.New;
+                PersonaDesktop formPersona = new PersonaDesktop();
+                formPersona.ShowDialog();
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -149,6 +151,7 @@ namespace UI.Desktop
             {
                 GuardarCambios();
                 Close();
+
             }
         }
 

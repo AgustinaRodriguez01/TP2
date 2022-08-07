@@ -38,8 +38,8 @@ namespace UI.Desktop
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtIDEspecialidad = new System.Windows.Forms.TextBox();
             this.adapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.tblPlanDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace UI.Desktop
             this.tblPlanDesktop.Controls.Add(this.txtDescripcion, 1, 1);
             this.tblPlanDesktop.Controls.Add(this.label1, 0, 0);
             this.tblPlanDesktop.Controls.Add(this.label3, 0, 2);
-            this.tblPlanDesktop.Controls.Add(this.txtIDEspecialidad, 1, 2);
+            this.tblPlanDesktop.Controls.Add(this.cmbEspecialidad, 1, 2);
             this.tblPlanDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblPlanDesktop.Location = new System.Drawing.Point(0, 0);
             this.tblPlanDesktop.Name = "tblPlanDesktop";
@@ -66,13 +66,13 @@ namespace UI.Desktop
             this.tblPlanDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblPlanDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblPlanDesktop.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblPlanDesktop.Size = new System.Drawing.Size(403, 107);
+            this.tblPlanDesktop.Size = new System.Drawing.Size(306, 113);
             this.tblPlanDesktop.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 26);
+            this.label2.Location = new System.Drawing.Point(3, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(63, 13);
             this.label2.TabIndex = 1;
@@ -80,7 +80,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(324, 81);
+            this.btnCancelar.Location = new System.Drawing.Point(227, 87);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 4;
@@ -91,7 +91,7 @@ namespace UI.Desktop
             // btnAceptar
             // 
             this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAceptar.Location = new System.Drawing.Point(243, 81);
+            this.btnAceptar.Location = new System.Drawing.Point(146, 87);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 3;
@@ -101,7 +101,7 @@ namespace UI.Desktop
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(131, 3);
+            this.txtID.Location = new System.Drawing.Point(92, 3);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 20);
@@ -109,7 +109,7 @@ namespace UI.Desktop
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(131, 29);
+            this.txtDescripcion.Location = new System.Drawing.Point(92, 31);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(100, 20);
             this.txtDescripcion.TabIndex = 6;
@@ -126,30 +126,32 @@ namespace UI.Desktop
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 52);
+            this.label3.Location = new System.Drawing.Point(3, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 13);
             this.label3.TabIndex = 7;
             this.label3.Text = "Especialidad";
             // 
-            // txtIDEspecialidad
-            // 
-            this.txtIDEspecialidad.Location = new System.Drawing.Point(131, 55);
-            this.txtIDEspecialidad.Name = "txtIDEspecialidad";
-            this.txtIDEspecialidad.Size = new System.Drawing.Size(100, 20);
-            this.txtIDEspecialidad.TabIndex = 8;
-            // 
             // adapterBindingSource
             // 
             this.adapterBindingSource.DataSource = typeof(Data.Database.Adapter);
             // 
+            // cmbEspecialidad
+            // 
+            this.cmbEspecialidad.FormattingEnabled = true;
+            this.cmbEspecialidad.Location = new System.Drawing.Point(92, 59);
+            this.cmbEspecialidad.Name = "cmbEspecialidad";
+            this.cmbEspecialidad.Size = new System.Drawing.Size(100, 21);
+            this.cmbEspecialidad.TabIndex = 8;
+            // 
             // PlanDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(403, 107);
+            this.ClientSize = new System.Drawing.Size(306, 113);
             this.Controls.Add(this.tblPlanDesktop);
             this.Name = "PlanDesktop";
             this.Text = "Registrar Plan";
+            this.Load += new System.EventHandler(this.PlanDesktop_Load);
             this.tblPlanDesktop.ResumeLayout(false);
             this.tblPlanDesktop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).EndInit();
@@ -168,6 +170,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.BindingSource adapterBindingSource;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIDEspecialidad;
+        private System.Windows.Forms.ComboBox cmbEspecialidad;
     }
 }

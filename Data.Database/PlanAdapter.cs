@@ -166,6 +166,51 @@ namespace Data.Database
             }
         }
 
+        public DataTable GetEspecialidades()
+        {
+            DataTable especialidades = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlan = new SqlCommand("select id_especialidad, desc_especialidad from especialidades", sqlConn);
+                SqlDataAdapter daPlan = new SqlDataAdapter(cmdPlan);
+                daPlan.Fill(especialidades);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de especialidades", Ex);
+                throw Ex;
+            }
+            finally { this.CloseConnection(); }
+
+            return especialidades;
+        }
+
+        public DataTable GetPlanes()
+        {
+            DataTable planes = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdPlan = new SqlCommand("select id_plan, desc_plan from planes", sqlConn);
+                SqlDataAdapter daPlan = new SqlDataAdapter(cmdPlan);
+                daPlan.Fill(planes);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de planes", Ex);
+                throw Ex;
+            }
+            finally { this.CloseConnection(); }
+
+            return planes;
+        }
     }
 }
+
+
 

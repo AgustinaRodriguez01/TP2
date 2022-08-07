@@ -41,7 +41,7 @@ namespace UI.Desktop
             this.txtHsSemanales = new System.Windows.Forms.TextBox();
             this.txtHsTotales = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtIDPlan = new System.Windows.Forms.TextBox();
+            this.cmbPlanes = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.txtHsSemanales, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.txtHsTotales, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtIDPlan, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.cmbPlanes, 1, 2);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -170,12 +170,13 @@ namespace UI.Desktop
             this.label3.TabIndex = 11;
             this.label3.Text = "Plan";
             // 
-            // txtIDPlan
+            // cmbPlanes
             // 
-            this.txtIDPlan.Location = new System.Drawing.Point(86, 159);
-            this.txtIDPlan.Name = "txtIDPlan";
-            this.txtIDPlan.Size = new System.Drawing.Size(100, 20);
-            this.txtIDPlan.TabIndex = 12;
+            this.cmbPlanes.FormattingEnabled = true;
+            this.cmbPlanes.Location = new System.Drawing.Point(86, 159);
+            this.cmbPlanes.Name = "cmbPlanes";
+            this.cmbPlanes.Size = new System.Drawing.Size(121, 21);
+            this.cmbPlanes.TabIndex = 12;
             // 
             // MateriaDesktop
             // 
@@ -184,6 +185,7 @@ namespace UI.Desktop
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "MateriaDesktop";
             this.Text = "Registrar Materia";
+            this.Load += new System.EventHandler(this.MateriaDesktop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -204,6 +206,6 @@ namespace UI.Desktop
         private System.Windows.Forms.TextBox txtHsSemanales;
         private System.Windows.Forms.TextBox txtHsTotales;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtIDPlan;
+        private System.Windows.Forms.ComboBox cmbPlanes;
     }
 }

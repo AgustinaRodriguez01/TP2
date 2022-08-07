@@ -44,9 +44,5 @@ namespace Business.Logic
             ComisionData.Save(com);
         }
 
-        public DataTable GetPlanes()
-        {
-            return ComisionData.GetPlanes();
-        }
     }
 }

@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Data.Database
 {
-    public class EspecialidadAdapter: Adapter
+    public class EspecialidadAdapter : Adapter
     {
         public List<Especialidad> GetAll()
         {
@@ -19,7 +19,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades",sqlConn);
+                SqlCommand cmdEspecialidades = new SqlCommand("select * from especialidades", sqlConn);
                 SqlDataReader drEspecialidades = cmdEspecialidades.ExecuteReader();
                 while (drEspecialidades.Read())
                 {

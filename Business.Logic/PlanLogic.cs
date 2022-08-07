@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
 using System.Windows.Forms;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -41,6 +42,16 @@ namespace Business.Logic
         public void Save(Plan plan)
         {
             PlanData.Save(plan);
+        }
+
+        public DataTable GetEspecialidades()
+        {
+            return PlanData.GetEspecialidades();
+        }
+
+        public DataTable GetPlanes()
+        {
+            return PlanData.GetPlanes();
         }
     }
 }

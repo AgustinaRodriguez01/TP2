@@ -99,16 +99,9 @@ namespace UI.Desktop
         }
         public override bool Validar()
         {
-            PlanLogic planActual = new PlanLogic();
-            var plan = planActual.GetOne(Convert.ToInt32(cmbPlanes.SelectedValue));
             if (txtDescripcion.Text == "" || txtAnioEspecialidad.Text == "")
             {
                 this.Notificar("Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else if (plan is null)
-            {
-                this.Notificar("Debe ingresar un id de Plan existente", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
             else return true;
@@ -141,8 +134,8 @@ namespace UI.Desktop
 
         private void ComisionDesktop_Load(object sender, EventArgs e)
         {
-            ComisionLogic comision = new ComisionLogic();
-            cmbPlanes.DataSource = comision.GetPlanes();
+            PlanLogic planes = new PlanLogic();
+            cmbPlanes.DataSource = planes.GetPlanes();
             cmbPlanes.ValueMember = "id_plan";
             cmbPlanes.DisplayMember = "desc_plan";
         }

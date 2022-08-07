@@ -28,7 +28,7 @@ namespace UI.Desktop
             }
             else
             {
-                Inicio formInicio = new Inicio();
+                Inicio formInicio = new Inicio(); 
                 formInicio.ShowDialog();
             }
         }
@@ -48,7 +48,6 @@ namespace UI.Desktop
         {
             UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
             formUsuario.ShowDialog();
-
         }
     }
 }
