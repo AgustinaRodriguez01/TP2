@@ -70,12 +70,12 @@ namespace UI.Desktop
         }
         public override void MapearADatos() 
         {
+            PersonaDesktop formPersona = new PersonaDesktop();
             if (Modo == ModoForm.Alta)
             {
                 Usuario usuarioActual = new Usuario();
                 UsuarioActual = usuarioActual;
                 UsuarioActual.State = BusinessEntity.States.New;
-                PersonaDesktop formPersona = new PersonaDesktop();
                 formPersona.ShowDialog();
             }
 
@@ -87,6 +87,7 @@ namespace UI.Desktop
                 UsuarioActual.Email = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
+              //  UsuarioActual.IdPersona = Convert.ToInt32(formPersona.txtID.Text);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -97,6 +98,8 @@ namespace UI.Desktop
             if(Modo == ModoForm.Baja)
             {
                 UsuarioActual.State = BusinessEntity.States.Deleted;
+                PersonaLogic per = new PersonaLogic();
+                //per.Delete(Convert.ToInt32(formPersona.txtID));
             }
         }
 
