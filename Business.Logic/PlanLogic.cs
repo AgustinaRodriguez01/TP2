@@ -44,11 +44,6 @@ namespace Business.Logic
             PlanData.Save(plan);
         }
 
-        public DataTable GetEspecialidades()
-        {
-            return PlanData.GetEspecialidades();
-        }
-
         public DataTable GetPlanes()
         {
             return PlanData.GetPlanes();

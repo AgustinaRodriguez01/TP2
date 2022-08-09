@@ -45,6 +45,13 @@ namespace UI.Desktop
                 Business.Entities.Personas personaActual = new Business.Entities.Personas();
                 PersonaActual = personaActual;
                 PersonaActual.State = BusinessEntity.States.New;
+                UsuarioDesktop formUsuario = new UsuarioDesktop();
+                AddOwnedForm(formUsuario);
+                formUsuario.txtApellido.Text = txtApellido.Text;
+                formUsuario.txtEmail.Text = txtEmail.Text;
+                formUsuario.txtNombre.Text = txtNombre.Text;
+                formUsuario.txtIdPersona.Text = txtID.Text;
+                formUsuario.ShowDialog();
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)

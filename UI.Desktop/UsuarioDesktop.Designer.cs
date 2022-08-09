@@ -47,6 +47,8 @@ namespace UI.Desktop
             this.txtConfirmarClave = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtIdPersona = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,19 +74,21 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.txtApellido, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtUsuario, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtConfirmarClave, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnAceptar, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label5, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.txtIdPersona, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelar, 3, 5);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowCount = 6;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(355, 133);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(351, 162);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
@@ -214,7 +218,8 @@ namespace UI.Desktop
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(159, 107);
+            this.btnAceptar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceptar.Location = new System.Drawing.Point(165, 133);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -224,7 +229,7 @@ namespace UI.Desktop
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(246, 107);
+            this.btnCancelar.Location = new System.Drawing.Point(246, 133);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -232,11 +237,28 @@ namespace UI.Desktop
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // txtIdPersona
+            // 
+            this.txtIdPersona.Location = new System.Drawing.Point(246, 107);
+            this.txtIdPersona.Name = "txtIdPersona";
+            this.txtIdPersona.ReadOnly = true;
+            this.txtIdPersona.Size = new System.Drawing.Size(100, 20);
+            this.txtIdPersona.TabIndex = 15;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(159, 104);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "Id Persona";
+            // 
             // UsuarioDesktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 133);
+            this.ClientSize = new System.Drawing.Size(351, 162);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "UsuarioDesktop";
             this.Text = "Registrar Usuario";
@@ -254,17 +276,19 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtClave;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.CheckBox chkHabilitado;
-        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtConfirmarClave;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.TextBox txtEmail;
+        public System.Windows.Forms.TextBox txtNombre;
+        public System.Windows.Forms.TextBox txtApellido;
+        public System.Windows.Forms.TextBox txtIdPersona;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -41,7 +41,7 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.cmbEspecialidad.Text = this.PlanActual.IdEspecialidad.ToString();
+            this.cmbEspecialidad.SelectedValue = this.PlanActual.IdEspecialidad;
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -136,7 +136,7 @@ namespace UI.Desktop
 
         private void PlanDesktop_Load(object sender, EventArgs e)
         {
-            PlanLogic esp = new PlanLogic();
+            EspecialidadLogic esp = new EspecialidadLogic();
             cmbEspecialidad.DataSource = esp.GetEspecialidades();
             cmbEspecialidad.ValueMember = "id_especialidad";
             cmbEspecialidad.DisplayMember = "desc_especialidad";

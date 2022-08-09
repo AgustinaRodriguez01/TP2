@@ -46,8 +46,8 @@ namespace UI.Desktop
 
         private void btnCrearCuentaNueva_Click(object sender, EventArgs e)
         {
-            UsuarioDesktop formUsuario = new UsuarioDesktop(ApplicationForm.ModoForm.Alta);
-            formUsuario.ShowDialog();
+            PersonaDesktop formPersona = new PersonaDesktop();
+            formPersona.ShowDialog();
         }
     }
 }

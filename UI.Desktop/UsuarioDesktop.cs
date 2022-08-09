@@ -47,6 +47,7 @@ namespace UI.Desktop
             this.txtUsuario.Text = this.UsuarioActual.NombreUsuario;
             this.txtClave.Text = this.UsuarioActual.Clave;
             this.txtConfirmarClave.Text = this.UsuarioActual.Clave;
+            this.txtIdPersona.Text = this.UsuarioActual.IdPersona.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -70,13 +71,11 @@ namespace UI.Desktop
         }
         public override void MapearADatos() 
         {
-            PersonaDesktop formPersona = new PersonaDesktop();
             if (Modo == ModoForm.Alta)
             {
                 Usuario usuarioActual = new Usuario();
                 UsuarioActual = usuarioActual;
                 UsuarioActual.State = BusinessEntity.States.New;
-                formPersona.ShowDialog();
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -87,7 +86,7 @@ namespace UI.Desktop
                 UsuarioActual.Email = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
-              //  UsuarioActual.IdPersona = Convert.ToInt32(formPersona.txtID.Text);
+                UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
 
                 if (Modo == ModoForm.Modificacion)
                 {
@@ -98,8 +97,6 @@ namespace UI.Desktop
             if(Modo == ModoForm.Baja)
             {
                 UsuarioActual.State = BusinessEntity.States.Deleted;
-                PersonaLogic per = new PersonaLogic();
-                //per.Delete(Convert.ToInt32(formPersona.txtID));
             }
         }
 
@@ -120,7 +117,7 @@ namespace UI.Desktop
 
             if (ValidarLogic.EsContraseñaValida(txtClave.Text, txtConfirmarClave.Text) == false)
             {
-                this.Notificar("aa", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                this.Notificar("Contraseña inválida", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
 

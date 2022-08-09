@@ -320,6 +320,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ComboBox cmbTipoPersona;
         private System.Windows.Forms.ComboBox cmbPlanes;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
-        public System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.TextBox txtID;
     }
 }

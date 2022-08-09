@@ -42,5 +42,10 @@ namespace Business.Logic
         {
             EspecialidadData.Save(esp);
         }
+
+        public DataTable GetEspecialidades()
+        {
+            return EspecialidadData.GetEspecialidades();
+        }
     }
 }

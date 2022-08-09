@@ -69,12 +69,12 @@ namespace UI.Desktop
             this.tblIniciarSesion.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblIniciarSesion.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblIniciarSesion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblIniciarSesion.Size = new System.Drawing.Size(166, 159);
+            this.tblIniciarSesion.Size = new System.Drawing.Size(207, 174);
             this.tblIniciarSesion.TabIndex = 0;
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(89, 49);
+            this.txtContraseña.Location = new System.Drawing.Point(110, 49);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(74, 20);
@@ -91,7 +91,7 @@ namespace UI.Desktop
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(89, 23);
+            this.txtUsuario.Location = new System.Drawing.Point(110, 23);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(74, 20);
             this.txtUsuario.TabIndex = 1;
@@ -104,13 +104,13 @@ namespace UI.Desktop
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(3, 46);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 26);
+            this.label2.Size = new System.Drawing.Size(101, 26);
             this.label2.TabIndex = 5;
             this.label2.Text = "Contraseña";
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(89, 75);
+            this.btnCancelar.Location = new System.Drawing.Point(110, 75);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(74, 23);
             this.btnCancelar.TabIndex = 4;
@@ -127,7 +127,7 @@ namespace UI.Desktop
             this.tblIniciarSesion.SetColumnSpan(this.lnklblOlvidaste, 2);
             this.lnklblOlvidaste.Location = new System.Drawing.Point(3, 101);
             this.lnklblOlvidaste.Name = "lnklblOlvidaste";
-            this.lnklblOlvidaste.Size = new System.Drawing.Size(160, 13);
+            this.lnklblOlvidaste.Size = new System.Drawing.Size(201, 13);
             this.lnklblOlvidaste.TabIndex = 5;
             this.lnklblOlvidaste.TabStop = true;
             this.lnklblOlvidaste.Text = "¿Olvidaste tu contraseña?";
@@ -137,7 +137,7 @@ namespace UI.Desktop
             // btnIngresar
             // 
             this.btnIngresar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIngresar.Location = new System.Drawing.Point(8, 75);
+            this.btnIngresar.Location = new System.Drawing.Point(29, 75);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 3;
@@ -149,7 +149,7 @@ namespace UI.Desktop
             // 
             this.btnCrearCuentaNueva.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tblIniciarSesion.SetColumnSpan(this.btnCrearCuentaNueva, 2);
-            this.btnCrearCuentaNueva.Location = new System.Drawing.Point(23, 124);
+            this.btnCrearCuentaNueva.Location = new System.Drawing.Point(43, 131);
             this.btnCrearCuentaNueva.Name = "btnCrearCuentaNueva";
             this.btnCrearCuentaNueva.Size = new System.Drawing.Size(120, 25);
             this.btnCrearCuentaNueva.TabIndex = 6;
@@ -167,7 +167,7 @@ namespace UI.Desktop
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(3, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(160, 20);
+            this.label4.Size = new System.Drawing.Size(201, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Iniciar Sesión";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -179,11 +179,11 @@ namespace UI.Desktop
             // 
             this.toolStripContainer1.ContentPanel.AutoScroll = true;
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tblIniciarSesion);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(166, 159);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(207, 174);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(166, 179);
+            this.toolStripContainer1.Size = new System.Drawing.Size(207, 174);
             this.toolStripContainer1.TabIndex = 1;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -191,7 +191,7 @@ namespace UI.Desktop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(166, 179);
+            this.ClientSize = new System.Drawing.Size(207, 174);
             this.Controls.Add(this.toolStripContainer1);
             this.Name = "LogIn";
             this.Text = "Iniciar Sesion";
