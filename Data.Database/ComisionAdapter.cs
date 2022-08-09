@@ -156,5 +156,30 @@ namespace Data.Database
             }
             finally { this.CloseConnection(); }
         }
+
+        public DataTable GetComisiones()
+        {
+            DataTable comisiones = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdComisiones = new SqlCommand("select id_comision, desc_comision from comisiones", sqlConn);
+                SqlDataAdapter daComisiones = new SqlDataAdapter(cmdComisiones);
+                daComisiones.Fill(comisiones);
+            }
+
+            catch(Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar las comisiones", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+            return comisiones;
+        }
     }
 }

@@ -170,6 +170,29 @@ namespace Data.Database
                 this.CloseConnection();
             }
         }
-    
+        
+        public DataTable GetMaterias()
+        {
+            DataTable materias = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdMaterias = new SqlCommand("select id_materia, desc_materia from materias", sqlConn);
+                SqlDataAdapter daMaterias = new SqlDataAdapter(cmdMaterias);
+                daMaterias.Fill(materias);
+            }
+
+            catch(Exception Ex)
+            {
+                Exception ExceptionManejada = new Exception("No se pudo cargar las materias", Ex);
+                throw ExceptionManejada;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+            return materias;
+        }
     }
 }

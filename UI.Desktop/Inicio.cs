@@ -52,5 +52,11 @@ namespace UI.Desktop
             Comisiones formComision = new Comisiones();
             formComision.ShowDialog();
         }
+
+        private void tsmCursos_Click(object sender, EventArgs e)
+        {
+            Cursos formCursos = new Cursos();
+            formCursos.ShowDialog();
+        }
     }
 }

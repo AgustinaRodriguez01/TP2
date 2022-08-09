@@ -39,6 +39,7 @@ namespace UI.Desktop
             this.tsmiMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiComisiones = new System.Windows.Forms.ToolStripMenuItem();
+            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -49,11 +50,13 @@ namespace UI.Desktop
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(659, 463);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(494, 372);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(659, 487);
+            this.toolStripContainer1.Size = new System.Drawing.Size(494, 396);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -68,7 +71,7 @@ namespace UI.Desktop
             this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(659, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(494, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +91,8 @@ namespace UI.Desktop
             this.tsmiPlanes,
             this.tsmiMaterias,
             this.tsmiEspecialidades,
-            this.tsmiComisiones});
+            this.tsmiComisiones,
+            this.cursosToolStripMenuItem});
             this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
             this.aaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.aaToolStripMenuItem.Text = "Ver";
@@ -135,14 +139,20 @@ namespace UI.Desktop
             this.tsmiComisiones.Text = "Comisiones";
             this.tsmiComisiones.Click += new System.EventHandler(this.tsmiComisiones_Click);
             // 
+            // cursosToolStripMenuItem
+            // 
+            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
+            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cursosToolStripMenuItem.Text = "Cursos";
+            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.tsmCursos_Click);
+            // 
             // Inicio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 487);
+            this.ClientSize = new System.Drawing.Size(494, 396);
             this.Controls.Add(this.toolStripContainer1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Inicio";
             this.Text = "Inicio";
             this.toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
@@ -167,5 +177,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem tsmiMaterias;
         private System.Windows.Forms.ToolStripMenuItem tsmiEspecialidades;
         private System.Windows.Forms.ToolStripMenuItem tsmiComisiones;
+        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
     }
 }

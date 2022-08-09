@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -42,5 +43,9 @@ namespace Business.Logic
             MateriaData.Save(mat);
         }
 
+        public DataTable GetMaterias()
+        {
+            return MateriaData.GetMaterias();
+        }
     }
 }
