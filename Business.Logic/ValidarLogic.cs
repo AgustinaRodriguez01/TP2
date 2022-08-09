@@ -30,15 +30,20 @@ namespace Business.Logic
             }
         }
 
-        public static bool EsContraseñaValida(string contraseña, string confirmacion)
+        public static bool EsConfirmacionValida(string contraseña, string confirmacion)
         {
             if (contraseña == confirmacion)
             {
-                if (contraseña.Length > 8)
-                {
-                    return true;
-                }
-                else return false;
+                return true;
+            }
+            else return false;
+        } 
+
+        public static bool ValidarCantCaractContraseña(string con)
+        {
+            if (con.Length >= 8)
+            {
+                return true;
             }
             else return false;
         }
