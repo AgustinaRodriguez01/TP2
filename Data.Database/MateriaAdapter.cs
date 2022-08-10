@@ -37,8 +37,8 @@ namespace Data.Database
 
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                new Exception("Error al recuperar lista de materias", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de materias", Ex);
+                throw ExcepcionManejada;
             }
             finally { this.CloseConnection(); }
 
