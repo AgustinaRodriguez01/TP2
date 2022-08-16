@@ -74,6 +74,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="LoginMasterPage.Master.cs">
+      <DependentUpon>LoginMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMasterPage.Master.designer.cs">
+      <DependentUpon>LoginMasterPage.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -84,6 +91,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Azul\Button.skin" />
+    <Content Include="LoginMasterPage.Master" />
     <None Include="packages.config" />
     <Content Include="web.config" />
     <None Include="web.Debug.config">
