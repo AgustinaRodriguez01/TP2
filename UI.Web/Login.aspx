@@ -3,7 +3,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Untitled Page</title>
+    <title>Iniciar Sesion</title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,7 +32,7 @@
         <asp:Label ID="lblClave" runat="server" Text="Clave"></asp:Label>
                 </td>
                 <td>
-        <asp:TextBox ID="txtClave" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -47,7 +47,8 @@
         <asp:LinkButton ID="OlvidoClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
                 </td>
                 <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    &nbsp;</td>
             </tr>
         </table>
     </form>

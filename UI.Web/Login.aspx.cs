@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Business.Logic;
+using Business.Entities;
 
 namespace UI.Web
 {
@@ -16,9 +18,11 @@ namespace UI.Web
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (txtUsuario.Text.ToLower() == "admin" && txtClave.Text == "admin")
+            UsuarioLogic usuarioActual = new UsuarioLogic();
+            var usuario = usuarioActual.ExisteUsuario(txtUsuario.Text, txtClave.Text);
+            if (usuario != null)
             {
-                Page.Response.Write("Ingreso OK");
+                Response.Redirect("https://localhost:44366/Default.aspx");
             }
             else
             {
