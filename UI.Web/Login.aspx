@@ -44,7 +44,7 @@
             </tr>
             <tr>
                 <td>
-        <asp:LinkButton ID="LinkButton1" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
+        <asp:LinkButton ID="OlvidoClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
