@@ -97,10 +97,18 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
+    <Compile Include="Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Azul\Button.skin" />
     <None Include="packages.config" />
+    <Content Include="Usuarios.aspx" />
     <Content Include="web.config" />
     <Content Include="Site.Master" />
     <None Include="web.Debug.config">

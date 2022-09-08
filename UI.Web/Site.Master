@@ -1,18 +1,16 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="UI.Web.Site1" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="UI.Web.Site" %>
 
-<!DOCTYPE html>
-
-<html>
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <title>Academia</title>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="bodyForm" runat="server">
+        <asp:Menu runat="server" ID="Menu" DataSourceID="SiteMapDataSource">
+        </asp:Menu>
+        <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            <asp:ContentPlaceHolder ID="bodyContentPlaceHolder" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
