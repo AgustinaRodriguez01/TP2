@@ -86,7 +86,7 @@ namespace UI.Desktop
                 UsuarioActual.Email = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
-                UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
+               // UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
 
                 if (Modo == ModoForm.Modificacion)
                 {
