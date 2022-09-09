@@ -30,8 +30,8 @@ namespace UI.Web
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-            claveAnteriorRequerida.= false;
-            nuevaContraRequerida.Enabled = false;
+            claveAnteriorRequerida.Enabled = false;
+            nuevaContraRequerida.Enabled = false; //arreglar
             usuarioRequerido.Enabled = false;
             Response.Redirect("https://localhost:44366/Login.aspx");
         }
