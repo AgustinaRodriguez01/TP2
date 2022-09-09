@@ -70,6 +70,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="OlvidarContraseña.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="Usuarios.aspx.designer.cs">
       <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OlvidarContraseña.aspx.cs">
+      <DependentUpon>OlvidarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OlvidarContraseña.aspx.designer.cs">
+      <DependentUpon>OlvidarContraseña.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

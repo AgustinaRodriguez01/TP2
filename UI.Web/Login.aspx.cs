@@ -32,7 +32,7 @@ namespace UI.Web
 
         protected void lnkRecordarClave_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Default.aspx?msj=Es Ud. un usuario muy descuidado, haga memoria");
+            Response.Redirect("https://localhost:44366/OlvidarContraseña.aspx");
         }
     }
 }
