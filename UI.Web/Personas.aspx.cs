@@ -1,0 +1,216 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using Business.Logic;
+using Business.Entities;
+
+namespace UI.Web
+{
+    public partial class Personas : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!Page.IsPostBack)
+            {
+                LoadGrid();
+            }
+        }
+
+        PersonaLogic _logic;
+
+        private PersonaLogic Logic
+        {
+            get
+            {
+                if(_logic == null)
+                {
+                    _logic = new PersonaLogic();
+                }
+                return _logic;
+            }
+        }
+
+        private void LoadGrid()
+        {
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
+        }
+
+        public enum FormModes
+        {
+            Alta,
+            Baja,
+            Modificacion
+        }
+
+        public FormModes FormMode
+        {
+            get { return (FormModes)this.ViewState["FormMode"];}
+            set { this.ViewState["FormMode"] = value;  }
+        }
+
+        private Personas Entity
+        {
+            get;
+            set;
+        }
+
+        private int SelectedID
+        {
+            get
+            {
+                if (this.ViewState["SelectedID"] != null)
+                {
+                    return (int)this.ViewState["SelectedID"];
+                }
+                else return 0;
+            }
+            set
+            {
+                this.ViewState["SelectedID"] = value;
+            }
+        }
+
+        private bool IsEntitySelected
+        {
+            get
+            {
+                return (this.SelectedID != 0);
+            }
+        }
+
+        protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.SelectedID = (int)this.gridView.SelectedValue;
+        }
+
+        private void LoadForm(int id)
+        {
+            this.Entity = this.Logic.GetOne(id);
+            this.nombreTextBox.Text = this.Entity.Nombre;
+            this.apellidoTextBox.Text = this.Entity.Apellido;
+            this.direccionTextBox.Text = this.Entity.Direccion;
+            this.emailTextBox.Text = this.Entity.Email;
+            this.telefonoTextBox.Text = this.Entity.Telefono;
+            this.fechaNacimientoTextBox.Text = this.Entity.FechaNacimiento;
+            this.legajoTextBox.Text = this.Entity.Legajo;
+            this.tipoPersonaTextBox.Text = this.Entity.TipoPersona;
+            //this.IDPlan
+        }
+
+        protected void editarLinkButton_Click(object sender, EventArgs e)
+        {
+            if(this.IsEntitySelected)
+            {
+                this.formPanel.Visible = true;
+                this.FormMode = FormModes.Modificacion;
+                this.LoadForm(this.SelectedID);
+                EnableForm(true);
+            }
+        }
+
+        private void LoadEntity(Personas persona)
+        {
+            persona.Nombre = this.nombreTextBox.Text;
+            persona.Apellido = this.apellidoTextBox.Text;
+            persona.Direccion = this.direccionTextBox.Text;
+            persona.Email = this.emailTextBox.Text;
+            persona.Telefono = this.telefonoTextBox.Text;
+            persona.FechaNacimiento = this.fechaNacimientoTextBox.Text;
+            persona.Legajo = this.legajoTextBox.Text;
+            persona.TipoPersona = this.tipoPersonaTextBox.Text;
+            //persona.IDPlan = this.
+        }
+
+        private void SaveEntity(Personas persona)
+        {
+            this.Logic.Save(persona);
+        }
+
+        protected void aceptarLinkButton_Click(object sender, EventArgs e)
+        {
+            switch (FormMode)
+            {
+                case FormModes.Baja:
+                    DeleteEntity(SelectedID);
+                    LoadGrid();
+                    break;
+                case FormModes.Modificacion:
+                    this.Entity.new Personas();
+                    this.Entity.ID = this.SelectedID;
+                    this.Entity.State = BusinessEntity.States.Modified;
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
+                    break;
+                case FormModes.Alta:
+                    Entity = new Personas();
+                    LoadEntity(Entity);
+                    SaveEntity(Entity);
+                    LoadGrid();
+                    break;
+                default: break;
+            }
+            this.formPanel.Visible = false;
+        }
+
+        private void EnableForn (bool enable)
+        {
+            this.nombreTextBox.Enabled = enable;
+            this.apellidoTextBox.Enabled = enable;
+            this.direccionTextBox.Enabled = enable;
+            this.emailTextBox.Enabled = enable;
+            this.telefonoTextBox.Enabled = enable;
+            this.fechaNacimientoTextBox.Enabled = enable;
+            this.legajoTextBox.Enabled = enable;
+            this.tipoPersonaTextBox.Enabled = enable;
+            //
+        }
+
+        protected void eliminarLinkButton_Click(object sender, EventArgs e)
+        {
+            if(this.IsEntitySelected)
+            {
+                formPanel.Visible = true;
+                FormMode = FormModes.Baja;
+                EnableForn(false);
+                LoadForm(SelectedID);
+            }
+        }
+
+        private void DeleteEntity(int id)
+        {
+            Logic.Delete(id);
+        }
+
+        protected void nuevoLinkButton_Click(object sender, EventArgs e)
+        {
+            formPanel.Visible = true;
+            FormMode = FormModes.Alta;
+            ClearForm();
+            EnableForm(true);
+        }
+
+        private void ClearForm()
+        {
+            nombreTextBox.Text = string.Empty;
+            apellidoTextBox.Text = string.Empty;
+            direccionTextBox.Text = string.Empty;
+            emailTextBox.Text = string.Empty;
+            telefonoTextBox.Text = string.Empty;
+            fechaNacimientoTextBox.Text = string.Empty;
+            legajoTextBox.Text = string.Empty;
+            tipoPersonaTextBox.Text = string.Empty;
+            //
+        }
+
+        protected void cancelarLinkButton_Click(object sender, EventArgs e)
+        {
+            LoadGrid();
+            formPanel.Visible = false;
+        }
+    }
+}

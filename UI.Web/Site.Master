@@ -31,6 +31,13 @@
                     <tr>
                         <td><a href="Especialidades.aspx">Especialidades</a></td> 
                     </tr>
+                    <tr>
+                        <td><a href="Planes.aspx">Planes</a></td>
+                    </tr>
+                    <tr>
+                        <td><a href="Personas.aspx">Personas</a></td>
+                    </tr>
+
                 </table> 
             </td> 
              
