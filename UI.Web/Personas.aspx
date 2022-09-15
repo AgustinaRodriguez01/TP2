@@ -55,8 +55,6 @@
         <asp:RequiredFieldValidator ID="legajoRequerido" runat="server" ErrorMessage="El legajo no puede estar vacío" ControlToValidate="legajoTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
          <asp:Label ID="tipoPersonaLabel" runat="server" Text="Tipo de persona: "></asp:Label>
-        <asp:TextBox ID="tipoPersonaTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="tipoPesonaRequerido" runat="server" ErrorMessage="El tipo de persona no puede estar vacío" ControlToValidate="tipoPersonaTextBox" ForeColor = "Red"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="IDPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
     </asp:Panel>

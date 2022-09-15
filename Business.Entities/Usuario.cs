@@ -14,7 +14,7 @@ namespace Business.Entities
         private string apellido;
         private string email;
         private bool habilitado;
-        private int idPersona;
+        //private int idPersona;
 
         public int IdPersona
         {

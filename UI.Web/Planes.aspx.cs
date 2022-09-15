@@ -41,8 +41,8 @@ namespace UI.Web
 
         public enum FormModes
         {
-            Alta;
-            Baja;
+            Alta,
+            Baja,
             Modificacion
         }
 
