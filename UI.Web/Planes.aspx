@@ -1,18 +1,18 @@
 ﻿<%@ Page Title="Planes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Planes.aspx.cs" Inherits="UI.Web.Planes" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns = "false"
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns ="false"
             SelectedRowStyle-BackColor ="Black"
             SelectedRowStyle-ForeColor ="White"
-            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged"
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="Descripcion" DataField ="Descripcion" />
                 <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>
     </asp:Panel>
-    <asp:Panel Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label Label ID="descripcionLabel" runat="server" Text="Descripcion"></asp:Label>
+    <asp:Panel ID="formPanel" Visible="false" runat="server">
+        <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion"></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="descripcionRequerida" runat="server" ErrorMessage="La descripción no puede estar vacia"
             ControlToValidate ="descripcionTextBox" ForeColor="Red"></asp:RequiredFieldValidator>

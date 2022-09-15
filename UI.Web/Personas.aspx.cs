@@ -163,7 +163,7 @@ namespace UI.Web
             this.direccionTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
             this.telefonoTextBox.Enabled = enable;
-            this.fechaNacimientoTextBox.Enabled = enable;
+           // this.fechaNacimientoTextBox.Enabled = enable;
             this.legajoTextBox.Enabled = enable;
         }
 
@@ -198,7 +198,7 @@ namespace UI.Web
             direccionTextBox.Text = string.Empty;
             emailTextBox.Text = string.Empty;
             telefonoTextBox.Text = string.Empty;
-            fechaNacimientoTextBox.Text = string.Empty;
+           // fechaNacimientoTextBox.Text = string.Empty;
             legajoTextBox.Text = string.Empty;
             //tipoPersonaTextBox.Text = string.Empty;
         }

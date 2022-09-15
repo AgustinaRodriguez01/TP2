@@ -39,8 +39,6 @@
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="fechaNacimientoLabel" runat="server" Text="Fecha Nacimiento: "></asp:Label>
-        <asp:TextBox ID="fechaNacimientoTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="fechaNacimientoRequerida" runat="server" ErrorMessage="La fecha de nacimiento no puede estar vacía" ControlToValidate="fechaNacimientoTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="legajoLabel" runat="server" Text="Legajo: "></asp:Label>
         <asp:TextBox ID="legajoTextBox" runat="server"></asp:TextBox>
