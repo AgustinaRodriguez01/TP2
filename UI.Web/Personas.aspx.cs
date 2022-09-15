@@ -200,8 +200,7 @@ namespace UI.Web
             telefonoTextBox.Text = string.Empty;
             fechaNacimientoTextBox.Text = string.Empty;
             legajoTextBox.Text = string.Empty;
-            tipoPersonaTextBox.Text = string.Empty;
-            //
+            //tipoPersonaTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

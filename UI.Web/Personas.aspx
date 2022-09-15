@@ -4,24 +4,16 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColums="false"
             SelectedRowsStyle-BackColor ="Black"
             SelectedRowsStyle-ForeColor="White"
-            DataKeyName="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+            DataKeyName="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" AutoGenerateColumns="False">
             <Columns>
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
-                <asp:CommnadFiel SelectText = "Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText ="Apellido" DataField="Apellido"/>
-                <asp:CommandFiel SelectText ="Seleccionar" ShowSelecteButton="true"/>
                 <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
-                <asp:CommandField SelectedText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText="Email" DataField="Email"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText="Legajo" DataField="Legajo"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText="TipoPersona" DataField="TipoPersona" />
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
                 <asp:BoundField HeaderText ="IDPlan" DataField="IDPlan"/>
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
             </Columns>
