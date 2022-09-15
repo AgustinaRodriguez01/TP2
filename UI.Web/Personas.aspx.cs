@@ -95,7 +95,6 @@ namespace UI.Web
             this.direccionTextBox.Text = this.Entity.Direccion;
             this.emailTextBox.Text = this.Entity.Email;
             this.telefonoTextBox.Text = this.Entity.Telefono;
-          //  this.fechaNacimientoTextBox.Text = this.Entity.FechaNacimiento.ToString;
            // this.legajoTextBox = Convert.ToInt32(this.Entity.Legajo);
             //this.IDPlan
         }
@@ -118,7 +117,7 @@ namespace UI.Web
             persona.Direccion = this.direccionTextBox.Text;
             persona.Email = this.emailTextBox.Text;
             persona.Telefono = this.telefonoTextBox.Text;
-            //persona.FechaNacimiento = this.fechaNacimientoTextBox.Text;
+            persona.FechaNacimiento = this.calFechaNacimiento.SelectedDate;
             persona.Legajo = Convert.ToInt32(this.legajoTextBox);
            // persona.TipoPersona = this.tipoPersonaTextBox.Text;
             //persona.IDPlan = this.
@@ -163,7 +162,7 @@ namespace UI.Web
             this.direccionTextBox.Enabled = enable;
             this.emailTextBox.Enabled = enable;
             this.telefonoTextBox.Enabled = enable;
-           // this.fechaNacimientoTextBox.Enabled = enable;
+            this.calFechaNacimiento.Enabled = enable;
             this.legajoTextBox.Enabled = enable;
         }
 
@@ -198,7 +197,6 @@ namespace UI.Web
             direccionTextBox.Text = string.Empty;
             emailTextBox.Text = string.Empty;
             telefonoTextBox.Text = string.Empty;
-           // fechaNacimientoTextBox.Text = string.Empty;
             legajoTextBox.Text = string.Empty;
             //tipoPersonaTextBox.Text = string.Empty;
         }
@@ -208,5 +206,6 @@ namespace UI.Web
             LoadGrid();
             formPanel.Visible = false;
         }
+
     }
 }
