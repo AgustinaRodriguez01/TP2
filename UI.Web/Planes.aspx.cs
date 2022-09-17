@@ -91,6 +91,7 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.descripcionTextBox.Text = this.Entity.Descripcion;
+            this.ddlEspecialidad.SelectedValue = this.Entity.IdEspecialidad.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -107,6 +108,7 @@ namespace UI.Web
         private void LoadEntity(Plan plan)
         {
             plan.Descripcion = this.descripcionTextBox.Text;
+            plan.IdEspecialidad = Convert.ToInt32(this.ddlEspecialidad.SelectedValue);
         }
 
         private void SaveEntity(Plan plan)
@@ -144,6 +146,12 @@ namespace UI.Web
         private void EnableForm(bool enable)
         {
             this.descripcionTextBox.Enabled = enable;
+            this.ddlEspecialidad.Enabled = enable;
+            EspecialidadLogic esp = new EspecialidadLogic();
+            ddlEspecialidad.DataSource = esp.GetEspecialidades();
+            ddlEspecialidad.DataValueField = "id_especialidad";
+            ddlEspecialidad.DataTextField = "desc_especialidad";
+            ddlEspecialidad.DataBind();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)

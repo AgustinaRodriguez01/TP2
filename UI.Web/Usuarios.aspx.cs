@@ -160,6 +160,7 @@ namespace UI.Web
             this.claveLabel.Visible = enable;
             this.repetirClaveLabel.Visible = enable;
             this.repetirClaveTextBox.Visible = enable;
+            this.habilitadoCheckBox.Visible = enable;
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)

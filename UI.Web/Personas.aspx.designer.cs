@@ -177,13 +177,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.TextBox telefonoTextBox;
 
         /// <summary>
-        /// Control RequiredFieldValidator1.
+        /// Control telefonoRequerido.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator telefonoRequerido;
 
         /// <summary>
         /// Control fechaNacimientoLabel.
@@ -249,13 +249,13 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList cmbTipoPersona;
 
         /// <summary>
-        /// Control IDPlanLabel.
+        /// Control IdPlanLabel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label IDPlanLabel;
+        protected global::System.Web.UI.WebControls.Label IdPlanLabel;
 
         /// <summary>
         /// Control cmbIdPlan.

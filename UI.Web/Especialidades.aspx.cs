@@ -40,7 +40,7 @@ namespace UI.Web
 
         public enum FormModes
         {
-            Alta,                       //sube
+            Alta,                      
             Baja,
             Modificacion
         }
@@ -61,7 +61,7 @@ namespace UI.Web
         {
             get
             {
-                if (this.ViewState["SelectedID"] != null)           //sube
+                if (this.ViewState["SelectedID"] != null)          
                 {
                     return (int)this.ViewState["SelectedID"];
                 }
@@ -74,7 +74,7 @@ namespace UI.Web
         }
 
         private bool IsEntitySelected
-        {                                       //sube
+        {                                       
             get
             {
                 return (this.SelectedID != 0);

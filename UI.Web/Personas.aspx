@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="Personas" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Personas.aspx.cs" Inherits="UI.Web.Personas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="gridView" runat="server" AutoGenerateColums="false"
-            SelectedRowsStyle-BackColor ="Black"
-            SelectedRowsStyle-ForeColor="White"
-            DataKeyName="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" AutoGenerateColumns="False">
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
+            SelectedRowStyle-BackColor ="Black"
+            SelectedRowStyle-ForeColor="White"
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
                 <asp:BoundField HeaderText ="Apellido" DataField="Apellido"/>
@@ -39,7 +39,7 @@
         <br />
         <asp:Label ID="telefonoLabel" runat="server" Text="Teléfono: "></asp:Label>
         <asp:TextBox ID="telefonoTextBox" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="telefonoTextBox" ErrorMessage="RequiredFieldValidator" ForeColor="Red">*</asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="telefonoRequerido" runat="server" ControlToValidate="telefonoTextBox" ErrorMessage="El teléfono no puede estar vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="fechaNacimientoLabel" runat="server" Text="Fecha Nacimiento: "></asp:Label>
         <asp:Calendar ID="calFechaNacimiento" runat="server"></asp:Calendar>
@@ -52,7 +52,7 @@
         <asp:DropDownList ID="cmbTipoPersona" runat="server">
         </asp:DropDownList>
         <br />
-        <asp:Label ID="IDPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
+        <asp:Label ID="IdPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
         <asp:DropDownList ID="cmbIdPlan" runat="server">
         </asp:DropDownList>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />

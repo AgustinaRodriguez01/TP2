@@ -15,8 +15,10 @@
         <asp:Label ID="descripcionLabel" runat="server" Text="Descripcion"></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="descripcionRequerida" runat="server" ErrorMessage="La descripción no puede estar vacia"
-            ControlToValidate ="descripcionTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
+            ControlToValidate ="descripcionTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
+        <asp:Label ID="idEspecialidadLabel" runat="server" Text="ID Especialidad:"></asp:Label>
+        <asp:DropDownList ID="ddlEspecialidad" runat="server"></asp:DropDownList>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
@@ -25,7 +27,8 @@
     </asp:Panel>
     <asp:Panel ID="formActionsPanel" runat="server">
     <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
-    <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Clicl">Cancelar</asp:LinkButton>
+    <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Clicl" CausesValidation="False">Cancelar</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
     </asp:Panel>
 </asp:Content>
 
