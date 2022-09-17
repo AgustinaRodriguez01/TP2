@@ -240,6 +240,15 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.Label tipoPersonaLabel;
 
         /// <summary>
+        /// Control cmbTipoPersona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbTipoPersona;
+
+        /// <summary>
         /// Control IDPlanLabel.
         /// </summary>
         /// <remarks>
@@ -247,6 +256,15 @@ namespace UI.Web
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label IDPlanLabel;
+
+        /// <summary>
+        /// Control cmbIdPlan.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cmbIdPlan;
 
         /// <summary>
         /// Control ValidationSummary1.

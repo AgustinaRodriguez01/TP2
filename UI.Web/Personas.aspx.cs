@@ -95,8 +95,8 @@ namespace UI.Web
             this.direccionTextBox.Text = this.Entity.Direccion;
             this.emailTextBox.Text = this.Entity.Email;
             this.telefonoTextBox.Text = this.Entity.Telefono;
-           // this.legajoTextBox = Convert.ToInt32(this.Entity.Legajo);
-            //this.IDPlan
+            //this.legajoTextBox = Convert.ToInt32(this.Entity.Legajo);
+            //this.cmbIdPlan.Text = Conver
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -118,9 +118,9 @@ namespace UI.Web
             persona.Email = this.emailTextBox.Text;
             persona.Telefono = this.telefonoTextBox.Text;
             persona.FechaNacimiento = this.calFechaNacimiento.SelectedDate;
-            persona.Legajo = Convert.ToInt32(this.legajoTextBox);
-           // persona.TipoPersona = this.tipoPersonaTextBox.Text;
-            //persona.IDPlan = this.
+            persona.Legajo = Convert.ToInt32(this.legajoTextBox.Text);
+            // persona.TPersona = this.cmbTipoPersona.SelectedValue;
+            // persona.IdPlan = Convert.ToInt32(this.cmbIdPlan.SelectedValue);
         }
 
         private void SaveEntity(Business.Entities.Personas persona)
@@ -164,6 +164,12 @@ namespace UI.Web
             this.telefonoTextBox.Enabled = enable;
             this.calFechaNacimiento.Enabled = enable;
             this.legajoTextBox.Enabled = enable;
+            this.cmbIdPlan.Enabled = enable;
+            //PlanLogic planes = new PlanLogic();
+            //this.cmbIdPlan.DataSource = planes.GetPlanes();
+            //cmbIdPlan.DataTextField = "desc_plan";
+            //cmbIdPlan.DataValueField = "id_plan";
+            //cmbIdPlan.DataBind();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -198,6 +204,7 @@ namespace UI.Web
             emailTextBox.Text = string.Empty;
             telefonoTextBox.Text = string.Empty;
             legajoTextBox.Text = string.Empty;
+            cmbIdPlan.SelectedValue = string.Empty;
             //tipoPersonaTextBox.Text = string.Empty;
         }
 

@@ -11,10 +11,10 @@
                 <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
                 <asp:BoundField HeaderText="Email" DataField="Email"/>
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                <asp:BoundField HeaderText="FechaNacimiento" DataField="FechaNacimiento"/>
+                <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento"/>
                 <asp:BoundField HeaderText="Legajo" DataField="Legajo"/>
-                <asp:BoundField HeaderText="TipoPersona" DataField="TipoPersona" />
-                <asp:BoundField HeaderText ="IDPlan" DataField="IDPlan"/>
+                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan"/>
+                <asp:BoundField HeaderText="Tipo de Persona" DataField="TPersona"/>
                 <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
             </Columns>
         </asp:GridView>
@@ -49,8 +49,12 @@
         <asp:RequiredFieldValidator ID="legajoRequerido" runat="server" ErrorMessage="El legajo no puede estar vacío" ControlToValidate="legajoTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
          <asp:Label ID="tipoPersonaLabel" runat="server" Text="Tipo de persona: "></asp:Label>
+        <asp:DropDownList ID="cmbTipoPersona" runat="server">
+        </asp:DropDownList>
         <br />
         <asp:Label ID="IDPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
+        <asp:DropDownList ID="cmbIdPlan" runat="server">
+        </asp:DropDownList>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
     </asp:Panel>
     <asp:Panel ID ="gridActionsPanel" runat="server">
