@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Iniciar Sesion</title>
+    <link href="Styles/login_s.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">

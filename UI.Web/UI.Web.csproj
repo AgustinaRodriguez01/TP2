@@ -67,6 +67,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
+    <Content Include="Login1.aspx" />
     <Content Include="OlvidarContraseña.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login1.aspx.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login1.aspx.designer.cs">
+      <DependentUpon>Login1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personas.aspx.cs">
       <DependentUpon>Personas.aspx</DependentUpon>
@@ -132,11 +140,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Themes\Azul\Button.skin" />
     <None Include="packages.config" />
     <Content Include="Especialidades.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
+    <Content Include="Styles\background.png" />
+    <Content Include="Styles\login_s.css" />
+    <Content Include="Styles\utn-logo.jpg" />
+    <Content Include="Styles\wood-panel-5728430_960_720.jpg" />
     <Content Include="Usuarios.aspx" />
     <Content Include="web.config" />
     <Content Include="Site.Master" />
