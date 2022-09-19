@@ -11,8 +11,8 @@ namespace Data.Database
         protected void OpenConnection()
         {
             string connectionString;
-            //connectionString = @"Server=localhost;Database=tp2_net;Integrated Security=false; User=net; Password=net;";
-            connectionString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
+            connectionString = @"Server=.\SQLEXPRESS;Database=Academia;Integrated Security=true; User=net; Password=net;";
+            //connectionString = ConfigurationManager.ConnectionStrings[consKeyDefaultCnnString].ConnectionString;
             sqlConn = new SqlConnection(connectionString);
             sqlConn.Open();
         }
