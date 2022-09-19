@@ -22,7 +22,7 @@ namespace Business.Logic
         {
             CursoData = new CursoAdapter();
         }
-
+        //
         public Curso GetOne(int id)
         {
             return CursoData.GetOne(id);
