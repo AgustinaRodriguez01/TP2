@@ -7,7 +7,6 @@
             DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
             <Columns>
                 <asp:BoundField HeaderText="Descripcion" DataField ="Descripcion" />
-                <asp:BoundField HeaderText="Especialidad" DataField="IdEspecialidad" />
                 <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>

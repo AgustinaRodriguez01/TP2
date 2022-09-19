@@ -25,7 +25,6 @@
                     <asp:TextBox ID="txtUsuario" placeholder="Usuario" runat="server"></asp:TextBox><br />
                     <asp:TextBox ID="txtClave" placeholder="Clave" runat="server"></asp:TextBox><br />
                     <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" />
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
                 </div>
 
             </div>
