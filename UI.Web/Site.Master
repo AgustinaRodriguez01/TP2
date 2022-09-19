@@ -43,6 +43,9 @@
                     <tr>
                         <td><a href="Comisiones.aspx">Comisiones</a></td>
                     </tr>
+                    <tr>
+                        <td><a href="Cursos.aspx">Cursos</a></td>
+                    </tr>
                 </table> 
             </td> 
              
