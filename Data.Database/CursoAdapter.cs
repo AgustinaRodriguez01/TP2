@@ -24,7 +24,7 @@ namespace Data.Database
                     Curso curso = new Curso();
                     curso.ID = (int)drCursos["id_curso"];
                     curso.IdMateria = (int)drCursos["id_materia"];
-                    curso.IdMateria = (int)drCursos["id_comision"];
+                    curso.IdComision = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
 
