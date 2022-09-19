@@ -40,20 +40,9 @@
                     <tr>
                         <td><a href="Materias.aspx">Materias</a></td>
                     </tr>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
                     <tr>
                         <td><a href="Comisiones.aspx">Comisiones</a></td>
                     </tr>
->>>>>>> 259e183c342e259396f145cac5e0446fc279de43
-=======
-                    <tr>
-                        <td><a href="Comisiones.aspx">Comisiones</a></td>
-                    </tr>
->>>>>>> 259e183c342e259396f145cac5e0446fc279de43
-
-
                 </table> 
             </td> 
              
