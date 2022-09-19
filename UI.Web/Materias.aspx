@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Materias" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Materias.aspx.cs" Inherits="UI.Web.Materias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
-    <asp:Panel ID=gridPanel runat="server">
-        <asp:GridView ID="GridView" runat="server" AutoGenerateColumns="false"
+    <asp:Panel ID="gridPanel" runat="server">
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor ="Black"
                 SelectedRowStyle-ForeColor="White"
                 DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">

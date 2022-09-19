@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="UI.Web.Cursos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Panel ID="gridPanel" runat="server">
-        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns ="false"
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White"
             DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
@@ -10,7 +10,7 @@
                 <asp:BoundField HeaderText="Comision" DataField="IdComision" />
                 <asp:BoundField HeaderText="Año" DataField="AnioCalendario" />
                 <asp:BoundField HeaderText="Cupo" DataField="Cupo" />
-                <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" />
+                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" />
             </Columns>
         </asp:GridView>
     </asp:Panel>

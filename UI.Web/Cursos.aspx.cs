@@ -147,10 +147,8 @@ namespace UI.Web
             this.ddlMateria.DataSource = materias.GetMaterias();
             ddlMateria.DataValueField = "id_materia";
             ddlMateria.DataTextField = "desc_materia";
-            ddlMateria.SelectedIndex = -1;
             ddlMateria.DataBind();
             ComisionLogic comision = new ComisionLogic();
-            ddlComision.SelectedIndex = -1;
             this.ddlComision.DataSource = comision.GetComisiones();
             ddlComision.DataValueField = "id_comision";
             ddlComision.DataTextField = "desc_comision";

@@ -33,8 +33,8 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.GridView.DataSource = this.Logic.GetAll();
-            this.GridView.DataBind();
+            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataBind();
         }
 
         public enum FormModes
@@ -75,7 +75,7 @@ namespace UI.Web
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.SelectedID = (int)this.GridView.SelectedValue;
+            this.SelectedID = (int)this.gridView.SelectedValue;
         }
 
         private void LoadForm(int id)
