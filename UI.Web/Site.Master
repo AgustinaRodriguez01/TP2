@@ -37,6 +37,10 @@
                     <tr>
                         <td><a href="Personas.aspx">Personas</a></td>
                     </tr>
+                    <tr>
+                        <td><a href="Materias.aspx">Materias</a></td>
+                    </tr>
+
 
                 </table> 
             </td> 
