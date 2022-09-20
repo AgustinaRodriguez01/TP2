@@ -129,10 +129,10 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Alta:
-                    Entity = new Curso();
-                    LoadEntity(Entity);
-                    SaveEntity(Entity);
-                    LoadGrid();
+                    this.Entity = new Curso();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
                     break;
                 default: break;
             }
@@ -143,6 +143,8 @@ namespace UI.Web
         {
             this.txtAnio.Enabled = enable;
             this.txtCupo.Enabled = enable;
+            this.ddlMateria.Enabled = enable;
+            this.ddlComision.Enabled = enable;
             MateriaLogic materias = new MateriaLogic();
             ddlMateria.SelectedValue = null;
             this.ddlMateria.DataSource = materias.GetMaterias();
@@ -161,7 +163,7 @@ namespace UI.Web
         {
             if (this.IsEntitySelected)
             {
-                formPanel.Visible = true;
+                this.formPanel.Visible = true;
                 FormMode = FormModes.Baja;
                 EnableForm(false);
                 LoadForm(SelectedID);

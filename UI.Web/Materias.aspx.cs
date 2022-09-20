@@ -49,7 +49,7 @@ namespace UI.Web
             set { this.ViewState["FormMode"] = value; }
         }
 
-        private Business.Entities.Materia Entity {
+        private Materia Entity {
             get;
             set;
         }
@@ -99,7 +99,7 @@ namespace UI.Web
             }
         }
 
-        private void LoadEntity(Business.Entities.Materia materia)
+        private void LoadEntity(Materia materia)
         {
             materia.Descripcion = this.descripcionTextBox.Text;
             materia.HsSemanales = Convert.ToInt32(this.hs_semanalesTextBox.Text);
@@ -107,7 +107,7 @@ namespace UI.Web
             materia.IdPlan = Convert.ToInt32(this.cmbIdPlan.SelectedValue);
         }
 
-        private void SaveEntity(Business.Entities.Materia materia)
+        private void SaveEntity(Materia materia)
         {
             this.Logic.Save(materia);
         }
@@ -121,7 +121,7 @@ namespace UI.Web
                     LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Business.Entities.Materia();
+                    this.Entity = new Materia();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
@@ -129,7 +129,7 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Alta:
-                    Entity = new Business.Entities.Materia();
+                    Entity = new Materia();
                     LoadEntity(Entity);
                     SaveEntity(Entity);
                     LoadGrid();
