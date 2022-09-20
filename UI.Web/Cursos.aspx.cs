@@ -144,14 +144,16 @@ namespace UI.Web
             this.txtAnio.Enabled = enable;
             this.txtCupo.Enabled = enable;
             MateriaLogic materias = new MateriaLogic();
+            ddlMateria.SelectedValue = null;
             this.ddlMateria.DataSource = materias.GetMaterias();
-            ddlMateria.DataValueField = "id_materia";
-            ddlMateria.DataTextField = "desc_materia";
+            ddlMateria.DataValueField ="id_materia";
+            ddlMateria.DataTextField ="desc_materia";
             ddlMateria.DataBind();
             ComisionLogic comision = new ComisionLogic();
+            ddlComision.SelectedValue = null;
             this.ddlComision.DataSource = comision.GetComisiones();
-            ddlComision.DataValueField = "id_comision";
-            ddlComision.DataTextField = "desc_comision";
+            ddlComision.DataValueField ="id_comision";
+            ddlComision.DataTextField ="desc_comision";
             ddlComision.DataBind();
         }
 
