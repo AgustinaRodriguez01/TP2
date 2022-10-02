@@ -4,54 +4,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Iniciar Sesion</title>
-    <link href="Styles/login_s.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/LoginStylesheet.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
+    <form id="form1" runat="server" class="formulario">
+        <h1>Inicio de Sesión</h1>
+
+        <div class="contenedor">
+            <div class="input-contenedor">
+                <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
+                <asp:TextBox ID="txtUsuario" runat="server" CssClass="texto"></asp:TextBox>
+            </div>
+            <div class="input-contenedor">
+                <asp:Label ID="lblClave" runat="server" Text="Clave"></asp:Label>
+                <asp:TextBox ID="txtClave" runat="server" TextMode="Password" CssClass="texto"></asp:TextBox>
+            </div>
+            <div>
+                <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" CssClass="boton" />
+            </div>
+            <div>
+                <asp:LinkButton ID="OlvidoClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click" CssClass="link"></asp:LinkButton>
+            </div>
         </div>
-        <table style="width:100%;">
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>
-        <asp:Label ID="lblBienvenido" runat="server" Text="¡Bienvenido al Sistema!"></asp:Label>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-        <asp:Label ID="lblUsuario" runat="server" Text="Usuario"></asp:Label>
-                </td>
-                <td>
-        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>
-        <asp:Label ID="lblClave" runat="server" Text="Clave"></asp:Label>
-                </td>
-                <td>
-        <asp:TextBox ID="txtClave" runat="server" TextMode="Password"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>
-        <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" OnClick="btnIngresar_Click" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-        <asp:LinkButton ID="OlvidoClave" runat="server" Text="Olvidé mi Clave" OnClick="lnkRecordarClave_Click"></asp:LinkButton>
-                </td>
-                <td>&nbsp;</td>
-                <td>
-                    &nbsp;</td>
-            </tr>
-        </table>
     </form>
 </body>
 </html>

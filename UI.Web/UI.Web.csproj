@@ -69,7 +69,6 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
-    <Content Include="Login1.aspx" />
     <Content Include="Materias.aspx" />
     <Content Include="OlvidarContraseña.aspx" />
   </ItemGroup>
@@ -104,13 +103,6 @@
     </Compile>
     <Compile Include="Especialidades.aspx.designer.cs">
       <DependentUpon>Especialidades.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Login1.aspx.cs">
-      <DependentUpon>Login1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login1.aspx.designer.cs">
-      <DependentUpon>Login1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Materias.aspx.cs">
       <DependentUpon>Materias.aspx</DependentUpon>
@@ -168,8 +160,8 @@
     <Content Include="Especialidades.aspx" />
     <Content Include="Personas.aspx" />
     <Content Include="Planes.aspx" />
-    <Content Include="Styles\background.png" />
-    <Content Include="Styles\login_s.css" />
+    <Content Include="Styles\imageBack.png" />
+    <Content Include="Styles\LoginStylesheet.css" />
     <Content Include="Styles\utn-logo.jpg" />
     <Content Include="Styles\wood-panel-5728430_960_720.jpg" />
     <Content Include="Usuarios.aspx" />
