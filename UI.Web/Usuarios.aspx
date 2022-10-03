@@ -4,14 +4,14 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor="Black"
             SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
             <Columns>
-                <asp:BoundField HeaderText="Nombre" DataField ="Nombre" />
-                <asp:BoundField HeaderText="Apellido" DataField ="Apellido" />
-                <asp:BoundField HeaderText="Email" DataField ="Email" />
-                <asp:BoundField HeaderText="Usuario" DataField ="NombreUsuario" />
-                <asp:BoundField HeaderText="Habilitado" DataField ="Habilitado" />
-                <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" />
+                <asp:BoundField HeaderText="Nombre" DataField ="Nombre" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Apellido" DataField ="Apellido" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Email" DataField ="Email" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Usuario" DataField ="NombreUsuario" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Habilitado" DataField ="Habilitado" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna"/>
             </Columns>
         </asp:GridView>
     </asp:Panel>

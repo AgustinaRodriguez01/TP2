@@ -4,18 +4,18 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor ="Black"
             SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
             <Columns>
-                <asp:BoundField HeaderText="Nombre" DataField="Nombre"/>
-                <asp:BoundField HeaderText ="Apellido" DataField="Apellido"/>
-                <asp:BoundField HeaderText="Direccion" DataField="Direccion"/>
-                <asp:BoundField HeaderText="Email" DataField="Email"/>
-                <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
-                <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento"/>
-                <asp:BoundField HeaderText="Legajo" DataField="Legajo"/>
-                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan"/>
-                <asp:BoundField HeaderText="Tipo de Persona" DataField="TPersona"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
+                <asp:BoundField HeaderText="Nombre" DataField="Nombre" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText ="Apellido" DataField="Apellido" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Direccion" DataField="Direccion" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Email" DataField="Email" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Telefono" DataField="Telefono" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Legajo" DataField="Legajo" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Tipo de Persona" DataField="TPersona" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna"/>
             </Columns>
         </asp:GridView>
     </asp:Panel>

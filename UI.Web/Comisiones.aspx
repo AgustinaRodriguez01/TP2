@@ -4,17 +4,17 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor ="Black"
             SelectedRowStyle-ForeColor="White"
-            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
             <Columns>
-                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion"/>
-                <asp:BoundField HeaderText ="Año especialidad" DataField="AnioEspecialidad"/>
-                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan"/>
-                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
+                <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText ="Año especialidad" DataField="AnioEspecialidad" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="Id Plan" DataField="IdPlan" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna"/>
             </Columns>
         </asp:GridView>
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
-        <asp:Label ID="descripcionLabel" runat="server" Text="Descripción:"></asp:Label>
+        <asp:Label ID="descripcionLabel" runat="server" Text="Descripción:" ></asp:Label>
         <asp:TextBox ID="descripcionTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="descripcionRequerido" runat="server" ErrorMessage="La descripción no puede estar vacio" ControlToValidate="descripcionTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
@@ -36,5 +36,6 @@
         <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
         <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click">Cancelar</asp:LinkButton>
     </asp:Panel>
+    
 </asp:Content>
 

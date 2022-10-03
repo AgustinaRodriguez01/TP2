@@ -5,6 +5,15 @@
 <head runat="server">
     <title>Iniciar Sesion</title>
     <link href="Styles/LoginStylesheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            font-size: 20px;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server" class="formulario">

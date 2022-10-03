@@ -4,13 +4,13 @@
         <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
             SelectedRowStyle-BackColor ="Black"
                 SelectedRowStyle-ForeColor="White"
-                DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged">
+                DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
                 <Columns>
-                    <asp:BoundField HeaderText="Descripcion" DataField="Descripcion"/>
-                    <asp:BoundField HeaderText ="Horas semanales" DataField="HsSemanales"/>
-                    <asp:BoundField HeaderText="Horas totales" DataField="HsTotales"/>
-                    <asp:BoundField HeaderText="Id plan" DataField="IdPlan"/>
-                    <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true"/>
+                    <asp:BoundField HeaderText="Descripcion" DataField="Descripcion" HeaderStyle-CssClass="tablaColumna"/>
+                    <asp:BoundField HeaderText ="Horas semanales" DataField="HsSemanales" HeaderStyle-CssClass="tablaColumna"/>
+                    <asp:BoundField HeaderText="Horas totales" DataField="HsTotales" HeaderStyle-CssClass="tablaColumna"/>
+                    <asp:BoundField HeaderText="Id plan" DataField="IdPlan" HeaderStyle-CssClass="tablaColumna"/>
+                    <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna"/>
                 </Columns>
         </asp:GridView>
     </asp:Panel>

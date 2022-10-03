@@ -162,6 +162,7 @@
     <Content Include="Planes.aspx" />
     <Content Include="Styles\imageBack.png" />
     <Content Include="Styles\LoginStylesheet.css" />
+    <Content Include="Styles\MasterPageStyleSheet.css" />
     <Content Include="Styles\utn-logo.jpg" />
     <Content Include="Styles\wood-panel-5728430_960_720.jpg" />
     <Content Include="Usuarios.aspx" />
