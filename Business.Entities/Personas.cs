@@ -117,7 +117,8 @@ namespace Business.Entities
         public enum TipoPersona
         {
             Alumno,
-            Docente
+            Docente,
+            Admin
         }
         public TipoPersona TPersona
         {

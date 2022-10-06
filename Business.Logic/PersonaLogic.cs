@@ -35,6 +35,12 @@ namespace Business.Logic
             return PersonaData.GetOne(id);
         }
 
+        public Personas GetLast()
+        {
+            return PersonaData.GetLast();
+        }
+
+
         public List<Personas> GetAll()
         {
             return PersonaData.GetAll();

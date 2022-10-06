@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Business.Logic;
+using Business.Entities;
 
 namespace UI.Desktop
 {
@@ -21,15 +22,17 @@ namespace UI.Desktop
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             UsuarioLogic usuarioActual = new UsuarioLogic();
-            var usuario = usuarioActual.ExisteUsuario(txtUsuario.Text, txtContraseña.Text);
+            Usuario usuario = usuarioActual.ExisteUsuario(txtUsuario.Text, txtContraseña.Text);
             if (usuario is null)
             {
                 MessageBox.Show("No se encontró el usuario");
             }
             else
             {
-                Inicio formInicio = new Inicio(); 
-                formInicio.ShowDialog();
+                PersonaLogic per = new PersonaLogic();
+                Business.Entities.Personas persona = per.GetOne(usuario.IdPersona);
+                Inicio ini = new Inicio(persona.TPersona);
+                ini.ShowDialog();
             }
         }
 

@@ -7,14 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Business.Entities;
 
 namespace UI.Desktop
 {
     public partial class Inicio : Form
     {
-        public Inicio()
+        public Inicio(Business.Entities.Personas.TipoPersona tipo)
         {
             InitializeComponent();
+            switch(tipo)
+            {
+                case Business.Entities.Personas.TipoPersona.Alumno:
+                    {
+                        tsmiUsuarios.Visible = false;
+                        tsmiPlanes.Visible = false;
+                        tsmiMaterias.Visible = false;
+                        tsmiEspecialidades.Visible = false;
+                        tsmiComisiones.Visible = false;
+                        tsmiUsuarios.Visible = false;
+                        tsmiPersonas.Visible = false;
+                        tsmiCursos.Visible = false;
+                        break;
+                    }
+                case Business.Entities.Personas.TipoPersona.Docente:
+                    {
+                        tsmiUsuarios.Visible = false;
+                        tsmiPlanes.Visible = false;
+                        tsmiMaterias.Visible = false;
+                        tsmiEspecialidades.Visible = false;
+                        tsmiComisiones.Visible = false;
+                        tsmiUsuarios.Visible = false;
+                        tsmiPersonas.Visible = false;
+                        tsmiCursos.Visible = false;
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
         }
 
         private void tsmiUsuarios_Click(object sender, EventArgs e)
@@ -58,5 +90,6 @@ namespace UI.Desktop
             Cursos formCursos = new Cursos();
             formCursos.ShowDialog();
         }
+
     }
 }

@@ -45,13 +45,6 @@ namespace UI.Desktop
                 Business.Entities.Personas personaActual = new Business.Entities.Personas();
                 PersonaActual = personaActual;
                 PersonaActual.State = BusinessEntity.States.New;
-                UsuarioDesktop formUsuario = new UsuarioDesktop();
-                AddOwnedForm(formUsuario);
-                formUsuario.txtApellido.Text = txtApellido.Text;
-                formUsuario.txtEmail.Text = txtEmail.Text;
-                formUsuario.txtNombre.Text = txtNombre.Text;
-                formUsuario.txtIdPersona.Text = txtID.Text;
-                formUsuario.ShowDialog();
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
@@ -131,6 +124,22 @@ namespace UI.Desktop
             MapearADatos();
             PersonaLogic perActual = new PersonaLogic();
             perActual.Save(PersonaActual);
+            if (Modo == ModoForm.Alta)
+            {
+                UsuarioDesktop formUsuario = new UsuarioDesktop();
+                PersonaLogic p = new PersonaLogic();
+                Business.Entities.Personas per = p.GetLast();
+                AddOwnedForm(formUsuario);
+                formUsuario.txtApellido.Text = txtApellido.Text;
+                formUsuario.txtEmail.Text = txtEmail.Text;
+                formUsuario.txtNombre.Text = txtNombre.Text;
+                formUsuario.txtIdPersona.Text = per.ID.ToString();
+                formUsuario.txtNombre.Enabled = false;
+                formUsuario.txtEmail.Enabled = false;
+                formUsuario.txtApellido.Enabled = false;
+                formUsuario.txtIdPersona.Enabled = false;
+                formUsuario.ShowDialog();
+            }
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons

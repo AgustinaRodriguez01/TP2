@@ -76,9 +76,16 @@ namespace UI.Desktop
                 Usuario usuarioActual = new Usuario();
                 UsuarioActual = usuarioActual;
                 UsuarioActual.State = BusinessEntity.States.New;
+                UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
+                UsuarioActual.Habilitado = chkHabilitado.Checked;
+                UsuarioActual.Nombre = txtNombre.Text;
+                UsuarioActual.Apellido = txtApellido.Text;
+                UsuarioActual.Email = txtEmail.Text;
+                UsuarioActual.NombreUsuario = txtUsuario.Text;
+                UsuarioActual.Clave = txtClave.Text;
             }
 
-            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            if (Modo == ModoForm.Modificacion)
             {
                 UsuarioActual.Habilitado = chkHabilitado.Checked;
                 UsuarioActual.Nombre = txtNombre.Text;
@@ -86,8 +93,7 @@ namespace UI.Desktop
                 UsuarioActual.Email = txtEmail.Text;
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
-               // UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
-
+                UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
                 if (Modo == ModoForm.Modificacion)
                 {
                     UsuarioActual.State = BusinessEntity.States.Modified;
@@ -97,6 +103,7 @@ namespace UI.Desktop
             if(Modo == ModoForm.Baja)
             {
                 UsuarioActual.State = BusinessEntity.States.Deleted;
+
             }
         }
 

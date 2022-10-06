@@ -93,9 +93,13 @@ namespace Data.Database
             try
             {
                 OpenConnection();
-                SqlCommand cmdDelete = new SqlCommand("delete personas where id_persona=@id", sqlConn);
-                cmdDelete.Parameters.Add("@id", SqlDbType.Int).Value = ID;
-                cmdDelete.ExecuteNonQuery();
+                SqlCommand cmdDeleteUsuario = new SqlCommand("delete usuarios where id_persona=@id", sqlConn);
+                SqlCommand cmdDeletePersona = new SqlCommand("delete personas where id_persona=@id", sqlConn);
+                cmdDeletePersona.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdDeleteUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                cmdDeleteUsuario.ExecuteNonQuery();
+                cmdDeletePersona.ExecuteNonQuery();
+                
             }
             catch
             {
@@ -190,6 +194,44 @@ namespace Data.Database
             }
             persona.State = BusinessEntity.States.Unmodified;
 
+        }
+
+        public Personas GetLast()
+        {
+            Personas persona = new Personas();
+            OpenConnection();
+            SqlCommand cmdPersonas = new SqlCommand("select top 1 * from personas order by id_persona desc", sqlConn);
+            SqlDataReader drPersonas = cmdPersonas.ExecuteReader();
+
+            try
+            {
+                if (drPersonas.Read())
+                {
+                    persona.ID = (int)drPersonas["id_persona"];
+                    persona.Legajo = (int)drPersonas["legajo"];
+                    persona.Apellido = (string)drPersonas["apellido"];
+                    persona.Nombre = (string)drPersonas["nombre"];
+                    persona.Direccion = (string)drPersonas["direccion"];
+                    persona.Email = (string)drPersonas["email"];
+                    persona.Telefono = (string)drPersonas["telefono"];
+                    persona.FechaNacimiento = Convert.ToDateTime(drPersonas["fecha_nac"]);
+                    persona.IdPlan = (int)drPersonas["id_plan"];
+                    persona.TPersona = (Personas.TipoPersona)(drPersonas["tipo_persona"]);
+                }
+                else persona = null;
+                drPersonas.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos de persona", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return persona;
         }
 
     }

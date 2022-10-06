@@ -32,14 +32,14 @@ namespace UI.Desktop
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ArchivoTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPersonas = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPlanes = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMaterias = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEspecialidades = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiComisiones = new System.Windows.Forms.ToolStripMenuItem();
-            this.cursosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -78,24 +78,24 @@ namespace UI.Desktop
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aaToolStripMenuItem});
+            this.ArchivoTsmi});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
-            // aaToolStripMenuItem
+            // ArchivoTsmi
             // 
-            this.aaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ArchivoTsmi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUsuarios,
             this.tsmiPersonas,
             this.tsmiPlanes,
             this.tsmiMaterias,
             this.tsmiEspecialidades,
             this.tsmiComisiones,
-            this.cursosToolStripMenuItem});
-            this.aaToolStripMenuItem.Name = "aaToolStripMenuItem";
-            this.aaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aaToolStripMenuItem.Text = "Ver";
+            this.tsmiCursos});
+            this.ArchivoTsmi.Name = "ArchivoTsmi";
+            this.ArchivoTsmi.Size = new System.Drawing.Size(180, 22);
+            this.ArchivoTsmi.Text = "Ver";
             // 
             // tsmiUsuarios
             // 
@@ -139,12 +139,12 @@ namespace UI.Desktop
             this.tsmiComisiones.Text = "Comisiones";
             this.tsmiComisiones.Click += new System.EventHandler(this.tsmiComisiones_Click);
             // 
-            // cursosToolStripMenuItem
+            // tsmiCursos
             // 
-            this.cursosToolStripMenuItem.Name = "cursosToolStripMenuItem";
-            this.cursosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cursosToolStripMenuItem.Text = "Cursos";
-            this.cursosToolStripMenuItem.Click += new System.EventHandler(this.tsmCursos_Click);
+            this.tsmiCursos.Name = "tsmiCursos";
+            this.tsmiCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiCursos.Text = "Cursos";
+            this.tsmiCursos.Click += new System.EventHandler(this.tsmCursos_Click);
             // 
             // Inicio
             // 
@@ -170,13 +170,13 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripContainer toolStripContainer1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ArchivoTsmi;
         private System.Windows.Forms.ToolStripMenuItem tsmiUsuarios;
         private System.Windows.Forms.ToolStripMenuItem tsmiPersonas;
         private System.Windows.Forms.ToolStripMenuItem tsmiPlanes;
         private System.Windows.Forms.ToolStripMenuItem tsmiMaterias;
         private System.Windows.Forms.ToolStripMenuItem tsmiEspecialidades;
         private System.Windows.Forms.ToolStripMenuItem tsmiComisiones;
-        private System.Windows.Forms.ToolStripMenuItem cursosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCursos;
     }
 }
