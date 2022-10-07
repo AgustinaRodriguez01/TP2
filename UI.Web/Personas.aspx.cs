@@ -133,10 +133,10 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            if (calFechaNacimiento.SelectedDate == null)
+            if (calFechaNacimiento.SelectedDate == new DateTime(0001,01,01,0,0,0))
 
             {
-                Response.Write("Seleccione una fecha de nacimiento");
+                Response.Write("<script>alert('Seleccione una fecha de nacimiento')</script>");
             }
             else
             {

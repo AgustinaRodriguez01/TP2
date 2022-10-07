@@ -11,7 +11,19 @@ namespace UI.Web
 {
 
 
-    public partial class Default1
+    public partial class Default
     {
+
+        /// <summary>
+        /// Propiedad Master.
+        /// </summary>
+        /// <remarks>
+        /// Propiedad generada automáticamente.
+        /// </remarks>
+        public new UI.Web.Site Master {
+            get {
+                return ((UI.Web.Site)(base.Master));
+            }
+        }
     }
 }

@@ -22,11 +22,14 @@ namespace UI.Web
             var usuario = usuarioActual.ExisteUsuario(txtUsuario.Text, txtClave.Text);
             if (usuario != null)
             {
+                PersonaLogic per = new PersonaLogic();
+                Business.Entities.Personas persona = per.GetOne(usuario.IdPersona);
+                Session.Add("tipo", persona.TPersona);
                 Response.Redirect("https://localhost:44366/Default.aspx");
             }
             else
             {
-                Page.Response.Write("Usuario y/o contraseña incorrectos");
+                Page.Response.Write("<script>alert('Usuario y / o contraseña incorrectos')</script>");
             }
         }
 
