@@ -98,6 +98,8 @@ namespace UI.Web
             this.legajoTextBox.Text = this.Entity.Legajo.ToString();
             this.cmbIdPlan.SelectedValue = this.Entity.IdPlan.ToString();
             this.cmbTipoPersona.SelectedValue = this.Entity.TPersona.ToString();
+            this.calFechaNacimiento.SelectedDate = this.Entity.FechaNacimiento;
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -120,8 +122,8 @@ namespace UI.Web
             persona.Telefono = this.telefonoTextBox.Text;
             persona.FechaNacimiento = this.calFechaNacimiento.SelectedDate;
             persona.Legajo = Convert.ToInt32(this.legajoTextBox.Text);
-            //persona.TPersona = this.cmbTipoPersona.SelectedValue.ToString();
             persona.IdPlan = Convert.ToInt32(this.cmbIdPlan.SelectedValue);
+            persona.TPersona = (Business.Entities.Personas.TipoPersona)Enum.Parse(typeof(Business.Entities.Personas.TipoPersona), this.cmbTipoPersona.SelectedValue);
         }
 
         private void SaveEntity(Business.Entities.Personas persona)
@@ -131,29 +133,37 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
-            switch (FormMode)
+            if (calFechaNacimiento.SelectedDate == null)
+
             {
-                case FormModes.Baja:
-                    DeleteEntity(SelectedID);
-                    LoadGrid();
-                    break;
-                case FormModes.Modificacion:
-                    this.Entity = new Business.Entities.Personas();
-                    this.Entity.ID = this.SelectedID;
-                    this.Entity.State = BusinessEntity.States.Modified;
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
-                    break;
-                case FormModes.Alta:
-                    Entity = new Business.Entities.Personas();
-                    LoadEntity(Entity);
-                    SaveEntity(Entity);
-                    LoadGrid();
-                    break;
-                default: break;
+                Response.Write("Seleccione una fecha de nacimiento");
             }
-            this.formPanel.Visible = false;
+            else
+            {
+                switch (FormMode)
+                {
+                    case FormModes.Baja:
+                        DeleteEntity(SelectedID);
+                        LoadGrid();
+                        break;
+                    case FormModes.Modificacion:
+                        this.Entity = new Business.Entities.Personas();
+                        this.Entity.ID = this.SelectedID;
+                        this.Entity.State = BusinessEntity.States.Modified;
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        this.LoadGrid();
+                        break;
+                    case FormModes.Alta:
+                        Entity = new Business.Entities.Personas();
+                        LoadEntity(Entity);
+                        SaveEntity(Entity);
+                        LoadGrid();
+                        break;
+                    default: break;
+                }
+                this.formPanel.Visible = false;
+            }
         }
 
         private void EnableForm (bool enable)
@@ -172,7 +182,7 @@ namespace UI.Web
             cmbIdPlan.DataValueField = "id_plan";
             cmbIdPlan.DataTextField = "desc_plan";
             cmbIdPlan.DataBind();
-            this.cmbTipoPersona.DataSource = this.Logic.GetTiposPersona();
+            this.cmbTipoPersona.DataSource = Enum.GetNames(typeof(Business.Entities.Personas.TipoPersona));
             cmbTipoPersona.DataBind();
         }
 

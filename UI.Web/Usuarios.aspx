@@ -11,6 +11,7 @@
                 <asp:BoundField HeaderText="Email" DataField ="Email" HeaderStyle-CssClass="tablaColumna"/>
                 <asp:BoundField HeaderText="Usuario" DataField ="NombreUsuario" HeaderStyle-CssClass="tablaColumna"/>
                 <asp:BoundField HeaderText="Habilitado" DataField ="Habilitado" HeaderStyle-CssClass="tablaColumna"/>
+                <asp:BoundField HeaderText="ID Persona" DataField="IdPersona" HeaderStyle-CssClass="tablaColumna" />
                 <asp:CommandField SelectText ="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna"/>
             </Columns>
         </asp:GridView>
