@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Business.Logic</RootNamespace>
     <AssemblyName>Business.Logic</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="BusinessLogic.cs" />
     <Compile Include="CursoLogic.cs" />
+    <Compile Include="Docentes_cursosLogic.cs" />
     <Compile Include="PersonaLogic.cs" />
     <Compile Include="ComisionLogic.cs" />
     <Compile Include="PlanLogic.cs" />
