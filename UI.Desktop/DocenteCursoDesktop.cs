@@ -42,7 +42,7 @@ namespace UI.Desktop
         public DocenteCursoDesktop(int ID, ModoForm modo) : this()
         {
             DocenteCurso dc = new DocenteCurso();
-            especialidadActual = especialidad.GetOne(ID);
+            DocenteCursoActual = dc.GetOne(ID);
             Modo = modo;
             MapearDeDatos();
         }
