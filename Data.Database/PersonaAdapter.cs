@@ -99,7 +99,7 @@ namespace Data.Database
                 cmdDeleteUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDeleteUsuario.ExecuteNonQuery();
                 cmdDeletePersona.ExecuteNonQuery();
-                
+
             }
             catch
             {
@@ -234,5 +234,32 @@ namespace Data.Database
             return persona;
         }
 
+        public DataTable GetDocentes()
+        {
+            DataTable docenteCurso = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdDocC = new SqlCommand("select id_persona,concat(nombre,' ',apellido) apenom from personas where tipo_persona = 1", sqlConn);
+                SqlDataAdapter daDocC = new SqlDataAdapter(cmdDocC);
+                daDocC.Fill(docenteCurso);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar", Ex);
+                throw ExcepcionManejada;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+
+            return docenteCurso;
+        }
     }
+
 }
+
+

@@ -63,6 +63,5 @@ namespace UI.Desktop
         {
             Listar();
         }
-
     }
 }

@@ -21,9 +21,13 @@ namespace UI.Web
             else
             {
                 this.nombreTextBox.Text = Request.QueryString["nombre"];
+                nombreTextBox.ReadOnly = true;
                 this.apellidoTextBox.Text = Request.QueryString["apellido"];
+                apellidoTextBox.ReadOnly = true;
                 this.emailTextBox.Text = Request.QueryString["email"];
+                emailTextBox.ReadOnly = true;
                 this.idPersonaTextBox.Text = Request.QueryString["id_per"];
+                idPersonaTextBox.ReadOnly = true;
                 formPanel.Visible = true;
                 this.FormMode = FormModes.Alta;
             }

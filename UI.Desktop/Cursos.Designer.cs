@@ -57,13 +57,11 @@ namespace UI.Desktop
             // toolStripContainer1.ContentPanel
             // 
             this.toolStripContainer1.ContentPanel.Controls.Add(this.tlCursos);
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(4);
-            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(1067, 527);
+            this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(800, 425);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.toolStripContainer1.Name = "toolStripContainer1";
-            this.toolStripContainer1.Size = new System.Drawing.Size(1067, 554);
+            this.toolStripContainer1.Size = new System.Drawing.Size(800, 450);
             this.toolStripContainer1.TabIndex = 0;
             this.toolStripContainer1.Text = "toolStripContainer1";
             // 
@@ -81,12 +79,11 @@ namespace UI.Desktop
             this.tlCursos.Controls.Add(this.btnSalir, 1, 1);
             this.tlCursos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlCursos.Location = new System.Drawing.Point(0, 0);
-            this.tlCursos.Margin = new System.Windows.Forms.Padding(4);
             this.tlCursos.Name = "tlCursos";
             this.tlCursos.RowCount = 2;
             this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tlCursos.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tlCursos.Size = new System.Drawing.Size(1067, 527);
+            this.tlCursos.Size = new System.Drawing.Size(800, 425);
             this.tlCursos.TabIndex = 0;
             // 
             // dgvCursos
@@ -103,67 +100,54 @@ namespace UI.Desktop
             this.Cupo});
             this.tlCursos.SetColumnSpan(this.dgvCursos, 2);
             this.dgvCursos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCursos.Location = new System.Drawing.Point(4, 4);
-            this.dgvCursos.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCursos.Location = new System.Drawing.Point(3, 3);
             this.dgvCursos.Name = "dgvCursos";
             this.dgvCursos.ReadOnly = true;
-            this.dgvCursos.RowHeadersWidth = 51;
             this.dgvCursos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCursos.Size = new System.Drawing.Size(1059, 483);
+            this.dgvCursos.Size = new System.Drawing.Size(794, 390);
             this.dgvCursos.TabIndex = 0;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "ID";
             this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 125;
             // 
             // IDMateria
             // 
             this.IDMateria.DataPropertyName = "IdMateria";
             this.IDMateria.HeaderText = "ID Materia";
-            this.IDMateria.MinimumWidth = 6;
             this.IDMateria.Name = "IDMateria";
             this.IDMateria.ReadOnly = true;
-            this.IDMateria.Width = 125;
             // 
             // IDComision
             // 
             this.IDComision.DataPropertyName = "IdComision";
             this.IDComision.HeaderText = "ID Comision";
-            this.IDComision.MinimumWidth = 6;
             this.IDComision.Name = "IDComision";
             this.IDComision.ReadOnly = true;
-            this.IDComision.Width = 125;
             // 
             // Año
             // 
             this.Año.DataPropertyName = "AnioCalendario";
             this.Año.HeaderText = "Año";
-            this.Año.MinimumWidth = 6;
             this.Año.Name = "Año";
             this.Año.ReadOnly = true;
-            this.Año.Width = 125;
             // 
             // Cupo
             // 
             this.Cupo.DataPropertyName = "Cupo";
             this.Cupo.HeaderText = "Cupo";
-            this.Cupo.MinimumWidth = 6;
             this.Cupo.Name = "Cupo";
             this.Cupo.ReadOnly = true;
-            this.Cupo.Width = 125;
             // 
             // btnActualizar
             // 
             this.btnActualizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnActualizar.Location = new System.Drawing.Point(855, 495);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnActualizar.Location = new System.Drawing.Point(641, 399);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(100, 28);
+            this.btnActualizar.Size = new System.Drawing.Size(75, 23);
             this.btnActualizar.TabIndex = 1;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
@@ -171,10 +155,9 @@ namespace UI.Desktop
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(963, 495);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalir.Location = new System.Drawing.Point(722, 399);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(100, 28);
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -183,14 +166,13 @@ namespace UI.Desktop
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsbNuevo,
             this.tsbEditar,
             this.tsbEliminar});
-            this.toolStrip1.Location = new System.Drawing.Point(4, 0);
+            this.toolStrip1.Location = new System.Drawing.Point(3, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(139, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(81, 25);
             this.toolStrip1.TabIndex = 0;
             // 
             // tsbNuevo
@@ -199,7 +181,7 @@ namespace UI.Desktop
             this.tsbNuevo.Image = global::UI.Desktop.Properties.Resources.Agregar;
             this.tsbNuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbNuevo.Name = "tsbNuevo";
-            this.tsbNuevo.Size = new System.Drawing.Size(29, 24);
+            this.tsbNuevo.Size = new System.Drawing.Size(23, 22);
             this.tsbNuevo.Text = "Nuevo";
             this.tsbNuevo.Click += new System.EventHandler(this.tsbNuevo_Click);
             // 
@@ -209,7 +191,7 @@ namespace UI.Desktop
             this.tsbEditar.Image = global::UI.Desktop.Properties.Resources.Editar;
             this.tsbEditar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEditar.Name = "tsbEditar";
-            this.tsbEditar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEditar.Size = new System.Drawing.Size(23, 22);
             this.tsbEditar.Text = "Editar";
             this.tsbEditar.Click += new System.EventHandler(this.tsbEditar_Click);
             // 
@@ -219,17 +201,16 @@ namespace UI.Desktop
             this.tsbEliminar.Image = global::UI.Desktop.Properties.Resources.Eliminar;
             this.tsbEliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbEliminar.Name = "tsbEliminar";
-            this.tsbEliminar.Size = new System.Drawing.Size(29, 24);
+            this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
             // 
             // Cursos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.toolStripContainer1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Cursos";
             this.Text = "Cursos";
             this.Load += new System.EventHandler(this.Cursos_Load);
