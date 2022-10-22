@@ -13,9 +13,19 @@ namespace UI.Web
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            this.LoadGrid();
+            if (Request.QueryString["nombre"] is null)
             {
-                LoadGrid();
+                formPanel.Visible = false;
+            }
+            else
+            {
+                this.nombreTextBox.Text = Request.QueryString["nombre"];
+                this.apellidoTextBox.Text = Request.QueryString["apellido"];
+                this.emailTextBox.Text = Request.QueryString["email"];
+                this.idPersonaTextBox.Text = Request.QueryString["id_per"];
+                formPanel.Visible = true;
+                this.FormMode = FormModes.Alta;
             }
         }
 
@@ -94,16 +104,17 @@ namespace UI.Web
             this.emailTextBox.Text = this.Entity.Email;
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
+            this.idPersonaTextBox.Text = this.Entity.IdPersona.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
+                EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
-                EnableForm(true);
             }
             
         }
@@ -116,6 +127,7 @@ namespace UI.Web
             usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
             usuario.Clave = this.claveTextBox.Text;
             usuario.Habilitado = this.habilitadoCheckBox.Checked;
+            usuario.IdPersona = Convert.ToInt32(idPersonaTextBox.Text);
         }
 
         private void SaveEntity(Usuario usuario)

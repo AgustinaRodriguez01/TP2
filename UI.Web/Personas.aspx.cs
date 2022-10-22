@@ -16,6 +16,7 @@ namespace UI.Web
             if(!Page.IsPostBack)
             {
                 LoadGrid();
+                formPanel.Visible = false;
             }
         }
 
@@ -106,10 +107,10 @@ namespace UI.Web
         {
             if(this.IsEntitySelected)
             {
+                this.EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
-                EnableForm(true);
             }
         }
 
@@ -124,6 +125,15 @@ namespace UI.Web
             persona.Legajo = Convert.ToInt32(this.legajoTextBox.Text);
             persona.IdPlan = Convert.ToInt32(this.cmbIdPlan.SelectedValue);
             persona.TPersona = (Business.Entities.Personas.TipoPersona)Enum.Parse(typeof(Business.Entities.Personas.TipoPersona), this.cmbTipoPersona.SelectedValue);
+        }
+
+        private void GuardarUsuario(Business.Entities.Personas persona)
+        {
+            this.Logic.Save(persona);
+            PersonaLogic p = new PersonaLogic();
+            Business.Entities.Personas per = p.GetLast();
+            string no = per.Nombre; string ape = per.Apellido; string mail = per.Email; int id = per.ID;
+            Response.Redirect("~/Usuarios.aspx?nombre=" + no + "&apellido=" + ape + "&email=" + mail + "&id_per=" + id);
         }
 
         private void SaveEntity(Business.Entities.Personas persona)
@@ -157,7 +167,7 @@ namespace UI.Web
                     case FormModes.Alta:
                         Entity = new Business.Entities.Personas();
                         LoadEntity(Entity);
-                        SaveEntity(Entity);
+                        GuardarUsuario(Entity);
                         LoadGrid();
                         break;
                     default: break;

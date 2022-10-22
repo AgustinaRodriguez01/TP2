@@ -55,6 +55,10 @@
         ControlToValidate ="repetirClaveTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <asp:CompareValidator ID="compararClaves" runat="server" ErrorMessage="Las claves no coinciden"
          ControlToValidate="claveTextBox" ControlToCompare="repetirClaveTextBox" Type="String" Operator ="Equal" ForeColor="Red">*</asp:CompareValidator>
+        <br />
+        <asp:Label ID="Label1" runat="server" Text="ID Persona:"></asp:Label>
+        <asp:TextBox ID="idPersonaTextBox" runat="server" ReadOnly="True"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="idPRequerido" ControlToValidate="idPersonaTextBox" runat="server" ErrorMessage="El Id de la Persona no puede ser vacío" ForeColor="Red">*</asp:RequiredFieldValidator>
         <asp:ValidationSummary ID="ResumenDeErrores" ForeColor="Red" runat="server"/>
         <br />
 
