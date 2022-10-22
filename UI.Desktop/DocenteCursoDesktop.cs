@@ -15,23 +15,26 @@ namespace UI.Desktop
         public DocenteCursoDesktop()
         {
             InitializeComponent();
-            dgvCursos.AutoGenerateColumns = false;
         }
 
-        private void InscripcionDocenteCurso_Load(object sender, EventArgs e)
-        {
-            Listar();
+        private DocenteCurso _DocenteCursoActual;
+        public DocenteCurso DocenteCursoActual {
+            get { return _DocenteCursoActual; }
+            set { _DocenteCursoActual = value; }
         }
 
         public void Listar()
         {
-            CursoLogic cur = new CursoLogic();
-            dgvCursos.DataSource = cur.GetAll();
+            DocenteCursoLogic dc = new DocenteCursoLogic();
+            cmbCurso.DataSource = dc.GetCursos();
+            cmbCurso.ValueMember = "id_curso";
+            cmbCurso.DisplayMember = "id_curso";
             PersonaLogic per = new PersonaLogic();
             cmbDocentes.DataSource = per.GetDocentes();
             cmbDocentes.DisplayMember = "apenom";
             cmbDocentes.ValueMember = "id_persona";
-
+            cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TipoCargo));
+            cmbCurso.SelectedIndex = 0;
         }
 
         public DocenteCursoDesktop(ModoForm modo) : this()
@@ -41,37 +44,32 @@ namespace UI.Desktop
 
         public DocenteCursoDesktop(int ID, ModoForm modo) : this()
         {
-            DocenteCurso dc = new DocenteCurso();
-            DocenteCursoActual = dc.GetOne(ID);
-            Modo = modo;
-            MapearDeDatos();
-        }
-
-        protected Especialidad especialidadActual;
-        public Especialidad EspecialidadActual {
-            get { return especialidadActual; }
-            set { especialidadActual = value; }
+            this.Modo = modo;
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            this.DocenteCursoActual = dcl.GetOne(ID);
+            this.MapearDeDatos();
         }
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.EspecialidadActual.ID.ToString();
-            this.txtDescripcion.Text = this.EspecialidadActual.Descripcion;
-
-
+            this.txtIdDictado.Text = this.DocenteCursoActual.ID.ToString();
+            this.cmbDocentes.SelectedValue = this.DocenteCursoActual.IdDocente;
+            this.cmbCurso.SelectedValue = this.DocenteCursoActual.IdCurso;
+            this.cmbCargo.SelectedValue = this.DocenteCursoActual.Cargo;
+            
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 btnAceptar.Text = "Guardar";
                 if (Modo == ModoForm.Modificacion)
                 {
-                    this.Text = "Modificar especialidad";
+                    this.Text = "Modificar curso";
                 }
             }
 
             if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
-                this.Text = "Eliminar especialidad";
+                this.Text = "Eliminar curso";
             }
 
             if (Modo == ModoForm.Consulta)
@@ -79,45 +77,43 @@ namespace UI.Desktop
                 btnAceptar.Text = "Aceptar";
             }
         }
+
         public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)
             {
-                Especialidad especialidadActual = new Especialidad();
-                EspecialidadActual = especialidadActual;
-                EspecialidadActual.State = BusinessEntity.States.New;
+                DocenteCurso dc = new DocenteCurso();
+                DocenteCursoActual = dc;
+                DocenteCursoActual.State = BusinessEntity.States.New;
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
-                EspecialidadActual.Descripcion = txtDescripcion.Text;
+                this.DocenteCursoActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
+                this.DocenteCursoActual.IdDocente = Convert.ToInt32(this.cmbDocentes.SelectedValue);
+                this.DocenteCursoActual.Cargo = (DocenteCurso.TipoCargo)(this.cmbCargo.SelectedValue);
 
                 if (Modo == ModoForm.Modificacion)
                 {
-                    EspecialidadActual.State = BusinessEntity.States.Modified;
+                    DocenteCursoActual.State = BusinessEntity.States.Modified;
                 }
             }
 
             if (Modo == ModoForm.Baja)
             {
-                EspecialidadActual.State = BusinessEntity.States.Deleted;
+                DocenteCursoActual.State = BusinessEntity.States.Deleted;
             }
         }
 
         public override void GuardarCambios()
         {
             MapearADatos();
-            EspecialidadLogic espActual = new EspecialidadLogic();
-            espActual.Save(EspecialidadActual);
+            DocenteCursoLogic dcActual = new DocenteCursoLogic();
+            dcActual.Save(DocenteCursoActual);
         }
         public override bool Validar()
         {
-            if (txtDescripcion.Text == "")
-            {
-                this.Notificar("La especialidad debe tener una descripcion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else return true;
+            return true;
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons
@@ -132,9 +128,34 @@ namespace UI.Desktop
             this.Notificar(this.Text, mensaje, botones, icono);
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
 
+        private void DocenteCursoDesktop_Load(object sender, EventArgs e)
+        {
+            Listar();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            GuardarCambios();
+            this.Close();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbCurso_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CursoLogic cl = new CursoLogic();
+            Curso cur = cl.GetOne(Convert.ToInt32(this.cmbCurso.SelectedValue));
+            MateriaLogic ml = new MateriaLogic();
+            Materia mat = ml.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic col = new ComisionLogic();
+            Comision com = col.GetOne(cur.IdComision);
+            lblComision.Text = com.Descripcion;
         }
     }
 }
+

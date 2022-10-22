@@ -28,6 +28,7 @@ namespace UI.Desktop
                         tsmiUsuarios.Visible = false;
                         tsmiPersonas.Visible = false;
                         tsmiCursos.Visible = false;
+                        tsmiInscripcionDocentes.Visible = false;
                         break;
                     }
                 case Business.Entities.Personas.TipoPersona.Docente:
@@ -40,7 +41,7 @@ namespace UI.Desktop
                         tsmiUsuarios.Visible = false;
                         tsmiPersonas.Visible = false;
                         tsmiCursos.Visible = false;
-                        tsmiCargaDeNotas.Visible = true;
+                        tsmiInscripcionDocentes.Visible = false;
                         break;
                     }
                 default:
@@ -92,10 +93,10 @@ namespace UI.Desktop
             formCursos.ShowDialog();
         }
 
-        private void tsmiCargaDeNotas_Click(object sender, EventArgs e)
+        private void tsmiInscripcionDocentes_Click(object sender, EventArgs e)
         {
-            Docentes_cursos formDocentes_cursos = new Docentes_cursos();
-            formDocentes_cursos.ShowDialog();
+            DocentesCursos formInsc = new DocentesCursos();
+            formInsc.ShowDialog();
         }
     }
 }

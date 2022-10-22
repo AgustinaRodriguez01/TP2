@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>UI.Desktop</RootNamespace>
     <AssemblyName>UI.Desktop</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -53,11 +53,11 @@
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Docentes_cursos.cs">
+    <Compile Include="DocentesCursos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Docentes_cursos.Designer.cs">
-      <DependentUpon>Docentes_cursos.cs</DependentUpon>
+    <Compile Include="DocentesCursos.Designer.cs">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,11 @@
     <Compile Include="CursoDesktop.Designer.cs">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="Notas.cs">
+    <Compile Include="DocenteCursoDesktop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Notas.Designer.cs">
-      <DependentUpon>Notas.cs</DependentUpon>
+    <Compile Include="DocenteCursoDesktop.Designer.cs">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
     </Compile>
     <Compile Include="OlvidasteContrasenia.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="Cursos.resx">
       <DependentUpon>Cursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Docentes_cursos.resx">
-      <DependentUpon>Docentes_cursos.cs</DependentUpon>
+    <EmbeddedResource Include="DocentesCursos.resx">
+      <DependentUpon>DocentesCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
@@ -193,11 +193,11 @@
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DocenteCursoDesktop.resx">
+      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Notas.resx">
-      <DependentUpon>Notas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OlvidasteContrasenia.resx">
       <DependentUpon>OlvidasteContrasenia.cs</DependentUpon>
