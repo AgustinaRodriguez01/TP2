@@ -32,16 +32,16 @@ namespace UI.Desktop
             this.toolStripContainer1 = new System.Windows.Forms.ToolStripContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvInscripciones = new System.Windows.Forms.DataGridView();
+            this.IdInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tsbNuevo = new System.Windows.Forms.ToolStripButton();
             this.tsbEditar = new System.Windows.Forms.ToolStripButton();
             this.tsbEliminar = new System.Windows.Forms.ToolStripButton();
-            this.IdInscripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCurso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Condicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStripContainer1.ContentPanel.SuspendLayout();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
@@ -100,8 +100,37 @@ namespace UI.Desktop
             this.dgvInscripciones.Location = new System.Drawing.Point(3, 3);
             this.dgvInscripciones.Name = "dgvInscripciones";
             this.dgvInscripciones.ReadOnly = true;
+            this.dgvInscripciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInscripciones.Size = new System.Drawing.Size(794, 390);
             this.dgvInscripciones.TabIndex = 0;
+            // 
+            // IdInscripcion
+            // 
+            this.IdInscripcion.DataPropertyName = "ID";
+            this.IdInscripcion.HeaderText = "Nro Inscripción";
+            this.IdInscripcion.Name = "IdInscripcion";
+            this.IdInscripcion.ReadOnly = true;
+            // 
+            // IdCurso
+            // 
+            this.IdCurso.DataPropertyName = "IdCurso";
+            this.IdCurso.HeaderText = "Curso";
+            this.IdCurso.Name = "IdCurso";
+            this.IdCurso.ReadOnly = true;
+            // 
+            // Condicion
+            // 
+            this.Condicion.DataPropertyName = "Condicion";
+            this.Condicion.HeaderText = "Condicion";
+            this.Condicion.Name = "Condicion";
+            this.Condicion.ReadOnly = true;
+            // 
+            // Nota
+            // 
+            this.Nota.DataPropertyName = "Nota";
+            this.Nota.HeaderText = "Nota";
+            this.Nota.Name = "Nota";
+            this.Nota.ReadOnly = true;
             // 
             // btnActualizar
             // 
@@ -165,34 +194,6 @@ namespace UI.Desktop
             this.tsbEliminar.Size = new System.Drawing.Size(23, 22);
             this.tsbEliminar.Text = "Eliminar";
             this.tsbEliminar.Click += new System.EventHandler(this.tsbEliminar_Click);
-            // 
-            // IdInscripcion
-            // 
-            this.IdInscripcion.DataPropertyName = "ID";
-            this.IdInscripcion.HeaderText = "Nro Inscripción";
-            this.IdInscripcion.Name = "IdInscripcion";
-            this.IdInscripcion.ReadOnly = true;
-            // 
-            // IdCurso
-            // 
-            this.IdCurso.DataPropertyName = "IdCurso";
-            this.IdCurso.HeaderText = "Curso";
-            this.IdCurso.Name = "IdCurso";
-            this.IdCurso.ReadOnly = true;
-            // 
-            // Condicion
-            // 
-            this.Condicion.DataPropertyName = "Condicion";
-            this.Condicion.HeaderText = "Condicion";
-            this.Condicion.Name = "Condicion";
-            this.Condicion.ReadOnly = true;
-            // 
-            // Nota
-            // 
-            this.Nota.DataPropertyName = "Nota";
-            this.Nota.HeaderText = "Nota";
-            this.Nota.Name = "Nota";
-            this.Nota.ReadOnly = true;
             // 
             // InscripcionesAlumnos
             // 

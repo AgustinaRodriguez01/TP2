@@ -57,6 +57,11 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtID.ReadOnly = true;
+                txtCupo.ReadOnly = true;
+                txtAnio.ReadOnly = true;
+                cmbComision.Enabled = false;
+                cmbMateria.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar curso";
             }

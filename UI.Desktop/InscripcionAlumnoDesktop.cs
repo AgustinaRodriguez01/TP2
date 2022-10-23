@@ -118,8 +118,11 @@ namespace UI.Desktop
         public override void GuardarCambios()
         {
             MapearADatos();
-            AlumnoInscripcionLogic inscActual = new AlumnoInscripcionLogic();
-            inscActual.Save(InscActual);
+            if(InscActual.IdCurso != 0)
+            {
+                AlumnoInscripcionLogic inscActual = new AlumnoInscripcionLogic();
+                inscActual.Save(InscActual);
+            }
         }
         public override bool Validar()
         {
@@ -137,7 +140,37 @@ namespace UI.Desktop
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            GuardarCambios();
             this.Close();
+        }
+
+        private void InscripcionAlumnoDesktop_Load(object sender, EventArgs e)
+        {
+            AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
+            cmbCurso.DataSource = a.GetCursos(Global.ID);
+            cmbCurso.ValueMember = "id_curso";
+            cmbCurso.DisplayMember = "id_curso";
+
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
+        }
+
+        private void cmbCurso_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
         }
     }
 
