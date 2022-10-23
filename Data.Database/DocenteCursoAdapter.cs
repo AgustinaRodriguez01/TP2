@@ -204,6 +204,7 @@ namespace Data.Database
             finally
             {
                 this.CloseConnection();
+
             }
             return docentes;
         }
