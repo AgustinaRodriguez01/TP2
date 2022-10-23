@@ -98,5 +98,11 @@ namespace UI.Desktop
             DocentesCursos formInsc = new DocentesCursos();
             formInsc.ShowDialog();
         }
+
+        private void inscripcionesDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlumnosInscripciones formInsc = new AlumnosInscripciones();
+            formInsc.ShowDialog();
+        }
     }
 }

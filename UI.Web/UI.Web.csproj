@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnosInscripciones.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
@@ -74,6 +75,13 @@
     <Content Include="OlvidarContraseña.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnosInscripciones.aspx.cs">
+      <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnosInscripciones.aspx.designer.cs">
+      <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
