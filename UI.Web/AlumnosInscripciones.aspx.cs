@@ -93,9 +93,8 @@ namespace UI.Web
         {
             this.Entity = this.Logic.GetOne(id);
             this.ddlCurso.SelectedValue = this.Entity.IdCurso.ToString();
-            this.ddlAlumno.SelectedValue = this.Entity.IdAlumno.ToString();
-            txtCondicion.Text = Entity.Condicion;
-            txtNota.Text = Entity.Nota.ToString();
+            //txtCondicion.Text = Entity.Condicion;
+            //txtNota.Text = Entity.Nota.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -112,9 +111,9 @@ namespace UI.Web
         private void LoadEntity(AlumnoInscripcion alumins)
         {
             alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
-            alumins.IdAlumno = Convert.ToInt32(this.ddlAlumno.SelectedValue);
-            alumins.Condicion = txtCondicion.Text;
-            alumins.Nota = Convert.ToInt32(txtNota.Text);
+            alumins.IdAlumno = Convert.ToInt32(Session["idPersona"]);
+            alumins.Condicion = "Inscripto";
+            alumins.Nota = 0;
         }
 
         private void SaveEntity(AlumnoInscripcion alumins)
@@ -152,22 +151,13 @@ namespace UI.Web
         private void EnableForm(bool enable)
         {
             this.ddlCurso.Enabled = enable;
-            this.ddlAlumno.Enabled = enable;
-            txtCondicion.Enabled = enable;
-            txtNota.Enabled = enable;
 
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
             ddlCurso.SelectedValue = null;
-            ddlCurso.DataSource = dcursos.GetCursos();
+            ddlCurso.DataSource = dcursos.GetCursos(Convert.ToInt32(Session["idPersona"]));
             ddlCurso.DataValueField = "id_curso";
             ddlCurso.DataTextField = "id_curso";
             ddlCurso.DataBind();
-
-            ddlAlumno.SelectedValue = null;
-            this.ddlAlumno.DataSource = dcursos.GetAlumnos();
-            ddlAlumno.DataValueField = "id_persona";
-            ddlAlumno.DataTextField = "apenom";
-            ddlAlumno.DataBind();
 
             ActualizarComboCurso();
         }
@@ -192,14 +182,7 @@ namespace UI.Web
         {
             formPanel.Visible = true;
             FormMode = FormModes.Alta;
-            ClearForm();
             EnableForm(true);
-        }
-
-        private void ClearForm()
-        {
-            txtCondicion.Text = string.Empty;
-            txtNota.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

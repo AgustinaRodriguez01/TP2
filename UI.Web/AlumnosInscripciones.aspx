@@ -26,15 +26,6 @@
            <asp:Label ID="lblAnio" runat="server" Text="Año"></asp:Label>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="lblCupo" runat="server" Text="Cupo"></asp:Label>
-           <br />
-        <asp:Label ID="lblAlumno" runat="server" Text="Alumno"></asp:Label>
-        <asp:DropDownList ID="ddlAlumno" runat="server"></asp:DropDownList>
-        <br />
-        <asp:Label ID="lblCondicion" runat="server" Text="Condicion"></asp:Label>
-           <asp:TextBox ID="txtCondicion" runat="server"></asp:TextBox>
-         <br />
-        <asp:Label ID="lblNota" runat="server" Text="Nota"></asp:Label>
-           <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>

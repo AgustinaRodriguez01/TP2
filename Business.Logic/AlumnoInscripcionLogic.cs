@@ -44,9 +44,9 @@ namespace Business.Logic
             AlumnoInscripcionData.Update(alumins);
         }
 
-        public DataTable GetCursos()
+        public DataTable GetCursos(int id)
         {
-            return AlumnoInscripcionData.GetCursos();
+            return AlumnoInscripcionData.GetCursos(id);
         }
 
         public DataTable GetAlumnos()

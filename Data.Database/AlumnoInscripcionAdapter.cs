@@ -164,13 +164,15 @@ namespace Data.Database
             alumins.State = BusinessEntity.States.Unmodified;
         }
 
-        public DataTable GetCursos()
+        public DataTable GetCursos(int id)
         {
             DataTable cursos = new DataTable();
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select * from cursos", sqlConn);
+                SqlCommand cmd = new SqlCommand("select * from cursos where id_curso not in " +
+                    "(select id_curso from alumnos_inscripciones where id_alumno = @id)", sqlConn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);
             }
