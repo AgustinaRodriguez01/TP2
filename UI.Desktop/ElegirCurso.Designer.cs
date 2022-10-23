@@ -30,6 +30,7 @@ namespace UI.Desktop
         private void InitializeComponent()
         {
             this.cmbCursos = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cmbCursos
@@ -39,21 +40,34 @@ namespace UI.Desktop
             this.cmbCursos.Name = "cmbCursos";
             this.cmbCursos.Size = new System.Drawing.Size(121, 21);
             this.cmbCursos.TabIndex = 0;
+            this.cmbCursos.SelectionChangeCommitted += new System.EventHandler(this.cmbCursos_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Seleccione un curso:";
             // 
             // ElegirCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.ClientSize = new System.Drawing.Size(411, 164);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbCursos);
             this.Name = "ElegirCurso";
             this.Text = "Elegir curso";
             this.Load += new System.EventHandler(this.ElegirCurso_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.ComboBox cmbCursos;
+        private System.Windows.Forms.Label label1;
     }
 }

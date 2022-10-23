@@ -58,5 +58,9 @@ namespace Business.Logic
             return AlumnoInscripcionData.GetAlumnos();
         }
 
+        public List<AlumnoInscripcion> GetAlumnosCurso(int id)
+        {
+            return AlumnoInscripcionData.GetAlumnosCurso(id);
+        }
     }
 }

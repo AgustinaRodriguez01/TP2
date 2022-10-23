@@ -15,6 +15,7 @@ namespace UI.Desktop
         static class Global
         {
             public static int ID;
+            public static int IdCurso;
         }
 
         public ElegirCurso()
@@ -31,6 +32,15 @@ namespace UI.Desktop
         {
             DocenteCursoLogic docCurso = new DocenteCursoLogic();
             cmbCursos.DataSource = docCurso.GetCursosDocente(Global.ID);
+            cmbCursos.ValueMember = "id_curso";
+            cmbCursos.DisplayMember = "id_curso";
+        }
+
+        private void cmbCursos_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Global.IdCurso = Convert.ToInt32(cmbCursos.SelectedValue);
+            CargarNotasAlumnos c = new CargarNotasAlumnos(Global.IdCurso);
+            c.ShowDialog();
         }
     }
 }
