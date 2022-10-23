@@ -60,6 +60,8 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtIDInscripcion.ReadOnly = true;
+                cmbCurso.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar especialidad";
             }

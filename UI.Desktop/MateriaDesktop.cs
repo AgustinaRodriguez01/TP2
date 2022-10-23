@@ -57,6 +57,11 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtID.ReadOnly = true;
+                txtHsTotales.ReadOnly = true;
+                txtHsSemanales.ReadOnly = true;
+                txtDescripcion.ReadOnly = true;
+                cmbPlanes.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar materia";
             }

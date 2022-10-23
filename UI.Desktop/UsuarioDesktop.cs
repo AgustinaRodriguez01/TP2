@@ -60,6 +60,15 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtID.ReadOnly = true;
+                chkHabilitado.Enabled = false;
+                txtNombre.ReadOnly = true;
+                txtApellido.ReadOnly = true;
+                txtEmail.ReadOnly = true;
+                txtUsuario.ReadOnly = true;
+                txtClave.ReadOnly = true;
+                txtConfirmarClave.ReadOnly = true;
+                txtIdPersona.ReadOnly = true;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar usuario";
             }

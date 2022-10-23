@@ -55,6 +55,10 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtAnioEspecialidad.ReadOnly = true;
+                txtDescripcion.ReadOnly = true;
+                txtID.ReadOnly = true;
+                cmbPlanes.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar comision";
             }

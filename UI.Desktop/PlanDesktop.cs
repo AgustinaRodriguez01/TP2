@@ -54,6 +54,9 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtID.ReadOnly = true;
+                txtDescripcion.ReadOnly = true;
+                cmbEspecialidad.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar plan";
             }

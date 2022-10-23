@@ -94,6 +94,16 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Baja)
             {
+                txtID.ReadOnly = true;
+                txtTelefono.ReadOnly = true;
+                txtNombre.ReadOnly = true;
+                dtpFechaNacimiento.Enabled = false;
+                txtApellido.ReadOnly = true;
+                txtLegajo.ReadOnly = true;
+                txtDireccion.ReadOnly = true;
+                cmbTipoPersona.Enabled = false;
+                txtEmail.ReadOnly = true;
+                cmbPlanes.Enabled = false;
                 btnAceptar.Text = "Eliminar";
                 this.Text = "Eliminar persona";
             }
