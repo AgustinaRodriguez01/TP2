@@ -36,7 +36,7 @@ namespace Data.Database
             catch (Exception Ex)
             {
                 Exception ExcepcionManejada = new Exception("Error al recuperar cursos", Ex);
-                //throw ExcepcionManejada;
+                throw ExcepcionManejada;
             }
 
             finally
@@ -168,6 +168,37 @@ namespace Data.Database
             }
 
             catch(Exception Ex)
+            {
+                Exception ExceptionManejada = new Exception("Error al actualizar el curso", Ex);
+                throw ExceptionManejada;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+        }
+
+        public void ActualizarCupo(Curso curso, int cant)
+        {
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdUpdate = new SqlCommand("UPDATE cursos SET id_materia = @idmateria, " +
+                    "id_comision = @idcomision," +
+                    "anio_calendario = @aniocalendario, cupo = @cupo+@cant  where id_curso = @id", sqlConn);
+
+                cmdUpdate.Parameters.Add("@idmateria", SqlDbType.Int).Value = curso.IdMateria;
+                cmdUpdate.Parameters.Add("@idcomision", SqlDbType.Int).Value = curso.IdComision;
+                cmdUpdate.Parameters.Add("@aniocalendario", SqlDbType.Int).Value = curso.AnioCalendario;
+                cmdUpdate.Parameters.Add("@cupo", SqlDbType.Int).Value = curso.Cupo;
+                cmdUpdate.Parameters.Add("@id", SqlDbType.Int).Value = curso.ID;
+                cmdUpdate.Parameters.Add("@cant", SqlDbType.Int).Value = cant;
+
+                cmdUpdate.ExecuteNonQuery();
+            }
+
+            catch (Exception Ex)
             {
                 Exception ExceptionManejada = new Exception("Error al actualizar el curso", Ex);
                 throw ExceptionManejada;

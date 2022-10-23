@@ -41,5 +41,10 @@ namespace Business.Logic
         {
             CursoData.Delete(id);
         }
+
+        public void ActualizarCupo(Curso curso, int cant)
+        {
+            CursoData.ActualizarCupo(curso, cant);
+        }
     }
 }

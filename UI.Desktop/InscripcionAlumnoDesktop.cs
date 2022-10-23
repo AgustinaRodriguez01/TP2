@@ -82,7 +82,7 @@ namespace UI.Desktop
                         this.InscActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
                         this.InscActual.Condicion = "Inscripto";
                         this.InscActual.Nota = 0;
-                        c.ActualizarCupo(curso.ID, -1);
+                        c.ActualizarCupo(curso, -1);
                         this.InscActual.State = BusinessEntity.States.New;
                         break;
                     }
@@ -92,24 +92,24 @@ namespace UI.Desktop
                         break;
                     }
                 case ModoForm.Modificacion:
-                    this.InscActual.ID = int.Parse(this.txtID.Text);
-                    this.AlumnoInscripcionActual.IDAlumno = Global.ID;
-                    this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
-                    this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
-                    this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
-                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Modified;
+                    this.InscActual.ID = Convert.ToInt32(this.txtIDInscripcion.Text);
+                    this.InscActual.IdAlumno = Global.ID;
+                    this.InscActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
+                    this.InscActual.Condicion = "Inscripto";
+                    this.InscActual.Nota = 0;
+                    this.InscActual.State = BusinessEntity.States.Modified;
                     break;
                 case ModoForm.Baja:
-                    this.AlumnoInscripcionActual.ID = int.Parse(this.txtID.Text);
-                    this.AlumnoInscripcionActual.IDAlumno = Global.ID;
-                    this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
-                    this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
-                    this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
-                    int e = 1; ca.CambiaCupo(cur, e);
-                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Deleted;
+                    this.InscActual.ID = Convert.ToInt32(this.txtIDInscripcion.Text);
+                    this.InscActual.IdAlumno = Global.ID;
+                    this.InscActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
+                    this.InscActual.Condicion = "Inscripto";
+                    this.InscActual.Nota = 0;
+                    this.InscActual.State = BusinessEntity.States.Deleted;
+                    c.ActualizarCupo(curso, 1);
                     break;
                 case ModoForm.Consulta:
-                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Unmodified;
+                    this.InscActual.State = BusinessEntity.States.Unmodified;
                     break;
             }
         }
