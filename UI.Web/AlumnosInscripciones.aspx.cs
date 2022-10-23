@@ -155,6 +155,7 @@ namespace UI.Web
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
             ddlCurso.SelectedValue = null;
             ddlCurso.DataSource = dcursos.GetCursos(Convert.ToInt32(Session["idPersona"]));
+            //Con variable de sesion
             ddlCurso.DataValueField = "id_curso";
             ddlCurso.DataTextField = "id_curso";
             ddlCurso.DataBind();
