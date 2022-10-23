@@ -61,9 +61,10 @@ namespace Business.Logic
             return Enum.GetValues(typeof(Personas.TipoPersona));
         }
 
-        public DataTable GetDocentes()
+        public DataTable GetAlumnos()
         {
-            return PersonaData.GetDocentes();
+            return PersonaData.GetAlumnos();
         }
+
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Database;
 using Business.Entities;
+using System.Data;
 
 namespace Business.Logic
 {
@@ -40,6 +41,11 @@ namespace Business.Logic
         public void Delete(int id)
         {
             CursoData.Delete(id);
+        }
+
+        public DataTable GetCursos()
+        {
+            return CursoData.GetCursos();
         }
     }
 }

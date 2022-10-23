@@ -53,13 +53,14 @@ namespace Data.Database
             SqlCommand cmdCurso = new SqlCommand("select * from cursos where id_curso=@id", sqlConn);
             cmdCurso.Parameters.Add("@id", SqlDbType.Int).Value = ID;
             SqlDataReader drCursos = cmdCurso.ExecuteReader();
+
             try
             {
                 if (drCursos.Read())
                 {
                     curso.ID = (int)drCursos["id_curso"];
                     curso.IdMateria = (int)drCursos["id_materia"];
-                    curso.IdComision = (int)drCursos["id_comision"];
+                    curso.IdMateria = (int)drCursos["id_comision"];
                     curso.AnioCalendario = (int)drCursos["anio_calendario"];
                     curso.Cupo = (int)drCursos["cupo"];
                 }
@@ -177,6 +178,30 @@ namespace Data.Database
             {
                 CloseConnection();
             }
+        }
+
+        public DataTable GetCursos()
+        {
+            DataTable cursos = new DataTable();
+            try
+            {
+                OpenConnection();
+                SqlCommand cmdCursos = new SqlCommand("select id_curso, cupo from cursos", sqlConn);
+                SqlDataAdapter daCursos = new SqlDataAdapter(cmdCursos);
+                daCursos.Fill(cursos);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExceptionManejada = new Exception("No se pudo cargar los cursos", Ex);
+                throw ExceptionManejada;
+            }
+
+            finally
+            {
+                CloseConnection();
+            }
+            return cursos;
         }
     }
 }

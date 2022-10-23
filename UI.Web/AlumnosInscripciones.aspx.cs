@@ -9,34 +9,25 @@ using Business.Entities;
 
 namespace UI.Web
 {
-    public partial class Usuarios : System.Web.UI.Page
+    public partial class AlumnosInscripciones : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.LoadGrid();
-            if (Request.QueryString["nombre"] is null)
+            if (!Page.IsPostBack)
             {
-                formPanel.Visible = false;
-            }
-            else
-            {
-                this.nombreTextBox.Text = Request.QueryString["nombre"];
-                this.apellidoTextBox.Text = Request.QueryString["apellido"];
-                this.emailTextBox.Text = Request.QueryString["email"];
-                this.idPersonaTextBox.Text = Request.QueryString["id_per"];
-                formPanel.Visible = true;
-                this.FormMode = FormModes.Alta;
+                LoadGrid();
             }
         }
 
-        UsuarioLogic _logic;
-        private UsuarioLogic Logic
+        AlumnoInscripcionLogic _logic;
+
+        private AlumnoInscripcionLogic Logic
         {
             get
             {
                 if (_logic == null)
                 {
-                    _logic = new UsuarioLogic();
+                    _logic = new AlumnoInscripcionLogic();
                 }
                 return _logic;
             }
@@ -61,7 +52,7 @@ namespace UI.Web
             set { this.ViewState["FormMode"] = value; }
         }
 
-        private Usuario Entity
+        private AlumnoInscripcion Entity
         {
             get;
             set;
@@ -91,6 +82,7 @@ namespace UI.Web
             }
         }
 
+
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.SelectedID = (int)this.gridView.SelectedValue;
@@ -99,40 +91,34 @@ namespace UI.Web
         private void LoadForm(int id)
         {
             this.Entity = this.Logic.GetOne(id);
-            this.nombreTextBox.Text = this.Entity.Nombre;
-            this.apellidoTextBox.Text = this.Entity.Apellido;
-            this.emailTextBox.Text = this.Entity.Email;
-            this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
-            this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
-            this.idPersonaTextBox.Text = this.Entity.IdPersona.ToString();
+            this.ddlAlumno.SelectedValue = this.Entity.IdAlumno.ToString();
+            this.ddlCurso.SelectedValue = this.Entity.IdCurso.ToString();
+            this.txtCondicion.Text = this.Entity.Condicion.ToString();
+            this.txtNota.Text = this.Entity.Nota.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                EnableForm(true);
                 this.formPanel.Visible = true;
                 this.FormMode = FormModes.Modificacion;
                 this.LoadForm(this.SelectedID);
+                EnableForm(true);
             }
-            
         }
 
-        private void LoadEntity(Usuario usuario)
+        private void LoadEntity(AlumnoInscripcion alumins)
         {
-            usuario.Nombre = this.nombreTextBox.Text;
-            usuario.Apellido = this.apellidoTextBox.Text;
-            usuario.Email = this.emailTextBox.Text;
-            usuario.NombreUsuario = this.nombreUsuarioTextBox.Text;
-            usuario.Clave = this.claveTextBox.Text;
-            usuario.Habilitado = this.habilitadoCheckBox.Checked;
-            usuario.IdPersona = Convert.ToInt32(idPersonaTextBox.Text);
+            alumins.IdAlumno = Convert.ToInt32(this.ddlAlumno.SelectedValue);
+            alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
+            alumins.Condicion = this.txtCondicion.Text;
+            alumins.Nota = Convert.ToInt32(this.txtNota.Text);
         }
 
-        private void SaveEntity(Usuario usuario)
+        private void SaveEntity(AlumnoInscripcion alumins)
         {
-            this.Logic.Save(usuario);
+            this.Logic.Save(alumins);
         }
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
@@ -144,7 +130,7 @@ namespace UI.Web
                     LoadGrid();
                     break;
                 case FormModes.Modificacion:
-                    this.Entity = new Usuario();
+                    this.Entity = new AlumnoInscripcion();
                     this.Entity.ID = this.SelectedID;
                     this.Entity.State = BusinessEntity.States.Modified;
                     this.LoadEntity(this.Entity);
@@ -152,10 +138,10 @@ namespace UI.Web
                     this.LoadGrid();
                     break;
                 case FormModes.Alta:
-                    Entity = new Usuario();
-                    LoadEntity(Entity);
-                    SaveEntity(Entity);
-                    LoadGrid();
+                    this.Entity = new AlumnoInscripcion();
+                    this.LoadEntity(this.Entity);
+                    this.SaveEntity(this.Entity);
+                    this.LoadGrid();
                     break;
                 default: break;
             }
@@ -164,22 +150,29 @@ namespace UI.Web
 
         private void EnableForm(bool enable)
         {
-            this.nombreTextBox.Enabled = enable;
-            this.apellidoTextBox.Enabled = enable;
-            this.emailTextBox.Enabled = enable;
-            this.nombreUsuarioTextBox.Enabled = enable;
-            this.claveTextBox.Visible = enable;
-            this.claveLabel.Visible = enable;
-            this.repetirClaveLabel.Visible = enable;
-            this.repetirClaveTextBox.Visible = enable;
-            this.habilitadoCheckBox.Visible = enable;
+            this.txtCondicion.Enabled = enable;
+            this.txtNota.Enabled = enable;
+            this.ddlAlumno.Enabled = enable;
+            this.ddlCurso.Enabled = enable;
+            PersonaLogic alumno = new PersonaLogic();
+            ddlAlumno.SelectedValue = null;
+            this.ddlAlumno.DataSource = alumno.GetAlumnos(); 
+            ddlAlumno.DataValueField = "id_persona";
+            ddlAlumno.DataTextField = "legajo"; 
+            ddlAlumno.DataBind();
+            CursoLogic curso = new CursoLogic();
+            ddlCurso.SelectedValue = null;
+            this.ddlCurso.DataSource = curso.GetCursos();
+            ddlCurso.DataValueField = "id_curso";
+            ddlCurso.DataTextField = "cupo";
+            ddlAlumno.DataBind();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
         {
             if (this.IsEntitySelected)
             {
-                formPanel.Visible = true;
+                this.formPanel.Visible = true;
                 FormMode = FormModes.Baja;
                 EnableForm(false);
                 LoadForm(SelectedID);
@@ -201,26 +194,14 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            nombreTextBox.Text = string.Empty;
-            apellidoTextBox.Text = string.Empty;
-            emailTextBox.Text = string.Empty;
-            habilitadoCheckBox.Checked = false;
-            nombreUsuarioTextBox.Text = string.Empty;
+            txtCondicion.Text = string.Empty;
+            txtNota.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
             LoadGrid();
             formPanel.Visible = false;
-        }
-
-        protected void ValidarLongitudContraseña_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            if (args.Value.Length >= 8)
-            {
-                args.IsValid = true;
-            }
-            else args.IsValid = false;
         }
     }
 }

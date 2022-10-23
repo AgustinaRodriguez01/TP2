@@ -13,7 +13,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UI.Web</RootNamespace>
     <AssemblyName>UI.Web</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort>44366</IISExpressSSLPort>
@@ -64,6 +64,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AlumnosInscripciones.aspx" />
+    <Content Include="CargaDeNotas.aspx" />
     <Content Include="Comisiones.aspx" />
     <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
@@ -73,6 +75,20 @@
     <Content Include="OlvidarContraseña.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnosInscripciones.aspx.cs">
+      <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AlumnosInscripciones.aspx.designer.cs">
+      <DependentUpon>AlumnosInscripciones.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CargaDeNotas.aspx.cs">
+      <DependentUpon>CargaDeNotas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CargaDeNotas.aspx.designer.cs">
+      <DependentUpon>CargaDeNotas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Comisiones.aspx.cs">
       <DependentUpon>Comisiones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

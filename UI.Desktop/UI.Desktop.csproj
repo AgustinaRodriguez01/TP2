@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>UI.Desktop</RootNamespace>
     <AssemblyName>UI.Desktop</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -47,17 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnosInscripcionesDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AlumnosInscripcionesDesktop.Designer.cs">
+      <DependentUpon>AlumnosInscripcionesDesktop.cs</DependentUpon>
+    </Compile>
     <Compile Include="ApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationForm.Designer.cs">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DocentesCursos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DocentesCursos.Designer.cs">
-      <DependentUpon>DocentesCursos.cs</DependentUpon>
     </Compile>
     <Compile Include="Especialidades.cs">
       <SubType>Form</SubType>
@@ -95,11 +95,11 @@
     <Compile Include="CursoDesktop.Designer.cs">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </Compile>
-    <Compile Include="DocenteCursoDesktop.cs">
+    <Compile Include="Notas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DocenteCursoDesktop.Designer.cs">
-      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
+    <Compile Include="Notas.Designer.cs">
+      <DependentUpon>Notas.cs</DependentUpon>
     </Compile>
     <Compile Include="OlvidasteContrasenia.cs">
       <SubType>Form</SubType>
@@ -169,6 +169,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AlumnosInscripcionesDesktop.resx">
+      <DependentUpon>AlumnosInscripcionesDesktop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ApplicationForm.resx">
       <DependentUpon>ApplicationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -181,9 +184,6 @@
     <EmbeddedResource Include="Cursos.resx">
       <DependentUpon>Cursos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocentesCursos.resx">
-      <DependentUpon>DocentesCursos.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EspecialidadDesktop.resx">
       <DependentUpon>EspecialidadDesktop.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,11 +193,11 @@
     <EmbeddedResource Include="CursoDesktop.resx">
       <DependentUpon>CursoDesktop.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DocenteCursoDesktop.resx">
-      <DependentUpon>DocenteCursoDesktop.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Notas.resx">
+      <DependentUpon>Notas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OlvidasteContrasenia.resx">
       <DependentUpon>OlvidasteContrasenia.cs</DependentUpon>

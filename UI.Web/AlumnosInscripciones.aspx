@@ -1,0 +1,41 @@
+﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AlumnosInscripciones.aspx.cs" Inherits="UI.Web.AlumnosInscripciones" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
+    <asp:Panel ID="gridPanel" runat="server">
+        <asp:GridView ID="gridView" runat="server" AutoGenerateColumns="false"
+            SelectedRowStyle-BackColor="Black"
+            SelectedRowStyle-ForeColor="White"
+            DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
+            <Columns>
+                <asp:BoundField HeaderText="Alumno" DataField="IdAlumno" HeaderStyle-CssClass="tablaColumna" />
+                <asp:BoundField HeaderText="Curso" DataField="IdCurso" HeaderStyle-CssClass="tablaColumna" />
+                <asp:BoundField HeaderText="Condición" DataField="Condicion" HeaderStyle-CssClass="tablaColumna" />
+                <asp:BoundField HeaderText="Nota" DataField="Nota" HeaderStyle-CssClass="tablaColumna" />
+                <asp:CommandField SelectText="Seleccionar" ShowSelectButton="true" HeaderStyle-CssClass="tablaColumna" />
+            </Columns>
+        </asp:GridView>
+    </asp:Panel>
+    <asp:Panel ID="formPanel" Visible="false" runat="server">
+        <asp:Label ID="lblAlumno" runat="server" Text="Alumno:"></asp:Label>
+        <asp:DropDownList ID="ddlAlumno" runat="server"></asp:DropDownList>
+        <br />
+        <asp:Label ID="lblCurso" runat="server" Text="Curso"></asp:Label>
+        <asp:DropDownList ID="ddlCurso" runat="server"></asp:DropDownList>
+        <br />
+        <asp:Label ID="lblCondicion" runat="server" Text="Condición:"></asp:Label>
+        <asp:TextBox ID="txtCondicion" runat="server"></asp:TextBox>
+        <br />
+        <asp:Label ID="lblNota" runat="server" Text="Nota:"></asp:Label>
+        <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
+    </asp:Panel>
+    <asp:Panel ID="gridActionsPanel" runat="server">
+        <asp:LinkButton ID="editarLinkButton" runat="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
+        <asp:LinkButton ID="eliminarLinkButton" runat="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
+        <asp:LinkButton ID="nuevoLinkButton" runat="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
+    </asp:Panel>
+    <asp:Panel ID="formActionsPanel" runat="server">
+    <asp:LinkButton ID="aceptarLinkButton" runat="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>
+    <asp:LinkButton ID="cancelarLinkButton" runat="server" OnClick="cancelarLinkButton_Click" CausesValidation="False">Cancelar</asp:LinkButton>
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />
+    </asp:Panel>
+</asp:Content>
