@@ -141,19 +141,23 @@ namespace UI.Web
             this.ddlCargo.Enabled = enable;
             this.ddlCurso.Enabled = enable;
             this.ddlDocente.Enabled = enable;
-            
-            MateriaLogic materias = new MateriaLogic();
-            ddlMateria.SelectedValue = null;
-            this.ddlMateria.DataSource = materias.GetMaterias();
-            ddlMateria.DataValueField = "id_materia";
-            ddlMateria.DataTextField = "desc_materia";
-            ddlMateria.DataBind();
-            ComisionLogic comision = new ComisionLogic();
-            ddlComision.SelectedValue = null;
-            this.ddlComision.DataSource = comision.GetComisiones();
-            ddlComision.DataValueField = "id_comision";
-            ddlComision.DataTextField = "desc_comision";
-            ddlComision.DataBind();
+
+            DocenteCursoLogic dcursos = new DocenteCursoLogic();
+            ddlCurso.SelectedValue = null;
+            ddlCurso.DataSource = dcursos.GetCursos();
+            ddlCurso.DataValueField = "id_curso";
+            ddlCurso.DataTextField = "id_curso";
+            ddlCurso.DataBind();
+
+            ddlDocente.SelectedValue = null;
+            this.ddlDocente.DataSource = dcursos.GetDocentes();
+            ddlDocente.DataValueField = "id_persona";
+            ddlDocente.DataTextField = "apenom";
+            ddlDocente.DataBind();
+
+            ddlCargo.SelectedValue = null;
+            this.ddlCargo.DataSource = Enum.GetNames(typeof(DocenteCurso.TipoCargo));
+            ddlCargo.DataBind();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -182,8 +186,7 @@ namespace UI.Web
 
         private void ClearForm()
         {
-            txtAnio.Text = string.Empty;
-            txtCupo.Text = string.Empty;
+
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
