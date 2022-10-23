@@ -44,6 +44,40 @@ namespace Data.Database
             return alumnosInscripciones;
         }
 
+        public List<AlumnoInscripcion> GetInscAlumno(int ID)
+        {
+            List<AlumnoInscripcion> alumnosInscripciones = new List<AlumnoInscripcion>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_alumno = @id", this.sqlConn);
+                SqlDataReader dr = cmd.ExecuteReader();
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                while (dr.Read())
+                {
+                    AlumnoInscripcion alumins = new AlumnoInscripcion();
+                    alumins.ID = (int)dr["id_inscripcion"];
+                    alumins.IdCurso = (int)dr["id_curso"];
+                    alumins.IdAlumno = (int)dr["id_alumno"];
+                    alumins.Condicion = (string)dr["condicion"];
+                    alumins.Nota = (int)dr["nota"];
+                    alumnosInscripciones.Add(alumins);
+                }
+                dr.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al recuperar lista de inscripciones de alumnos", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return alumnosInscripciones;
+        }
+
         public AlumnoInscripcion GetOne(int ID)
         {
             AlumnoInscripcion alumins = new AlumnoInscripcion();

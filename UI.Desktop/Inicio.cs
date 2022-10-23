@@ -107,7 +107,7 @@ namespace UI.Desktop
 
         private void inscripcionesDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InscripcionAlumnoDesktop formAlumnoCurso = new InscripcionAlumnoDesktop(Global.ID);
+            InscripcionesAlumnos formAlumnoCurso = new InscripcionesAlumnos(Global.ID);
             formAlumnoCurso.ShowDialog();
         }
     }
