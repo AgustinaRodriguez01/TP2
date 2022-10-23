@@ -228,7 +228,7 @@ namespace UI.Web
             emailTextBox.Text = string.Empty;
             telefonoTextBox.Text = string.Empty;
             legajoTextBox.Text = string.Empty;
-        }
+        }//
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
         {
