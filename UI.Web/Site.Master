@@ -55,10 +55,6 @@
                     <tr>
                         <td><asp:HyperLink ID="cursosLink" runat="server" NavigateUrl="~/Cursos.aspx">Cursos</asp:HyperLink></td>
                     </tr>
-                     <tr>
-                        <td><asp:HyperLink ID="CargaDeNotasLink" runat="server" NavigateUrl="~/AlumnosInscripciones.aspx">Carga de notas</asp:HyperLink></td>
-                    </tr>
-
                 </table> 
             </td> 
              

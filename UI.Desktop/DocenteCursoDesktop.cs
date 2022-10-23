@@ -15,23 +15,12 @@ namespace UI.Desktop
         public DocenteCursoDesktop()
         {
             InitializeComponent();
-            dgvCursos.AutoGenerateColumns = false;
         }
 
-        private void InscripcionDocenteCurso_Load(object sender, EventArgs e)
-        {
-            Listar();
-        }
-
-        public void Listar()
-        {
-            CursoLogic cur = new CursoLogic();
-            dgvCursos.DataSource = cur.GetAll();
-            PersonaLogic per = new PersonaLogic();
-            cmbDocentes.DataSource = per.GetDocentes();
-            cmbDocentes.DisplayMember = "apenom";
-            cmbDocentes.ValueMember = "id_persona";
-
+        private DocenteCurso _DocenteCursoActual;
+        public DocenteCurso DocenteCursoActual {
+            get { return _DocenteCursoActual; }
+            set { _DocenteCursoActual = value; }
         }
 
         public DocenteCursoDesktop(ModoForm modo) : this()
@@ -41,37 +30,56 @@ namespace UI.Desktop
 
         public DocenteCursoDesktop(int ID, ModoForm modo) : this()
         {
-            DocenteCurso dc = new DocenteCurso();
-            DocenteCursoActual = dc.GetOne(ID);
-            Modo = modo;
-            MapearDeDatos();
+            this.Modo = modo;
+            DocenteCursoLogic dcl = new DocenteCursoLogic();
+            this.DocenteCursoActual = dcl.GetOne(ID);
+            this.MapearDeDatos();
         }
 
-        protected Especialidad especialidadActual;
-        public Especialidad EspecialidadActual {
-            get { return especialidadActual; }
-            set { especialidadActual = value; }
+        public void Listar()
+        {
+            DocenteCursoLogic dc = new DocenteCursoLogic();
+            cmbCurso.DataSource = dc.GetCursos();
+            cmbCurso.ValueMember = "id_curso";
+            cmbCurso.DisplayMember = "id_curso";
+            cmbDocentes.DataSource = dc.GetDocentes();
+            cmbDocentes.DisplayMember = "apenom";
+            cmbDocentes.ValueMember = "id_persona";
+            cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TipoCargo));
+
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
+            lblAnioCalendario.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
+
         }
 
         public override void MapearDeDatos()
         {
-            this.txtID.Text = this.EspecialidadActual.ID.ToString();
-            this.txtDescripcion.Text = this.EspecialidadActual.Descripcion;
-
-
+            this.txtIdDictado.Text = this.DocenteCursoActual.ID.ToString();
+            this.cmbDocentes.SelectedValue = this.DocenteCursoActual.IdDocente;
+            this.cmbCurso.SelectedValue = this.DocenteCursoActual.IdCurso;
+            this.cmbCargo.SelectedValue = this.DocenteCursoActual.Cargo;
+            
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 btnAceptar.Text = "Guardar";
                 if (Modo == ModoForm.Modificacion)
                 {
-                    this.Text = "Modificar especialidad";
+                    this.Text = "Modificar curso";
                 }
             }
 
             if (Modo == ModoForm.Baja)
             {
                 btnAceptar.Text = "Eliminar";
-                this.Text = "Eliminar especialidad";
+                this.Text = "Eliminar curso";
             }
 
             if (Modo == ModoForm.Consulta)
@@ -79,62 +87,71 @@ namespace UI.Desktop
                 btnAceptar.Text = "Aceptar";
             }
         }
+
         public override void MapearADatos()
         {
             if (Modo == ModoForm.Alta)
             {
-                Especialidad especialidadActual = new Especialidad();
-                EspecialidadActual = especialidadActual;
-                EspecialidadActual.State = BusinessEntity.States.New;
+                DocenteCurso dc = new DocenteCurso();
+                DocenteCursoActual = dc;
+                DocenteCursoActual.State = BusinessEntity.States.New;
             }
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
-                EspecialidadActual.Descripcion = txtDescripcion.Text;
+                
+                this.DocenteCursoActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
+                this.DocenteCursoActual.IdDocente = Convert.ToInt32(this.cmbDocentes.SelectedValue);
+                this.DocenteCursoActual.Cargo = (DocenteCurso.TipoCargo)(this.cmbCargo.SelectedValue);
 
                 if (Modo == ModoForm.Modificacion)
                 {
-                    EspecialidadActual.State = BusinessEntity.States.Modified;
+                    DocenteCursoActual.State = BusinessEntity.States.Modified;
                 }
             }
 
             if (Modo == ModoForm.Baja)
             {
-                EspecialidadActual.State = BusinessEntity.States.Deleted;
+                DocenteCursoActual.State = BusinessEntity.States.Deleted;
             }
         }
 
         public override void GuardarCambios()
         {
             MapearADatos();
-            EspecialidadLogic espActual = new EspecialidadLogic();
-            espActual.Save(EspecialidadActual);
-        }
-        public override bool Validar()
-        {
-            if (txtDescripcion.Text == "")
-            {
-                this.Notificar("La especialidad debe tener una descripcion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            else return true;
+            DocenteCursoLogic dcActual = new DocenteCursoLogic();
+            dcActual.Save(DocenteCursoActual);
         }
 
-        public new void Notificar(string titulo, string mensaje, MessageBoxButtons
-        botones, MessageBoxIcon icono)
+        private void DocenteCursoDesktop_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(mensaje, titulo, botones, icono);
-
-        }
-        public new void Notificar(string mensaje, MessageBoxButtons botones,
-        MessageBoxIcon icono)
-        {
-            this.Notificar(this.Text, mensaje, botones, icono);
+            Listar();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnAceptar_Click(object sender, EventArgs e)
         {
+            GuardarCambios();
+            this.Close();
+        }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void cmbCurso_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
+            lblAnioCalendario.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
         }
     }
 }
+

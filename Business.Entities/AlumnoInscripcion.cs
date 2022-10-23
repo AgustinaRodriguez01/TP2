@@ -7,17 +7,11 @@ namespace Business.Entities
 {
     public class AlumnoInscripcion : BusinessEntity
     {
-        private int idInscripcion;
         private string condicion;
         private int idAlumno;
         private int idCurso;
         private int nota;
 
-        public int IdInscripcion
-        {
-            get { return idInscripcion; }
-            set { idInscripcion = value; }
-        }
         public string Condicion
         {
             get

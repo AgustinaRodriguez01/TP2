@@ -99,7 +99,7 @@ namespace Data.Database
                 cmdDeleteUsuario.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 cmdDeleteUsuario.ExecuteNonQuery();
                 cmdDeletePersona.ExecuteNonQuery();
-                
+
             }
             catch
             {
@@ -129,7 +129,7 @@ namespace Data.Database
                 cmdInsert.Parameters.Add("@direccion", SqlDbType.VarChar, 50).Value = persona.Direccion;
                 cmdInsert.Parameters.Add("@fechaNac", SqlDbType.DateTime).Value = persona.FechaNacimiento;
                 cmdInsert.Parameters.Add("@idPlan", SqlDbType.Int).Value = persona.IdPlan;
-                cmdInsert.Parameters.Add("@tipoPersona", SqlDbType.Int).Value = Convert.ToInt32(persona.TPersona);
+                cmdInsert.Parameters.Add("@tipoPersona", SqlDbType.Int).Value = persona.TPersona;
                 persona.ID = Decimal.ToInt32((decimal)cmdInsert.ExecuteScalar());
 
             }
@@ -234,29 +234,32 @@ namespace Data.Database
             return persona;
         }
 
-        public DataTable GetAlumnos()
+        public DataTable GetDocentes()
         {
-            DataTable alumnos = new DataTable();
+            DataTable docenteCurso = new DataTable();
             try
             {
                 OpenConnection();
-                SqlCommand cmdAlumnos = new SqlCommand("select id_persona, legajo from personas", sqlConn);
-                SqlDataAdapter daAlumnos = new SqlDataAdapter(cmdAlumnos);
-                daAlumnos.Fill(alumnos);
+                SqlCommand cmdDocC = new SqlCommand("select id_persona,concat(nombre,' ',apellido) apenom from personas where tipo_persona = 1", sqlConn);
+                SqlDataAdapter daDocC = new SqlDataAdapter(cmdDocC);
+                daDocC.Fill(docenteCurso);
             }
 
             catch (Exception Ex)
             {
-                Exception ExceptionManejada = new Exception("No se pudo cargar los alumnos", Ex);
-                throw ExceptionManejada;
+                Exception ExcepcionManejada = new Exception("Error al recuperar", Ex);
+                throw ExcepcionManejada;
             }
 
             finally
             {
                 CloseConnection();
             }
-            return alumnos;
-        }
 
+            return docenteCurso;
+        }
     }
+
 }
+
+
