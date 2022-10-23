@@ -13,9 +13,15 @@ namespace UI.Desktop
 {
     public partial class Inicio : Form
     {
-        public Inicio(Business.Entities.Personas.TipoPersona tipo)
+        static class Global
+        {
+            public static int ID;
+        }
+
+        public Inicio(Business.Entities.Personas.TipoPersona tipo, int id)
         {
             InitializeComponent();
+            Global.ID = id;
             switch(tipo)
             {
                 case Business.Entities.Personas.TipoPersona.Alumno:
@@ -101,8 +107,8 @@ namespace UI.Desktop
 
         private void inscripcionesDeAlumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlumnosInscripciones formInsc = new AlumnosInscripciones();
-            formInsc.ShowDialog();
+            InscripcionAlumnoDesktop formAlumnoCurso = new InscripcionAlumnoDesktop(Global.ID);
+            formAlumnoCurso.ShowDialog();
         }
     }
 }

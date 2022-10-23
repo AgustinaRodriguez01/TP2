@@ -31,7 +31,7 @@ namespace UI.Desktop
             {
                 PersonaLogic per = new PersonaLogic();
                 Business.Entities.Personas persona = per.GetOne(usuario.IdPersona);
-                Inicio ini = new Inicio(persona.TPersona);
+                Inicio ini = new Inicio(persona.TPersona, persona.ID);
                 ini.ShowDialog();
             }
         }
