@@ -16,8 +16,16 @@
     </asp:Panel>
        <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="lblCurso" runat="server" Text="Curso"></asp:Label>
-        <asp:DropDownList ID="ddlCurso" runat="server"></asp:DropDownList>
-        <br />
+        <asp:DropDownList ID="ddlCurso" runat="server" OnSelectedIndexChanged="ddlCurso_SelectedIndexChanged"></asp:DropDownList>
+           &nbsp;&nbsp;&nbsp;
+           <asp:Label ID="lblMateria" runat="server" Text="Materia"></asp:Label>
+           &nbsp;&nbsp;&nbsp;
+           <asp:Label ID="lblComision" runat="server" Text="Comision"></asp:Label>
+           &nbsp;&nbsp;&nbsp;
+           <asp:Label ID="lblAnio" runat="server" Text="Año"></asp:Label>
+           &nbsp;&nbsp;&nbsp;
+           <asp:Label ID="lblCupo" runat="server" Text="Cupo"></asp:Label>
+           <br />
         <asp:Label ID="lblDocente" runat="server" Text="Docente"></asp:Label>
         <asp:DropDownList ID="ddlDocente" runat="server"></asp:DropDownList>
         <br />

@@ -158,6 +158,8 @@ namespace UI.Web
             ddlCargo.SelectedValue = null;
             this.ddlCargo.DataSource = Enum.GetNames(typeof(DocenteCurso.TipoCargo));
             ddlCargo.DataBind();
+
+            ActualizarComboCurso();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -195,5 +197,39 @@ namespace UI.Web
             formPanel.Visible = false;
         }
 
+        public void ActualizarComboCurso()
+        {
+            CursoLogic cl = new CursoLogic();
+            Curso cur = cl.GetOne(Convert.ToInt32(this.ddlCurso.SelectedValue));
+            MateriaLogic ml = new MateriaLogic();
+            Materia mat = ml.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic col = new ComisionLogic();
+            Comision com = col.GetOne(cur.IdComision);
+            lblComision.Text = com.Descripcion;
+            lblAnio.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
+            lblComision.DataBind();
+            lblMateria.DataBind();
+            lblCupo.DataBind();
+            lblAnio.DataBind();
+        }
+        protected void ddlCurso_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CursoLogic cl = new CursoLogic();
+            Curso cur = cl.GetOne(Convert.ToInt32(this.ddlCurso.SelectedValue));
+            MateriaLogic ml = new MateriaLogic();
+            Materia mat = ml.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic col = new ComisionLogic();
+            Comision com = col.GetOne(cur.IdComision);
+            lblComision.Text = com.Descripcion;
+            lblComision.DataBind();
+            lblMateria.DataBind();
+            lblAnio.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
+            lblCupo.DataBind();
+            lblAnio.DataBind();
+        }
     }
 }
