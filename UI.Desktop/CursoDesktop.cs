@@ -81,7 +81,7 @@ namespace UI.Desktop
                 CursoActual.State = BusinessEntity.States.New;
             }
 
-            if(Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
+            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
                 CursoActual.AnioCalendario = Convert.ToInt32(txtAnio.Text);
                 CursoActual.Cupo = Convert.ToInt32(txtCupo.Text);
