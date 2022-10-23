@@ -35,6 +35,7 @@ namespace UI.Desktop
                         tsmiPersonas.Visible = false;
                         tsmiCursos.Visible = false;
                         tsmiInscripcionDocentes.Visible = false;
+                        tsmiCargaNotas.Visible = false;
                         break;
                     }
                 case Business.Entities.Personas.TipoPersona.Docente:
@@ -48,6 +49,7 @@ namespace UI.Desktop
                         tsmiPersonas.Visible = false;
                         tsmiCursos.Visible = false;
                         tsmiInscripcionDocentes.Visible = false;
+                        inscripcionesDeAlumnosToolStripMenuItem.Visible = false;
                         break;
                     }
                 default:
@@ -109,6 +111,12 @@ namespace UI.Desktop
         {
             InscripcionesAlumnos formAlumnoCurso = new InscripcionesAlumnos(Global.ID);
             formAlumnoCurso.ShowDialog();
+        }
+
+        private void tsmiCargaNotas_Click(object sender, EventArgs e)
+        {
+            ElegirCursoDocente notas = new ElegirCursoDocente(Global.ID);
+            notas.ShowDialog();
         }
     }
 }

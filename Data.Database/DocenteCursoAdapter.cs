@@ -184,6 +184,31 @@ namespace Data.Database
             return cursos;
         }
 
+        public DataTable GetCursosDocente(int id)
+        {
+            DataTable cursos = new DataTable();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select * from docentes_cursos where id_docente = @id", sqlConn);
+                cmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(cursos);
+            }
+
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                new Exception("Error al recuperar lista de cursos", Ex);
+                throw Ex;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return cursos;
+        }
+
         public DataTable GetDocentes()
         {
             DataTable docentes = new DataTable();
