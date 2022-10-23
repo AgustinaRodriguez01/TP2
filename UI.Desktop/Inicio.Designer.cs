@@ -42,7 +42,7 @@ namespace UI.Desktop
             this.tsmiCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiInscripcionDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionesDeAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCargaNotas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCargarNotas = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -53,11 +53,11 @@ namespace UI.Desktop
             // 
             // toolStripContainer1.ContentPanel
             // 
-            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainer1.ContentPanel.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainer1.ContentPanel.Size = new System.Drawing.Size(494, 372);
             this.toolStripContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.toolStripContainer1.Location = new System.Drawing.Point(0, 0);
-            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.toolStripContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.toolStripContainer1.Name = "toolStripContainer1";
             this.toolStripContainer1.Size = new System.Drawing.Size(494, 396);
             this.toolStripContainer1.TabIndex = 0;
@@ -99,7 +99,7 @@ namespace UI.Desktop
             this.tsmiCursos,
             this.tsmiInscripcionDocentes,
             this.inscripcionesDeAlumnosToolStripMenuItem,
-            this.tsmiCargaNotas});
+            this.tsmiCargarNotas});
             this.ArchivoTsmi.Name = "ArchivoTsmi";
             this.ArchivoTsmi.Size = new System.Drawing.Size(180, 22);
             this.ArchivoTsmi.Text = "Ver";
@@ -167,12 +167,12 @@ namespace UI.Desktop
             this.inscripcionesDeAlumnosToolStripMenuItem.Text = "Inscripciones de alumnos";
             this.inscripcionesDeAlumnosToolStripMenuItem.Click += new System.EventHandler(this.inscripcionesDeAlumnosToolStripMenuItem_Click);
             // 
-            // tsmiCargaNotas
+            // tsmiCargarNotas
             // 
-            this.tsmiCargaNotas.Name = "tsmiCargaNotas";
-            this.tsmiCargaNotas.Size = new System.Drawing.Size(245, 22);
-            this.tsmiCargaNotas.Text = "Carga de Notas";
-            this.tsmiCargaNotas.Click += new System.EventHandler(this.tsmiCargaNotas_Click);
+            this.tsmiCargarNotas.Name = "tsmiCargarNotas";
+            this.tsmiCargarNotas.Size = new System.Drawing.Size(245, 22);
+            this.tsmiCargarNotas.Text = "Cargar notas";
+            this.tsmiCargarNotas.Click += new System.EventHandler(this.tsmiCargarNotas_Click);
             // 
             // Inicio
             // 
@@ -208,6 +208,6 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem tsmiCursos;
         private System.Windows.Forms.ToolStripMenuItem tsmiInscripcionDocentes;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesDeAlumnosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCargaNotas;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCargarNotas;
     }
 }
