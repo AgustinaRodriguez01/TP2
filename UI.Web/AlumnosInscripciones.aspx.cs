@@ -36,7 +36,7 @@ namespace UI.Web
 
         private void LoadGrid()
         {
-            this.gridView.DataSource = this.Logic.GetAll();
+            this.gridView.DataSource = this.Logic.GetInscAlumno(Convert.ToInt32(Session["idPersona"]));
             this.gridView.DataBind();
         }
 
@@ -91,10 +91,6 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            this.Entity = this.Logic.GetOne(id);
-            this.ddlCurso.SelectedValue = this.Entity.IdCurso.ToString();
-            //txtCondicion.Text = Entity.Condicion;
-            //txtNota.Text = Entity.Nota.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -110,6 +106,7 @@ namespace UI.Web
 
         private void LoadEntity(AlumnoInscripcion alumins)
         {
+
             alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
             alumins.IdAlumno = Convert.ToInt32(Session["idPersona"]);
             alumins.Condicion = "Inscripto";
@@ -123,10 +120,13 @@ namespace UI.Web
 
         protected void aceptarLinkButton_Click(object sender, EventArgs e)
         {
+            CursoLogic c = new CursoLogic();
+            Curso curso = c.GetOne(Convert.ToInt32(ddlCurso.SelectedValue));
             switch (FormMode)
             {
                 case FormModes.Baja:
                     DeleteEntity(SelectedID);
+                    c.ActualizarCupo(curso, 1);
                     LoadGrid();
                     break;
                 case FormModes.Modificacion:
@@ -139,9 +139,14 @@ namespace UI.Web
                     break;
                 case FormModes.Alta:
                     this.Entity = new AlumnoInscripcion();
-                    this.LoadEntity(this.Entity);
-                    this.SaveEntity(this.Entity);
-                    this.LoadGrid();
+                    if (curso.Cupo != 0)
+                    {
+                        this.LoadEntity(this.Entity);
+                        this.SaveEntity(this.Entity);
+                        c.ActualizarCupo(curso, -1);
+                        this.LoadGrid();
+                    }
+                    else Response.Write("No hay cupo en este curso.");
                     break;
                 default: break;
             }
@@ -155,7 +160,6 @@ namespace UI.Web
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
             ddlCurso.SelectedValue = null;
             ddlCurso.DataSource = dcursos.GetCursos(Convert.ToInt32(Session["idPersona"]));
-            //Con variable de sesion
             ddlCurso.DataValueField = "id_curso";
             ddlCurso.DataTextField = "id_curso";
             ddlCurso.DataBind();
