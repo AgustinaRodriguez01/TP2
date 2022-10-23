@@ -65,6 +65,6 @@ namespace UI.Desktop
         private void InscripcionesAlumnos_Load(object sender, EventArgs e)
         {
             Listar();
-        }//
+        }
     }
 }

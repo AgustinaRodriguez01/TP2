@@ -70,26 +70,47 @@ namespace UI.Desktop
         }
         public override void MapearADatos()
         {
-            if (Modo == ModoForm.Alta)
+            this.InscActual = new AlumnoInscripcion();
+            CursoLogic c = new CursoLogic();
+            Curso curso = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            switch (Modo)
             {
-                AlumnoInscripcion inscActual = new AlumnoInscripcion();
-                InscActual = inscActual;
-                InscActual.State = BusinessEntity.States.New;
-            }
-
-            if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
-            {
-                InscActual.IdCurso = Convert.ToInt32(cmbCurso.SelectedValue);
-
-                if (Modo == ModoForm.Modificacion)
-                {
-                    InscActual.State = BusinessEntity.States.Modified;
-                }
-            }
-
-            if (Modo == ModoForm.Baja)
-            {
-                InscActual.State = BusinessEntity.States.Deleted;
+                case ModoForm.Alta:
+                    if (curso.Cupo != 0)
+                    {
+                        this.InscActual.IdAlumno = Global.ID;
+                        this.InscActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
+                        this.InscActual.Condicion = "Inscripto";
+                        this.InscActual.Nota = 0;
+                        c.ActualizarCupo(curso.ID, -1);
+                        this.InscActual.State = BusinessEntity.States.New;
+                        break;
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay cupo en este curso.");
+                        break;
+                    }
+                case ModoForm.Modificacion:
+                    this.InscActual.ID = int.Parse(this.txtID.Text);
+                    this.AlumnoInscripcionActual.IDAlumno = Global.ID;
+                    this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
+                    this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
+                    this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
+                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Modified;
+                    break;
+                case ModoForm.Baja:
+                    this.AlumnoInscripcionActual.ID = int.Parse(this.txtID.Text);
+                    this.AlumnoInscripcionActual.IDAlumno = Global.ID;
+                    this.AlumnoInscripcionActual.IDCurso = Convert.ToInt32(this.cbIDCurso.SelectedValue);
+                    this.AlumnoInscripcionActual.Condicion = this.cbCondicion.SelectedItem.ToString();
+                    this.AlumnoInscripcionActual.Nota = Convert.ToInt32(this.nNota.Value);
+                    int e = 1; ca.CambiaCupo(cur, e);
+                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Deleted;
+                    break;
+                case ModoForm.Consulta:
+                    this.AlumnoInscripcionActual.State = BusinessEntity.States.Unmodified;
+                    break;
             }
         }
 

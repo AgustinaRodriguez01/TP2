@@ -57,5 +57,7 @@ namespace Business.Logic
         {
             return AlumnoInscripcionData.GetAlumnos();
         }
+
+
     }
 }
