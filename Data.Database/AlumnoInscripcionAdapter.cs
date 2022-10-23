@@ -51,8 +51,8 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_alumno = @id", this.sqlConn);
-                SqlDataReader dr = cmd.ExecuteReader();
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                SqlDataReader dr = cmd.ExecuteReader();
                 while (dr.Read())
                 {
                     AlumnoInscripcion alumins = new AlumnoInscripcion();
@@ -67,8 +67,7 @@ namespace Data.Database
             }
             catch (Exception Ex)
             {
-                Exception ExcepcionManejada =
-                    new Exception("Error al recuperar lista de inscripciones de alumnos", Ex);
+                Exception ExcepcionManejada = new Exception("Error al recuperar lista de inscripciones de alumnos", Ex);
                 throw ExcepcionManejada;
             }
             finally

@@ -46,6 +46,7 @@ namespace UI.Desktop
 
         public override void MapearDeDatos()
         {
+            txtIDInscripcion.Text = InscActual.ID.ToString();
             cmbCurso.SelectedValue = InscActual.IdCurso.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)

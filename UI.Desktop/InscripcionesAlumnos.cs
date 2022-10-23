@@ -14,9 +14,9 @@ namespace UI.Desktop
     {
         public InscripcionesAlumnos(int id)
         {
+            Global.ID = id;
             InitializeComponent();
             dgvInscripciones.AutoGenerateColumns = false;
-            Global.ID = id;
         }
         static class Global
         {
@@ -58,8 +58,8 @@ namespace UI.Desktop
 
         public void Listar()
         {
-            AlumnoInscripcionLogic Ml = new AlumnoInscripcionLogic();
-            this.dgvInscripciones.DataSource = Ml.GetInscAlumno(Global.ID);
+            AlumnoInscripcionLogic alumno = new AlumnoInscripcionLogic();
+            this.dgvInscripciones.DataSource = alumno.GetInscAlumno(Global.ID);
         }
 
         private void InscripcionesAlumnos_Load(object sender, EventArgs e)
