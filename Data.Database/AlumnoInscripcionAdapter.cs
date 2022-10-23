@@ -101,7 +101,7 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmd = new SqlCommand(
-                    "UPDATE alumnos_inscripciones SET id_inscripcion = @id, id_alumno= @id_alumno, id_curso = @id_cursos, condicion=@condicion, nota=@nota " +
+                    "UPDATE alumnos_inscripciones SET id_alumno= @id_alumno, id_curso = @id_curso, condicion=@condicion, nota=@nota " +
                     "WHERE id_inscripcion = @id", this.sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = alumins.ID;
                 cmd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumins.IdAlumno;

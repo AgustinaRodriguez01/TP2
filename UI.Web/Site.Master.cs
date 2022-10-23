@@ -23,6 +23,7 @@ namespace UI.Web
                     PlanesVisible = false;
                     EspecialidadesVisible = false;
                     DocentesVisible = false;
+                    AlumnosInscVisible = false;
                     break;
                 case Business.Entities.Personas.TipoPersona.Docente:
                     PersonasVisible = false;
@@ -33,6 +34,7 @@ namespace UI.Web
                     PlanesVisible = false;
                     EspecialidadesVisible = false;
                     DocentesVisible = false;
+                    AlumnosInscVisible = false;
                     break;
                 default: break;
             }
@@ -76,6 +78,10 @@ namespace UI.Web
         public bool DocentesVisible {
             get { return docentesCursosLink.Visible; }
             set { docentesCursosLink.Visible = value; }
+        }
+
+        public bool AlumnosInscVisible {
+            get;set;
         }
     }
 }

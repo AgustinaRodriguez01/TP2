@@ -94,6 +94,8 @@ namespace UI.Web
             this.Entity = this.Logic.GetOne(id);
             this.ddlCurso.SelectedValue = this.Entity.IdCurso.ToString();
             this.ddlAlumno.SelectedValue = this.Entity.IdAlumno.ToString();
+            txtCondicion.Text = Entity.Condicion;
+            txtNota.Text = Entity.Nota.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -111,6 +113,8 @@ namespace UI.Web
         {
             alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
             alumins.IdAlumno = Convert.ToInt32(this.ddlAlumno.SelectedValue);
+            alumins.Condicion = txtCondicion.Text;
+            alumins.Nota = Convert.ToInt32(txtNota.Text);
         }
 
         private void SaveEntity(AlumnoInscripcion alumins)
@@ -149,6 +153,8 @@ namespace UI.Web
         {
             this.ddlCurso.Enabled = enable;
             this.ddlAlumno.Enabled = enable;
+            txtCondicion.Enabled = enable;
+            txtNota.Enabled = enable;
 
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
             ddlCurso.SelectedValue = null;
@@ -192,7 +198,8 @@ namespace UI.Web
 
         private void ClearForm()
         {
-
+            txtCondicion.Text = string.Empty;
+            txtNota.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)
