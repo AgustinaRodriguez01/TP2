@@ -100,6 +100,7 @@ namespace UI.Desktop
             this.dgvDocenteCurso.Location = new System.Drawing.Point(3, 3);
             this.dgvDocenteCurso.Name = "dgvDocenteCurso";
             this.dgvDocenteCurso.ReadOnly = true;
+            this.dgvDocenteCurso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDocenteCurso.Size = new System.Drawing.Size(493, 187);
             this.dgvDocenteCurso.TabIndex = 0;
             // 

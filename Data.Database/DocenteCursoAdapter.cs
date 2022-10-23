@@ -166,7 +166,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_curso, id_materia, id_comision from cursos", sqlConn);
+                SqlCommand cmd = new SqlCommand("select * from cursos", sqlConn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(cursos);
             }
@@ -190,7 +190,7 @@ namespace Data.Database
             try
             {
                 this.OpenConnection();
-                SqlCommand cmd = new SqlCommand("select id_persona,concat( nombre,' ', apellido)nape from personas where tipo_persona=0", sqlConn);
+                SqlCommand cmd = new SqlCommand("select id_persona,concat( nombre,' ', apellido)apenom from personas where tipo_persona=1", sqlConn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(docentes);
             }

@@ -23,20 +23,6 @@ namespace UI.Desktop
             set { _DocenteCursoActual = value; }
         }
 
-        public void Listar()
-        {
-            DocenteCursoLogic dc = new DocenteCursoLogic();
-            cmbCurso.DataSource = dc.GetCursos();
-            cmbCurso.ValueMember = "id_curso";
-            cmbCurso.DisplayMember = "id_curso";
-            PersonaLogic per = new PersonaLogic();
-            cmbDocentes.DataSource = per.GetDocentes();
-            cmbDocentes.DisplayMember = "apenom";
-            cmbDocentes.ValueMember = "id_persona";
-            cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TipoCargo));
-            cmbCurso.SelectedIndex = 0;
-        }
-
         public DocenteCursoDesktop(ModoForm modo) : this()
         {
             Modo = modo;
@@ -48,6 +34,30 @@ namespace UI.Desktop
             DocenteCursoLogic dcl = new DocenteCursoLogic();
             this.DocenteCursoActual = dcl.GetOne(ID);
             this.MapearDeDatos();
+        }
+
+        public void Listar()
+        {
+            DocenteCursoLogic dc = new DocenteCursoLogic();
+            cmbCurso.DataSource = dc.GetCursos();
+            cmbCurso.ValueMember = "id_curso";
+            cmbCurso.DisplayMember = "id_curso";
+            cmbDocentes.DataSource = dc.GetDocentes();
+            cmbDocentes.DisplayMember = "apenom";
+            cmbDocentes.ValueMember = "id_persona";
+            cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TipoCargo));
+
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
+            lblMateria.Text = mat.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
+            lblAnioCalendario.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
+
         }
 
         public override void MapearDeDatos()
@@ -89,6 +99,7 @@ namespace UI.Desktop
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
+                
                 this.DocenteCursoActual.IdCurso = Convert.ToInt32(this.cmbCurso.SelectedValue);
                 this.DocenteCursoActual.IdDocente = Convert.ToInt32(this.cmbDocentes.SelectedValue);
                 this.DocenteCursoActual.Cargo = (DocenteCurso.TipoCargo)(this.cmbCargo.SelectedValue);
@@ -111,23 +122,6 @@ namespace UI.Desktop
             DocenteCursoLogic dcActual = new DocenteCursoLogic();
             dcActual.Save(DocenteCursoActual);
         }
-        public override bool Validar()
-        {
-            return true;
-        }
-
-        public new void Notificar(string titulo, string mensaje, MessageBoxButtons
-        botones, MessageBoxIcon icono)
-        {
-            MessageBox.Show(mensaje, titulo, botones, icono);
-
-        }
-        public new void Notificar(string mensaje, MessageBoxButtons botones,
-        MessageBoxIcon icono)
-        {
-            this.Notificar(this.Text, mensaje, botones, icono);
-        }
-
 
         private void DocenteCursoDesktop_Load(object sender, EventArgs e)
         {
@@ -147,14 +141,16 @@ namespace UI.Desktop
 
         private void cmbCurso_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            CursoLogic cl = new CursoLogic();
-            Curso cur = cl.GetOne(Convert.ToInt32(this.cmbCurso.SelectedValue));
-            MateriaLogic ml = new MateriaLogic();
-            Materia mat = ml.GetOne(cur.IdMateria);
+            CursoLogic c = new CursoLogic();
+            Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia mat = m.GetOne(cur.IdMateria);
             lblMateria.Text = mat.Descripcion;
-            ComisionLogic col = new ComisionLogic();
-            Comision com = col.GetOne(cur.IdComision);
-            lblComision.Text = com.Descripcion;
+            ComisionLogic com = new ComisionLogic();
+            Comision comi = com.GetOne(cur.IdComision);
+            lblComision.Text = comi.Descripcion;
+            lblAnioCalendario.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
         }
     }
 }
