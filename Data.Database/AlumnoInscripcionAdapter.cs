@@ -246,5 +246,39 @@ namespace Data.Database
             }
             return alumnos;
         }
+
+        public List<AlumnoInscripcion> GetAlumnosCurso(int idCurso)
+        {
+            List<AlumnoInscripcion> alumnosCurso = new List<AlumnoInscripcion>();
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmd = new SqlCommand("select * from alumnos_inscripciones where id_curso = @idCurso", this.sqlConn);
+                cmd.Parameters.Add("@idCurso", SqlDbType.Int).Value = idCurso;
+                SqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    AlumnoInscripcion alumCurso = new AlumnoInscripcion();
+                    alumCurso.ID = (int)dr["id_inscripcion"];
+                    alumCurso.IdAlumno = (int)dr["id_alumno"];
+                    alumCurso.IdCurso = (int)dr["id_curso"];
+                    alumCurso.Condicion = (string)dr["condicion"];
+                    alumCurso.Nota = (int)dr["nota"];
+                    alumnosCurso.Add(alumCurso);
+                }
+                dr.Close();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada =
+                    new Exception("Error al recuperar lista de alumnos de ese curso", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+            return alumnosCurso;
+        }
     }
 }
