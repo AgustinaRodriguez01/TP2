@@ -20,8 +20,8 @@ namespace UI.Desktop
 
         static class Global
         {
-            public static int ID;
             public static int IdCurso;
+            public static AlumnoInscripcion insc;
         }
 
         public CargarNotasAlumnos(int idcurso) : this()
@@ -40,14 +40,20 @@ namespace UI.Desktop
         {
             int ID = ((AlumnoInscripcion)this.dgvAlumnos.SelectedRows[0].DataBoundItem).ID;
             AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
-            AlumnoInscripcion al = new AlumnoInscripcion();
-            al = a.GetOne(ID);
-            Business.Entities.Personas alumno = new Business.Entities.Personas();
+            Global.insc = a.GetOne(ID);
             PersonaLogic p = new PersonaLogic();
-            alumno = p.GetOne(al.IdAlumno);
+            Business.Entities.Personas alumno = p.GetOne(Global.insc.IdAlumno);
             lblNombre.Text = alumno.Nombre + " " + alumno.Apellido;
         }
 
-
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            Global.insc.Condicion = cmbCondicion.SelectedItem.ToString();
+            Global.insc.Nota = Convert.ToInt32(nudNota.Text);
+            AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
+            a.Update(Global.insc);
+            AlumnoInscripcionLogic c = new AlumnoInscripcionLogic();
+            dgvAlumnos.DataSource = c.GetAlumnosCurso(Global.IdCurso);
+        }
     }
 }

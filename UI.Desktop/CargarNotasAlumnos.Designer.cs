@@ -38,10 +38,11 @@ namespace UI.Desktop
             this.label1 = new System.Windows.Forms.Label();
             this.cmbCondicion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtNota = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.nudNota = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNota)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -55,8 +56,8 @@ namespace UI.Desktop
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.cmbCondicion, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.txtNota, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.btnGuardar, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.nudNota, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -147,13 +148,6 @@ namespace UI.Desktop
             this.label2.TabIndex = 4;
             this.label2.Text = "Nota:";
             // 
-            // txtNota
-            // 
-            this.txtNota.Location = new System.Drawing.Point(675, 398);
-            this.txtNota.Name = "txtNota";
-            this.txtNota.Size = new System.Drawing.Size(100, 20);
-            this.txtNota.TabIndex = 5;
-            // 
             // btnGuardar
             // 
             this.btnGuardar.Location = new System.Drawing.Point(675, 424);
@@ -162,6 +156,14 @@ namespace UI.Desktop
             this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // nudNota
+            // 
+            this.nudNota.Location = new System.Drawing.Point(675, 398);
+            this.nudNota.Name = "nudNota";
+            this.nudNota.Size = new System.Drawing.Size(120, 20);
+            this.nudNota.TabIndex = 7;
             // 
             // CargarNotasAlumnos
             // 
@@ -174,6 +176,7 @@ namespace UI.Desktop
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNota)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,7 +192,7 @@ namespace UI.Desktop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbCondicion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtNota;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.NumericUpDown nudNota;
     }
 }
