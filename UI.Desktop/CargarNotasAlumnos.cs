@@ -24,7 +24,7 @@ namespace UI.Desktop
             public static int IdCurso;
         }
 
-        public CargarNotasAlumnos(int idcurso)
+        public CargarNotasAlumnos(int idcurso) : this()
         {
             Global.IdCurso = idcurso;
         }
@@ -38,13 +38,16 @@ namespace UI.Desktop
 
         private void dgvAlumnos_Click(object sender, EventArgs e)
         {
-            int ID = ((Business.Entities.AlumnoInscripcion)this.dgvAlumnos.SelectedRows[0].DataBoundItem).ID;
+            int ID = ((AlumnoInscripcion)this.dgvAlumnos.SelectedRows[0].DataBoundItem).ID;
             AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
             AlumnoInscripcion al = new AlumnoInscripcion();
             al = a.GetOne(ID);
             Business.Entities.Personas alumno = new Business.Entities.Personas();
             PersonaLogic p = new PersonaLogic();
-            alumno = p.GetOne()
+            alumno = p.GetOne(al.IdAlumno);
+            lblNombre.Text = alumno.Nombre + " " + alumno.Apellido;
         }
+
+
     }
 }
