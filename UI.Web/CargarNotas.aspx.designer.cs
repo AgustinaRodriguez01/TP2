@@ -33,6 +33,24 @@ namespace UI.Web
         protected global::System.Web.UI.WebControls.DropDownList ddlCursos;
 
         /// <summary>
+        /// Control lblMateria.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMateria;
+
+        /// <summary>
+        /// Control lblComision.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblComision;
+
+        /// <summary>
         /// Control btnAceptar.
         /// </summary>
         /// <remarks>

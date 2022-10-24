@@ -230,5 +230,10 @@ namespace UI.Web
             lblCupo.DataBind();
             lblAnio.DataBind();
         }
+
+        protected void ddlCurso_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

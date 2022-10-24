@@ -52,6 +52,7 @@ namespace UI.Web
             AlumnoInscripcionLogic aluIns = new AlumnoInscripcionLogic();
             gvAlumnos.DataSource = aluIns.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
             gvAlumnos.DataBind();
+
         }
 
         protected void gridView_SelectedIndexChanged(object sender, EventArgs e)

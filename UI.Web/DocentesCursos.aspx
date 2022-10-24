@@ -16,7 +16,7 @@
     </asp:Panel>
        <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="lblCurso" runat="server" Text="Curso"></asp:Label>
-        <asp:DropDownList ID="ddlCurso" runat="server" OnSelectedIndexChanged="ddlCurso_SelectedIndexChanged"></asp:DropDownList>
+        <asp:DropDownList ID="ddlCurso" runat="server" OnSelectedIndexChanged="ddlCurso_SelectedIndexChanged" AutoPostBack="True"></asp:DropDownList>
            &nbsp;&nbsp;&nbsp;
            <asp:Label ID="lblMateria" runat="server" Text="Materia"></asp:Label>
            &nbsp;&nbsp;&nbsp;

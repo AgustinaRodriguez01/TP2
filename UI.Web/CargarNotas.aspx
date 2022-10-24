@@ -2,8 +2,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Elija un curso"></asp:Label>
     <asp:DropDownList ID="ddlCursos" runat="server" AutoPostBack="True"></asp:DropDownList>
-    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
+    &nbsp;&nbsp;&nbsp;
+    <asp:Label ID="lblMateria" runat="server" Text="Materia"></asp:Label>
+&nbsp;&nbsp;
+    <asp:Label ID="lblComision" runat="server" Text="Comision"></asp:Label>
+&nbsp;&nbsp;
     <br />
+    <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" OnClick="btnAceptar_Click" />
     <asp:GridView ID="gvAlumnos" runat="server" AutoGenerateColumns="false" SelectedRowStyle-BackColor ="Black" SelectedRowStyle-ForeColor="White"
                 DataKeyNames="ID" OnSelectedIndexChanged="gridView_SelectedIndexChanged" CssClass="tablaABM">
                 <Columns>
