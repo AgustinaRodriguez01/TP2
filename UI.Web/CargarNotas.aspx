@@ -26,7 +26,9 @@
     <br />
     <asp:Label ID="Label3" runat="server" Text="Nota"></asp:Label>
     <asp:TextBox ID="txtNota" runat="server"></asp:TextBox>
+        <asp:RequiredFieldValidator ID="NotaRequerida" runat="server" ErrorMessage="La nota no puede ser vacía" ControlToValidate="txtNota" ForeColor="Red">*</asp:RequiredFieldValidator>
     <br />
     <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" />
+        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
     </asp:Panel>
 </asp:Content>

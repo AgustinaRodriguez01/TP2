@@ -68,14 +68,21 @@ namespace UI.Web
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
             Global.aluIns.Condicion = ddlCondicion.SelectedItem.ToString();
-            Global.aluIns.Nota = Convert.ToInt32(txtNota.Text);
-            AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
-            a.Update(Global.aluIns);
-            AlumnoInscripcionLogic c = new AlumnoInscripcionLogic();
-            gvAlumnos.DataSource = c.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
-            AlumnoInscripcionLogic aluIns = new AlumnoInscripcionLogic();
-            gvAlumnos.DataSource = aluIns.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
-            gvAlumnos.DataBind();
+            if (ValidarLogic.EstaEntreUnoYDiez(Global.aluIns.Nota))
+            {
+                Page.Response.Write("<script>alert('La nota debe estar entre 0 y 10')</script>");
+            }
+            else
+            {
+                Global.aluIns.Nota = Convert.ToInt32(txtNota.Text);
+                AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
+                a.Update(Global.aluIns);
+                AlumnoInscripcionLogic c = new AlumnoInscripcionLogic();
+                gvAlumnos.DataSource = c.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
+                AlumnoInscripcionLogic aluIns = new AlumnoInscripcionLogic();
+                gvAlumnos.DataSource = aluIns.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
+                gvAlumnos.DataBind();
+            } 
         }
     }
 }

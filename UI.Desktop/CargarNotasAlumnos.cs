@@ -49,11 +49,15 @@ namespace UI.Desktop
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             Global.insc.Condicion = cmbCondicion.SelectedItem.ToString();
-            Global.insc.Nota = Convert.ToInt32(nudNota.Text);
-            AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
-            a.Update(Global.insc);
-            AlumnoInscripcionLogic c = new AlumnoInscripcionLogic();
-            dgvAlumnos.DataSource = c.GetAlumnosCurso(Global.IdCurso);
+            if (ValidarLogic.EstaEntreUnoYDiez(Global.insc.Nota))
+            {
+                Global.insc.Nota = Convert.ToInt32(nudNota.Text);
+                AlumnoInscripcionLogic a = new AlumnoInscripcionLogic();
+                a.Update(Global.insc);
+                AlumnoInscripcionLogic c = new AlumnoInscripcionLogic();
+                dgvAlumnos.DataSource = c.GetAlumnosCurso(Global.IdCurso);
+            }
+            else MessageBox.Show("Debe ingresar un nro entre 1 y 10");
         }
     }
 }

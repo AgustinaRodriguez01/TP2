@@ -57,5 +57,11 @@ namespace Business.Logic
             }
             else return false;
         }
+
+        public static bool EstaEntreUnoYDiez(int n)
+        {
+            if (n <= 10 & n >= 0) return true;
+            else return false;
+        }
     }
 }
