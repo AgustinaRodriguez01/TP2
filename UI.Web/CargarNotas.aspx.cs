@@ -42,13 +42,13 @@ namespace UI.Web
                 ddlCursos.DataValueField = "id_curso";
                 ddlCursos.DataTextField = "id_curso";
                 ddlCursos.DataBind();
-                Session["idCurso"] = ddlCursos.SelectedValue;
                 gvAlumnos.Visible = true;
             }
         }
 
         protected void btnAceptar_Click(object sender, EventArgs e)
         {
+            Session["idCurso"] = ddlCursos.SelectedValue;
             AlumnoInscripcionLogic aluIns = new AlumnoInscripcionLogic();
             gvAlumnos.DataSource = aluIns.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
             gvAlumnos.DataBind();
