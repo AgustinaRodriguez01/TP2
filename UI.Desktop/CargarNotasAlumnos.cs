@@ -59,24 +59,5 @@ namespace UI.Desktop
             }
             else MessageBox.Show("Debe ingresar un nro entre 1 y 10");
         }
-
-        private void nudNota_Enter(object sender, EventArgs e)
-        {
-            switch (cmbCondicion.SelectedItem.ToString())
-            {
-                case "Aprobado":
-                    nudNota.Minimum = 6;
-                    nudNota.Maximum = 10;
-                    break;
-                case "Regular":
-                    nudNota.Minimum = 6;
-                    nudNota.Maximum = 10;
-                    break;
-                case "Libre":
-                    nudNota.Minimum = 0;
-                    nudNota.Maximum = 5;
-                    break;
-            }
-        }
     }
 }

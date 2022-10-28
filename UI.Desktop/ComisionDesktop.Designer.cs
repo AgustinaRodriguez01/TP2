@@ -152,7 +152,6 @@ namespace UI.Desktop
             // 
             // cmbPlanes
             // 
-            this.cmbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPlanes.FormattingEnabled = true;
             this.cmbPlanes.Location = new System.Drawing.Point(273, 29);
             this.cmbPlanes.Name = "cmbPlanes";

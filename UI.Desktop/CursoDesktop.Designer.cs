@@ -153,7 +153,6 @@ namespace UI.Desktop
             // 
             // cmbMateria
             // 
-            this.cmbMateria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMateria.FormattingEnabled = true;
             this.cmbMateria.Location = new System.Drawing.Point(84, 29);
             this.cmbMateria.Name = "cmbMateria";
@@ -162,7 +161,6 @@ namespace UI.Desktop
             // 
             // cmbComision
             // 
-            this.cmbComision.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbComision.FormattingEnabled = true;
             this.cmbComision.Location = new System.Drawing.Point(84, 56);
             this.cmbComision.Name = "cmbComision";

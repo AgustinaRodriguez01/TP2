@@ -261,7 +261,6 @@ namespace UI.Desktop
             // 
             // cmbTipoPersona
             // 
-            this.cmbTipoPersona.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTipoPersona.FormattingEnabled = true;
             this.cmbTipoPersona.Location = new System.Drawing.Point(254, 81);
             this.cmbTipoPersona.Name = "cmbTipoPersona";
@@ -270,7 +269,6 @@ namespace UI.Desktop
             // 
             // cmbPlanes
             // 
-            this.cmbPlanes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbPlanes.FormattingEnabled = true;
             this.cmbPlanes.Location = new System.Drawing.Point(254, 108);
             this.cmbPlanes.Name = "cmbPlanes";
