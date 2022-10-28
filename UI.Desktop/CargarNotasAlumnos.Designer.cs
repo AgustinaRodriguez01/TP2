@@ -129,11 +129,12 @@ namespace UI.Desktop
             // 
             // cmbCondicion
             // 
+            this.cmbCondicion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCondicion.FormattingEnabled = true;
             this.cmbCondicion.Items.AddRange(new object[] {
             "Regular",
             "Aprobado",
-            "Inscripto"});
+            "Libre"});
             this.cmbCondicion.Location = new System.Drawing.Point(675, 371);
             this.cmbCondicion.Name = "cmbCondicion";
             this.cmbCondicion.Size = new System.Drawing.Size(121, 21);
@@ -162,8 +163,10 @@ namespace UI.Desktop
             // 
             this.nudNota.Location = new System.Drawing.Point(675, 398);
             this.nudNota.Name = "nudNota";
+            this.nudNota.ReadOnly = true;
             this.nudNota.Size = new System.Drawing.Size(120, 20);
             this.nudNota.TabIndex = 7;
+            this.nudNota.Enter += new System.EventHandler(this.nudNota_Enter);
             // 
             // CargarNotasAlumnos
             // 

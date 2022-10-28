@@ -38,8 +38,8 @@ namespace UI.Desktop
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.adapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
+            this.adapterBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tblPlanDesktop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.adapterBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -132,17 +132,18 @@ namespace UI.Desktop
             this.label3.TabIndex = 7;
             this.label3.Text = "Especialidad";
             // 
-            // adapterBindingSource
-            // 
-            this.adapterBindingSource.DataSource = typeof(Data.Database.Adapter);
-            // 
             // cmbEspecialidad
             // 
+            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(92, 59);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(100, 21);
             this.cmbEspecialidad.TabIndex = 8;
+            // 
+            // adapterBindingSource
+            // 
+            this.adapterBindingSource.DataSource = typeof(Data.Database.Adapter);
             // 
             // PlanDesktop
             // 
