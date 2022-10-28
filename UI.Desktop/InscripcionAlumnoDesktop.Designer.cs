@@ -94,6 +94,7 @@ namespace UI.Desktop
             // 
             // cmbCurso
             // 
+            this.cmbCurso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCurso.FormattingEnabled = true;
             this.cmbCurso.Location = new System.Drawing.Point(93, 29);
             this.cmbCurso.Name = "cmbCurso";
