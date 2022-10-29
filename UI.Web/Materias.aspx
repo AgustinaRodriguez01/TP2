@@ -27,7 +27,7 @@
         <asp:TextBox ID="hs_totalesTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="hs_totalesRequerida" runat="server" ErrorMessage="Las horas totales no puede estar vacía" ControlToValidate="hs_totalesTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="IdPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
+        <asp:Label ID="IdPlanLabel" runat="server" Text="Plan: "></asp:Label>
         <asp:DropDownList ID="cmbIdPlan" runat="server">
         </asp:DropDownList>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />

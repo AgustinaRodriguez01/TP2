@@ -36,6 +36,9 @@ namespace UI.Desktop
                         tsmiCursos.Visible = false;
                         tsmiInscripcionDocentes.Visible = false;
                         tsmiCargarNotas.Visible = false;
+                        tsmiReportePlanes.Visible = false;
+                        tsmiReporteCursos.Visible = false;
+                        tsmiReportes.Visible = false;
                         break;
                     }
                 case Business.Entities.Personas.TipoPersona.Docente:
@@ -50,6 +53,9 @@ namespace UI.Desktop
                         tsmiCursos.Visible = false;
                         tsmiInscripcionDocentes.Visible = false;
                         inscripcionesDeAlumnosToolStripMenuItem.Visible = false;
+                        tsmiReportePlanes.Visible = false;
+                        tsmiReporteCursos.Visible = false;
+                        tsmiReportes.Visible = false;
                         break;
                     }
                 default:
@@ -118,6 +124,18 @@ namespace UI.Desktop
         {
             ElegirCurso eleg = new ElegirCurso(Global.ID);
             eleg.ShowDialog();
+        }
+
+        private void tsmiReportePlanes_Click(object sender, EventArgs e)
+        {
+            formReportePlanes rp = new formReportePlanes();
+            rp.ShowDialog();
+        }
+
+        private void tsmiReporteCursos_Click(object sender, EventArgs e)
+        {
+            formReporteCursos rc = new formReporteCursos();
+            rc.ShowDialog();
         }
     }
 }

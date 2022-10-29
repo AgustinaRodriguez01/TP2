@@ -18,7 +18,7 @@
         <asp:RequiredFieldValidator ID="descripcionRequerida" runat="server" ErrorMessage="La descripción no puede estar vacia"
             ControlToValidate ="descripcionTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="idEspecialidadLabel" runat="server" Text="ID Especialidad:"></asp:Label>
+        <asp:Label ID="idEspecialidadLabel" runat="server" Text="Especialidad:"></asp:Label>
         <asp:DropDownList ID="ddlEspecialidad" runat="server"></asp:DropDownList>
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">

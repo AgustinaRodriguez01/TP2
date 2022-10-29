@@ -22,7 +22,7 @@
         <asp:TextBox ID="anio_especialidadTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="anio_especialidadRequerido" runat="server" ErrorMessage="El año de la especialidad no puede estar vacío" ControlToValidate="anio_especialidadTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
-        <asp:Label ID="IdPlanLabel" runat="server" Text="ID Plan: "></asp:Label>
+        <asp:Label ID="IdPlanLabel" runat="server" Text="Plan: "></asp:Label>
         <asp:DropDownList ID="cmbIdPlan" runat="server">
         </asp:DropDownList>
         <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" />

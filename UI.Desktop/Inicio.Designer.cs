@@ -43,6 +43,9 @@ namespace UI.Desktop
             this.tsmiInscripcionDocentes = new System.Windows.Forms.ToolStripMenuItem();
             this.inscripcionesDeAlumnosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCargarNotas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReportes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReportePlanes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReporteCursos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripContainer1.TopToolStripPanel.SuspendLayout();
             this.toolStripContainer1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -72,7 +75,8 @@ namespace UI.Desktop
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem});
+            this.archivoToolStripMenuItem,
+            this.tsmiReportes});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(494, 24);
@@ -101,7 +105,7 @@ namespace UI.Desktop
             this.inscripcionesDeAlumnosToolStripMenuItem,
             this.tsmiCargarNotas});
             this.ArchivoTsmi.Name = "ArchivoTsmi";
-            this.ArchivoTsmi.Size = new System.Drawing.Size(180, 22);
+            this.ArchivoTsmi.Size = new System.Drawing.Size(90, 22);
             this.ArchivoTsmi.Text = "Ver";
             // 
             // tsmiUsuarios
@@ -174,6 +178,29 @@ namespace UI.Desktop
             this.tsmiCargarNotas.Text = "Cargar notas";
             this.tsmiCargarNotas.Click += new System.EventHandler(this.tsmiCargarNotas_Click);
             // 
+            // tsmiReportes
+            // 
+            this.tsmiReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiReportePlanes,
+            this.tsmiReporteCursos});
+            this.tsmiReportes.Name = "tsmiReportes";
+            this.tsmiReportes.Size = new System.Drawing.Size(65, 20);
+            this.tsmiReportes.Text = "Reportes";
+            // 
+            // tsmiReportePlanes
+            // 
+            this.tsmiReportePlanes.Name = "tsmiReportePlanes";
+            this.tsmiReportePlanes.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReportePlanes.Text = "Planes";
+            this.tsmiReportePlanes.Click += new System.EventHandler(this.tsmiReportePlanes_Click);
+            // 
+            // tsmiReporteCursos
+            // 
+            this.tsmiReporteCursos.Name = "tsmiReporteCursos";
+            this.tsmiReporteCursos.Size = new System.Drawing.Size(180, 22);
+            this.tsmiReporteCursos.Text = "Cursos";
+            this.tsmiReporteCursos.Click += new System.EventHandler(this.tsmiReporteCursos_Click);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +236,8 @@ namespace UI.Desktop
         private System.Windows.Forms.ToolStripMenuItem tsmiInscripcionDocentes;
         private System.Windows.Forms.ToolStripMenuItem inscripcionesDeAlumnosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiCargarNotas;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReportes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReportePlanes;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReporteCursos;
     }
 }
