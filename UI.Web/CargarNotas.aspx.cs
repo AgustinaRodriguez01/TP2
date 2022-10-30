@@ -42,6 +42,17 @@ namespace UI.Web
                 ddlCursos.DataValueField = "id_curso";
                 ddlCursos.DataTextField = "id_curso";
                 ddlCursos.DataBind();
+
+                CursoLogic c = new CursoLogic();
+                Curso curso = c.GetOne(Convert.ToInt32(ddlCursos.SelectedValue));
+                MateriaLogic m = new MateriaLogic();
+                Materia materia = m.GetOne(curso.IdMateria);
+                ComisionLogic co = new ComisionLogic();
+                Comision comision = co.GetOne(curso.IdComision);
+                lblComision.Text = comision.Descripcion;
+                lblComision.DataBind();
+                lblMateria.Text = materia.Descripcion;
+                lblMateria.DataBind();
                 gvAlumnos.Visible = true;
             }
         }
@@ -84,6 +95,20 @@ namespace UI.Web
                 gvAlumnos.DataSource = aluIns.GetAlumnosCurso(Convert.ToInt32(Session["idCurso"]));
                 gvAlumnos.DataBind();
             } 
+        }
+
+        protected void ddlCursos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CursoLogic c = new CursoLogic();
+            Curso curso = c.GetOne(Convert.ToInt32(ddlCursos.SelectedValue));
+            MateriaLogic m = new MateriaLogic();
+            Materia materia = m.GetOne(curso.IdMateria);
+            ComisionLogic co = new ComisionLogic();
+            Comision comision = co.GetOne(curso.IdComision);
+            lblComision.Text = comision.Descripcion;
+            lblComision.DataBind();
+            lblMateria.Text = materia.Descripcion;
+            lblMateria.DataBind();
         }
     }
 }

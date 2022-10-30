@@ -92,7 +92,8 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-
+            Entity = Logic.GetOne(id);
+            ddlCurso.SelectedValue = Entity.IdCurso.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -163,13 +164,12 @@ namespace UI.Web
             this.ddlCurso.Enabled = enable;
 
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
-            ddlCurso.SelectedValue = null;
             ddlCurso.DataSource = dcursos.GetCursos(Convert.ToInt32(Session["idPersona"]));
             ddlCurso.DataValueField = "id_curso";
             ddlCurso.DataTextField = "id_curso";
             ddlCurso.DataBind();
 
-            ActualizarComboCurso();
+            ActualizarLabels();
         }
 
         protected void eliminarLinkButton_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace UI.Web
             formPanel.Visible = false;
         }
 
-        public void ActualizarComboCurso()
+        protected void ddlCurso_SelectedIndexChanged(object sender, EventArgs e)
         {
             CursoLogic cl = new CursoLogic();
             Curso cur = cl.GetOne(Convert.ToInt32(this.ddlCurso.SelectedValue));
@@ -211,14 +211,15 @@ namespace UI.Web
             ComisionLogic col = new ComisionLogic();
             Comision com = col.GetOne(cur.IdComision);
             lblComision.Text = com.Descripcion;
-            lblAnio.Text = cur.AnioCalendario.ToString();
-            lblCupo.Text = cur.Cupo.ToString();
             lblComision.DataBind();
             lblMateria.DataBind();
+            lblAnio.Text = cur.AnioCalendario.ToString();
+            lblCupo.Text = cur.Cupo.ToString();
             lblCupo.DataBind();
             lblAnio.DataBind();
         }
-        protected void ddlCurso_SelectedIndexChanged(object sender, EventArgs e)
+
+        public void ActualizarLabels()
         {
             CursoLogic cl = new CursoLogic();
             Curso cur = cl.GetOne(Convert.ToInt32(this.ddlCurso.SelectedValue));

@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CargarNotas.aspx.cs" Inherits="UI.Web.CargarNotas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="bodyContentPlaceHolder" runat="server">
     <asp:Label ID="Label1" runat="server" Text="Elija un curso"></asp:Label>
-    <asp:DropDownList ID="ddlCursos" runat="server" AutoPostBack="True"></asp:DropDownList>
+    <asp:DropDownList ID="ddlCursos" runat="server" AutoPostBack="True" OnSelectedIndexChanged="ddlCursos_SelectedIndexChanged"></asp:DropDownList>
     &nbsp;&nbsp;&nbsp;
     <asp:Label ID="lblMateria" runat="server" Text="Materia"></asp:Label>
 &nbsp;&nbsp;
