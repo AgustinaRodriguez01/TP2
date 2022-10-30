@@ -109,6 +109,7 @@ namespace UI.Web
             this.habilitadoCheckBox.Checked = this.Entity.Habilitado;
             this.nombreUsuarioTextBox.Text = this.Entity.NombreUsuario;
             this.idPersonaTextBox.Text = this.Entity.IdPersona.ToString();
+            this.claveTextBox.Text = this.Entity.Clave.ToString();
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -210,6 +211,8 @@ namespace UI.Web
             emailTextBox.Text = string.Empty;
             habilitadoCheckBox.Checked = false;
             nombreUsuarioTextBox.Text = string.Empty;
+            claveTextBox.Text = string.Empty;
+            repetirClaveTextBox.Text = string.Empty;
         }
 
         protected void cancelarLinkButton_Click(object sender, EventArgs e)

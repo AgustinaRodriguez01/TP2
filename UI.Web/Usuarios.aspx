@@ -18,17 +18,17 @@
     </asp:Panel>
     <asp:Panel ID="formPanel" Visible="false" runat="server">
         <asp:Label ID="nombreLabel" runat="server" Text="Nombre:"></asp:Label>
-        <asp:TextBox ID="nombreTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="nombreTextBox" runat="server" ReadOnly="True"></asp:TextBox>
         <asp:RequiredFieldValidator ID="nombreRequerido" runat="server" ErrorMessage="El nombre no puede estar vacío"
          ControlToValidate ="nombreTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="apellidoLabel" runat="server" Text="Apellido:"></asp:Label>
-        <asp:TextBox ID="apellidoTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="apellidoTextBox" runat="server" ReadOnly="True"></asp:TextBox>
         <asp:RequiredFieldValidator ID="apellidoRequerido" runat="server" ErrorMessage="El apellido no puede estar vacío"
          ControlToValidate ="apellidoTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="emailLabel" runat="server" Text="Email:"></asp:Label>
-        <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="emailTextBox" runat="server" ReadOnly="True"></asp:TextBox>
          <asp:RequiredFieldValidator ID="emailRequerido" runat="server" ErrorMessage="El email no puede estar vacío"
          ControlToValidate ="emailTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <asp:RegularExpressionValidator ID="esMailValido" runat="server" ErrorMessage="El email no es válido"
@@ -43,7 +43,7 @@
          ControlToValidate ="nombreUsuarioTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <br />
         <asp:Label ID="claveLabel" runat="server" Text="Clave:"></asp:Label>
-        <asp:TextBox ID="claveTextBox" TextMode="Password" runat="server"></asp:TextBox>
+        <asp:TextBox ID="claveTextBox" runat="server"></asp:TextBox>
         <asp:RequiredFieldValidator ID="claveRequerida" runat="server" ErrorMessage="La clave no puede estar vacía"
          ControlToValidate ="claveTextBox" ForeColor="Red">*</asp:RequiredFieldValidator>
         <asp:CustomValidator ID="ValidarLongitudContraseña" runat="server" ErrorMessage="La contraseña debe tener 8 o más caracteres"
@@ -65,8 +65,6 @@
     </asp:Panel>
     <asp:Panel ID="gridActionsPanel" runat="server">
         <asp:LinkButton ID="editarLinkButton" runat ="server" OnClick="editarLinkButton_Click">Editar</asp:LinkButton>
-        <asp:LinkButton ID="eliminarLinkButton" runat ="server" OnClick="eliminarLinkButton_Click">Eliminar</asp:LinkButton>
-        <asp:LinkButton ID="nuevoLinkButton" runat ="server" OnClick="nuevoLinkButton_Click">Nuevo</asp:LinkButton>
     </asp:Panel>
         <asp:Panel ID="formActionsPanel" runat="server">
         <asp:LinkButton ID="aceptarLinkButton" runat ="server" OnClick="aceptarLinkButton_Click">Aceptar</asp:LinkButton>

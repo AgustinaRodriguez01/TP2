@@ -187,6 +187,33 @@ namespace Data.Database
             }
         }
 
+        public void ActualizarDatos(string nombre, string apellido, string mail, int id)
+        {
+            try
+            {
+                this.OpenConnection();
+                SqlCommand cmdSave = new SqlCommand(
+                    "UPDATE usuarios SET " +
+                    "nombre = @nombre, apellido = @apellido, email = @email " +
+                    "WHERE id_persona = @id", sqlConn);
+
+                cmdSave.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                cmdSave.Parameters.Add("@nombre", SqlDbType.VarChar, 50).Value = nombre;
+                cmdSave.Parameters.Add("apellido", SqlDbType.VarChar, 50).Value = apellido;
+                cmdSave.Parameters.Add("@email", SqlDbType.VarChar, 50).Value = mail;
+                cmdSave.ExecuteNonQuery();
+            }
+            catch (Exception Ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al modificar los datos del usuario", Ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.CloseConnection();
+            }
+        }
+
         protected void Insert(Usuario usuario)
         {
             try

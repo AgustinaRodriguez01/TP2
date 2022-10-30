@@ -103,10 +103,7 @@ namespace UI.Desktop
                 UsuarioActual.NombreUsuario = txtUsuario.Text;
                 UsuarioActual.Clave = txtClave.Text;
                 UsuarioActual.IdPersona = Convert.ToInt32(txtIdPersona.Text);
-                if (Modo == ModoForm.Modificacion)
-                {
-                    UsuarioActual.State = BusinessEntity.States.Modified;
-                }
+                UsuarioActual.State = BusinessEntity.States.Modified;
             }
 
             if(Modo == ModoForm.Baja)

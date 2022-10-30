@@ -150,6 +150,11 @@ namespace UI.Desktop
                 formUsuario.txtIdPersona.Enabled = false;
                 formUsuario.ShowDialog();
             }
+            if(Modo == ModoForm.Modificacion)
+            {
+                UsuarioLogic u = new UsuarioLogic();
+                u.ActualizarDatos(txtNombre.Text, txtApellido.Text, txtEmail.Text, Convert.ToInt32(txtID.Text));
+            }
         }
 
         public new void Notificar(string titulo, string mensaje, MessageBoxButtons

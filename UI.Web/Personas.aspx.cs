@@ -162,6 +162,8 @@ namespace UI.Web
                         this.Entity.State = BusinessEntity.States.Modified;
                         this.LoadEntity(this.Entity);
                         this.SaveEntity(this.Entity);
+                        UsuarioLogic u = new UsuarioLogic();
+                        u.ActualizarDatos(nombreTextBox.Text, apellidoTextBox.Text, emailTextBox.Text, SelectedID);
                         this.LoadGrid();
                         break;
                     case FormModes.Alta:

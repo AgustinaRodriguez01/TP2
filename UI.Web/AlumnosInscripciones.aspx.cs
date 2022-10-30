@@ -115,7 +115,6 @@ namespace UI.Web
 
             alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
             alumins.IdAlumno = Convert.ToInt32(Session["idPersona"]);
-            //alumins.IdAlumno = Global.idPersona;
             alumins.Condicion = "Inscripto";
             alumins.Nota = 0;
         }

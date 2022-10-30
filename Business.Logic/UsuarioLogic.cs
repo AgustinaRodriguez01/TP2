@@ -26,6 +26,11 @@ namespace Business.Logic
             return UsuarioData.ExisteUsuario(us, con);
         }
 
+        public void ActualizarDatos(string nom, string ape, string email, int id)
+        {
+            UsuarioData.ActualizarDatos(nom,ape,email,id);
+        }
+
         public Usuario ActualizarContraseña(string us, string conActual, string conNueva)
         {
             return UsuarioData.ActualizarContraseña(us, conActual, conNueva);

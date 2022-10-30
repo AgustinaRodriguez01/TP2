@@ -11,10 +11,6 @@ namespace UI.Web
 {
     public partial class Login : System.Web.UI.Page
     {
-        //static class Global
-        //{
-        //    public static int idPersona;
-        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -31,7 +27,6 @@ namespace UI.Web
                 Business.Entities.Personas persona = per.GetOne(usuario.IdPersona);
                 Session.Add("tipo", persona.TPersona);
                 Session["idPersona"] = persona.ID;
-                //Global.idPersona = persona.ID;
                 Response.Redirect("https://localhost:44366/Default.aspx");
             }
             else

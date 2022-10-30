@@ -74,7 +74,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Cupo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
