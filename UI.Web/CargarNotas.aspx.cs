@@ -82,7 +82,27 @@ namespace UI.Web
             Global.aluIns.Condicion = ddlCondicion.SelectedItem.ToString();
             if (ValidarLogic.EstaEntreUnoYDiez(Global.aluIns.Nota))
             {
-                Page.Response.Write("<script>alert('La nota debe estar entre 0 y 10')</script>");
+                switch (Global.aluIns.Condicion)
+                {
+                    case ("Regular"):
+                        if(Global.aluIns.Nota < 6)
+                        {
+                            Page.Response.Write("<script>alert('La nota debe estar entre 6 y 10')</script>");
+                        }
+                        break;
+                    case ("Aprobado"):
+                        if (Global.aluIns.Nota < 6)
+                        {
+                            Page.Response.Write("<script>alert('La nota debe estar entre 6 y 10')</script>");
+                        }
+                        break;
+                    case ("Libre"):
+                        if ((Global.aluIns.Nota > 6) || (Global.aluIns.Nota < 0))
+                        {
+                            Page.Response.Write("<script>alert('La nota debe estar entre 0 y 5')</script>");
+                        }
+                        break;
+                }
             }
             else
             {

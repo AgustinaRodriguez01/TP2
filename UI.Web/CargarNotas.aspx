@@ -26,7 +26,7 @@
     <asp:DropDownList ID="ddlCondicion" runat="server">
         <asp:ListItem>Regular</asp:ListItem>
         <asp:ListItem>Aprobado</asp:ListItem>
-        <asp:ListItem>Inscripto</asp:ListItem>
+        <asp:ListItem>Libre</asp:ListItem>
     </asp:DropDownList>
     <br />
     <asp:Label ID="Label3" runat="server" Text="Nota"></asp:Label>
