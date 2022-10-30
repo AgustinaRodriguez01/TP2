@@ -41,7 +41,6 @@ namespace UI.Desktop
         {
             this.txtID.Text = this.PlanActual.ID.ToString();
             this.txtDescripcion.Text = this.PlanActual.Descripcion;
-            this.cmbEspecialidad.SelectedValue = this.PlanActual.IdEspecialidad;
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -143,6 +142,10 @@ namespace UI.Desktop
             cmbEspecialidad.DataSource = esp.GetEspecialidades();
             cmbEspecialidad.ValueMember = "id_especialidad";
             cmbEspecialidad.DisplayMember = "desc_especialidad";
+            if(Modo == ModoForm.Modificacion || Modo == ModoForm.Baja)
+            {
+                this.cmbEspecialidad.SelectedValue = this.PlanActual.IdEspecialidad;
+            }
         }
     }
 }

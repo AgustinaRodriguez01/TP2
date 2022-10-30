@@ -12,10 +12,6 @@ namespace UI.Web
 {
     public partial class AlumnosInscripciones : System.Web.UI.Page
     {
-        //static class Global
-        //{
-        //    public static int idPersona;
-        //}
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -42,7 +38,6 @@ namespace UI.Web
         private void LoadGrid()
         {
             this.gridView.DataSource = this.Logic.GetInscAlumno(Convert.ToInt32(Session["idPersona"]));
-            //this.gridView.DataSource = this.Logic.GetInscAlumno(Global.idPersona);
             this.gridView.DataBind();
         }
 
@@ -97,6 +92,7 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
@@ -115,8 +111,11 @@ namespace UI.Web
 
             alumins.IdCurso = Convert.ToInt32(this.ddlCurso.SelectedValue);
             alumins.IdAlumno = Convert.ToInt32(Session["idPersona"]);
-            alumins.Condicion = "Inscripto";
-            alumins.Nota = 0;
+            if(FormMode == FormModes.Alta)
+            {
+                alumins.Condicion = "Inscripto";
+                alumins.Nota = 0;
+            }
         }
 
         private void SaveEntity(AlumnoInscripcion alumins)
@@ -166,7 +165,6 @@ namespace UI.Web
             AlumnoInscripcionLogic dcursos = new AlumnoInscripcionLogic();
             ddlCurso.SelectedValue = null;
             ddlCurso.DataSource = dcursos.GetCursos(Convert.ToInt32(Session["idPersona"]));
-            //ddlCurso.DataSource = dcursos.GetCursos(Global.idPersona);
             ddlCurso.DataValueField = "id_curso";
             ddlCurso.DataTextField = "id_curso";
             ddlCurso.DataBind();
@@ -238,9 +236,5 @@ namespace UI.Web
             lblAnio.DataBind();
         }
 
-        protected void ddlCurso_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

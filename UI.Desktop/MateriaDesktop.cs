@@ -167,6 +167,11 @@ namespace UI.Desktop
             cmbPlanes.DataSource = planes.GetPlanes();
             cmbPlanes.ValueMember = "id_plan";
             cmbPlanes.DisplayMember = "desc_plan";
+
+            if(Modo== ModoForm.Baja || Modo == ModoForm.Modificacion)
+            {
+                cmbPlanes.SelectedValue = materiaActual.IdPlan.ToString();
+            }
         }
     }
 }

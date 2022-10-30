@@ -134,13 +134,11 @@ namespace Data.Database
             {
                 this.OpenConnection();
                 SqlCommand cmd = new SqlCommand(
-                    "UPDATE alumnos_inscripciones SET id_alumno= @id_alumno, id_curso = @id_curso, condicion=@condicion, nota=@nota " +
+                    "UPDATE alumnos_inscripciones SET id_alumno= @id_alumno, id_curso = @id_curso " +
                     "WHERE id_inscripcion = @id", this.sqlConn);
                 cmd.Parameters.Add("@id", SqlDbType.Int).Value = alumins.ID;
                 cmd.Parameters.Add("@id_alumno", SqlDbType.Int).Value = alumins.IdAlumno;
                 cmd.Parameters.Add("@id_curso", SqlDbType.Int).Value = alumins.IdCurso;
-                cmd.Parameters.Add("@condicion", SqlDbType.VarChar).Value = alumins.Condicion;
-                cmd.Parameters.Add("@nota", SqlDbType.Int).Value = alumins.Nota;
                 cmd.ExecuteNonQuery();
             }
             catch (Exception Ex)

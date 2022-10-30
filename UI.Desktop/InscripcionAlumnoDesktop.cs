@@ -153,6 +153,11 @@ namespace UI.Desktop
             cmbCurso.ValueMember = "id_curso";
             cmbCurso.DisplayMember = "id_curso";
 
+            if(Modo == ModoForm.Baja || Modo == ModoForm.Modificacion)
+            {
+                cmbCurso.SelectedValue = InscActual.IdCurso.ToString();
+            }
+
             CursoLogic c = new CursoLogic();
             Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
             MateriaLogic m = new MateriaLogic();

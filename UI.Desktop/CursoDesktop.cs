@@ -43,8 +43,6 @@ namespace UI.Desktop
             this.txtID.Text = this.CursoActual.ID.ToString();
             this.txtAnio.Text = this.CursoActual.AnioCalendario.ToString();
             this.txtCupo.Text = this.CursoActual.Cupo.ToString();
-            cmbMateria.SelectedValue = this.CursoActual.IdMateria.ToString();
-            cmbComision.SelectedValue = this.CursoActual.IdComision.ToString();
             
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -153,6 +151,11 @@ namespace UI.Desktop
             cmbComision.DataSource = com.GetComisiones();
             cmbComision.DisplayMember = "desc_comision";
             cmbComision.ValueMember = "id_comision";
+            if(Modo == ModoForm.Modificacion || Modo == ModoForm.Baja)
+            {
+                cmbMateria.SelectedValue = this.CursoActual.IdMateria;
+                cmbComision.SelectedValue = this.CursoActual.IdComision;
+            }
         }
     }
 }

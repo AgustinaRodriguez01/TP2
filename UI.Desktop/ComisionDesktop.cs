@@ -42,7 +42,6 @@ namespace UI.Desktop
             this.txtID.Text = this.ComisionActual.ID.ToString();
             this.txtDescripcion.Text = this.ComisionActual.Descripcion;
             this.txtAnioEspecialidad.Text = this.ComisionActual.AnioEspecialidad.ToString();
-            this.cmbPlanes.SelectedValue = this.ComisionActual.IdPlan.ToString();
 
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
@@ -142,6 +141,10 @@ namespace UI.Desktop
             cmbPlanes.DataSource = planes.GetPlanes();
             cmbPlanes.ValueMember = "id_plan";
             cmbPlanes.DisplayMember = "desc_plan";
+            if (Modo == ModoForm.Modificacion || Modo == ModoForm.Baja)
+            {
+                this.cmbPlanes.SelectedValue = this.ComisionActual.IdPlan.ToString();
+            }
         }
     }
 }

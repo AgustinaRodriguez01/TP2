@@ -47,6 +47,11 @@ namespace UI.Desktop
             cmbDocentes.ValueMember = "id_persona";
             cmbCargo.DataSource = Enum.GetValues(typeof(DocenteCurso.TipoCargo));
 
+            if (ModoForm.Modificacion == Modo || ModoForm.Baja == Modo)
+            {
+                cmbCurso.SelectedValue = DocenteCursoActual.IdCurso.ToString();
+            }
+
             CursoLogic c = new CursoLogic();
             Curso cur = c.GetOne(Convert.ToInt32(cmbCurso.SelectedValue));
             MateriaLogic m = new MateriaLogic();
@@ -64,8 +69,6 @@ namespace UI.Desktop
         {
             this.txtIdDictado.Text = this.DocenteCursoActual.ID.ToString();
             this.cmbDocentes.SelectedValue = this.DocenteCursoActual.IdDocente;
-            this.cmbCurso.SelectedValue = this.DocenteCursoActual.IdCurso;
-            this.cmbCargo.SelectedValue = this.DocenteCursoActual.Cargo;
             
             if (Modo == ModoForm.Alta || Modo == ModoForm.Modificacion)
             {
