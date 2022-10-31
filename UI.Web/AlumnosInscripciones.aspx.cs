@@ -92,8 +92,7 @@ namespace UI.Web
 
         private void LoadForm(int id)
         {
-            Entity = Logic.GetOne(id);
-            ddlCurso.SelectedValue = Entity.IdCurso.ToString();
+
         }
 
         protected void editarLinkButton_Click(object sender, EventArgs e)
