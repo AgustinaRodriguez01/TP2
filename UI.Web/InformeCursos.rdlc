@@ -34,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id curso</Value>
+                              <Value>ID Curso</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -47,6 +47,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -64,7 +65,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id materia</Value>
+                              <Value>ID Materia</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -77,6 +78,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -94,7 +96,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>id comision</Value>
+                              <Value>ID Comision</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -107,6 +109,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -124,7 +127,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>anio calendario</Value>
+                              <Value>Año</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -137,6 +140,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -154,7 +158,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>cupo</Value>
+                              <Value>Cupo</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -167,6 +171,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>Brown</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -354,13 +359,15 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCursos</DataSetName>
-        <Top>0.55245cm</Top>
+        <Top>0.14111cm</Top>
         <Left>2.06058cm</Left>
         <Height>1.2cm</Height>
         <Width>12.5cm</Width>
         <Style>
           <Border>
-            <Style>None</Style>
+            <Color>Maroon</Color>
+            <Style>Solid</Style>
+            <Width>3pt</Width>
           </Border>
         </Style>
       </Tablix>
