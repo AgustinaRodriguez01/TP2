@@ -25,6 +25,8 @@ namespace UI.Web
                     DocentesVisible = false;
                     AlumnosInscVisible = true;
                     CargaNotasVisible = false;
+                    ReportePlanesVisible = false;
+                    ReporteCursosVisible = false;
                     break;
                 case Business.Entities.Personas.TipoPersona.Docente:
                     PersonasVisible = false;
@@ -37,6 +39,8 @@ namespace UI.Web
                     DocentesVisible = false;
                     AlumnosInscVisible = false;
                     CargaNotasVisible = true;
+                    ReportePlanesVisible = false;
+                    ReporteCursosVisible = false;
                     break;
                 default: break;
             }
@@ -97,6 +101,18 @@ namespace UI.Web
         {
             get { return cargarNotasLink.Visible; }
             set { cargarNotasLink.Visible = value; }
+        }
+
+        public bool ReportePlanesVisible
+        {
+            get { return reportePlanesLink.Visible; }
+            set { reportePlanesLink.Visible = value; }
+        }
+
+        public bool ReporteCursosVisible
+        {
+            get { return reporteCursosLink.Visible; }
+            set { reporteCursosLink.Visible = value; }
         }
     }
 }
